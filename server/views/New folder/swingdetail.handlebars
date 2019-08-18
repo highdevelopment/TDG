@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<!-- Basic -->
+		<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">	
+
+		<title>The Doors Golf</title>	
+
+		<meta name="keywords" content="HTML5 Template" />
+		<meta name="description" content="Porto - Responsive HTML5 Template">
+		<meta name="author" content="okler.net">
+		<meta name="naver-site-verification" content="edf9bb2ea9dcc8fdc7701dbab11b58f0c5369b7b"/>
+		<meta name="google-site-verification" content="4CnREwPIlYSQ6M2oc_Xb8b0KIFiQCVMzyT48HcKdKPw" />
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+		<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<!-- Web Fonts  -->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
+
+		<!-- Vendor CSS -->
+		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.css">
+		<link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
+		<link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.min.css">
+		<link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.min.css">
+		<link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.css">
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="css/theme.css">
+		<link rel="stylesheet" href="css/theme-elements.css">
+		<link rel="stylesheet" href="css/theme-blog.css">
+		<link rel="stylesheet" href="css/theme-shop.css">
+		<link rel="stylesheet" href="css/theme-animate.css">
+
+		<!-- Current Page CSS -->
+		<link rel="stylesheet" href="vendor/rs-plugin/css/settings.css" media="screen">
+		<link rel="stylesheet" href="vendor/rs-plugin/css/layers.css" media="screen">
+		<link rel="stylesheet" href="vendor/rs-plugin/css/navigation.css" media="screen">
+		<link rel="stylesheet" href="vendor/circle-flip-slideshow/css/component.css" media="screen">
+
+		<!-- <link rel="stylesheet" type="text/css" href="css/select2.css"/> -->
+		<!-- <link rel="stylesheet" type="text/css" href="css/dataTables.bootstrap.css"/> -->
+		<!-- <link href="css/components-rounded.css" id="style_components" rel="stylesheet" type="text/css"> -->
+		<!-- <link href="css/plugins.css" rel="stylesheet" type="text/css"> -->
+
+		<!-- Skin CSS -->
+		<link rel="stylesheet" href="css/skins/default.css">
+
+		<!-- Theme Custom CSS -->
+		<link rel="stylesheet" href="css/custom.css">
+
+		<!-- Head Libs -->
+		<script src="vendor/modernizr/modernizr.js"></script>
+
+		<style type="text/css">
+			.best-swing-title {
+				text-align: center;
+				margin-bottom: 20px;
+			}
+			.best-swing-title hr {
+				background: gray;
+			}
+			.best-swing-title p {
+			    font-size: 18px;
+			    color: #333;
+			    background: white;
+			    width: 155px;
+			    margin: auto;
+			    margin-top: -34px;
+			}
+			.display-flex {
+				display: flex;
+			}
+			.profile-img {
+			    width: 100px;
+			    font-size: 60px;
+			    background: #B6CFF6;
+			    line-height: 94px;
+			    color: white;
+			    padding-bottom: 6px;
+			    text-align: center;
+			    border-radius: 115px;
+			}
+			.vote-state {
+				margin: 0;
+    			text-align: right;
+    		}
+    		.display-table {
+    			display: table;
+    		}
+    		.vote-main-part {
+    			width: calc(100% - 110px);
+    			padding-left: 10px;
+     			height: 85px;
+     			padding-top: 15px;
+    		}
+    		.comments-txt {
+			    vertical-align: bottom;
+			    display: table-cell;
+			    font-size: 18px;
+    		}
+
+		</style>
+
+	</head>
+	<body>
+		<div class="body">
+			<header id="header" data-plugin-options='{"stickyEnabled": true, "stickyEnableOnBoxed": true, "stickyEnableOnMobile": true, "stickyStartAt": 47, "stickySetTop": "-47px", "stickyChangeLogo": true}'>
+				<div class="header-body">
+					<div class="header-container container">
+						<div class="header-row">
+							<div class="header-column">
+								<div class="header-logo">
+									<a href="index">
+										<img alt="Porto" width="109" height="80" data-sticky-width="82" data-sticky-height="50" data-sticky-top="33" src="img/logo.png">
+									</a>
+								</div>
+							</div>
+							<div class="header-column">
+								<div class="header-row">
+									<nav class="header-nav-top">
+										<ul class="nav nav-pills">
+											{{#if user.isManager}}
+												<li class="hidden-xs">
+													<a href="manager"><i class="fa fa-angle-right"></i> TDG매니저</a>
+												</li>
+											{{/if}}
+											<li class="hidden-xs">
+												<a href="contact-us"><i class="fa fa-angle-right"></i> 고객센터</a>
+											</li>
+											<li class="hidden-xs">
+												<a href="intro"><i class="fa fa-angle-right"></i> 창업안내</a>
+											</li>
+											{{#if user.isAuth}}
+												<li class="hidden-xs">
+													<a id="btnLogOut" style="cursor: pointer;"><i class="fa fa-angle-right"></i>로그아웃</a>
+													<form id="form_logout" action="/logOutUser" method="post"></form>
+												</li>
+											{{else}}
+												<li class="hidden-xs">
+													<a href="login"><i class="fa fa-angle-right"></i>로그인</a>
+												</li>
+												<li class="hidden-xs">
+													<a href="signupAgree"><i class="fa fa-angle-right"></i>회원가입</a>
+												</li>
+											{{/if}}
+										</ul>
+									</nav>
+								</div>
+								<div class="header-row">
+									<div class="header-nav">
+										<button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main">
+											<i class="fa fa-bars"></i>
+										</button>
+										<ul class="header-social-icons social-icons hidden-xs">
+											<li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+											<li class="social-icons-youtube"><a href="http://www.youtube.com/" target="_blank" title="Youtube"><i class="fa fa-youtube-play"></i></a></li>
+										</ul>
+										<div class="header-nav-main header-nav-main-effect-1 header-nav-main-sub-effect-1 collapse">
+											<nav>
+												<ul class="nav nav-pills" id="mainNav">
+													<li class="dropdown">
+														<a class="dropdown-toggle" href="analy">
+															My TDG
+														</a>
+														<ul class="dropdown-menu">
+															<li>
+																<a href="analy">
+																	내 기록 분석
+																</a>
+															</li>
+															<li>
+																<a href="swing">
+																	내 스윙 영상
+																</a>
+															</li>
+															<li>
+																<a href="gameset">
+																	게임설정
+																</a>
+															</li>
+															<li>
+																<a href="qa">
+																	1:1 문의
+																</a>
+															</li>
+															<li>
+																<a href="profile">
+																	프로필관리
+																</a>
+															</li>
+														</ul>
+													</li>
+													<li class="dropdown">
+														<a href="meeting">
+															대회
+														</a>
+													</li>
+													<li class="dropdown">
+														<a class="dropdown-toggle" href="event">
+															이벤트
+														</a>
+														<ul class="dropdown-menu">
+															<li>
+																<a href="event">
+																	이벤트
+																</a>
+															</li>
+															<li>
+																<a href="notice">
+																	공지사항
+																</a>
+															</li>
+														</ul>
+													</li>
+													<li class="dropdown">
+														<a href="course">
+															코스소개
+														</a>
+													</li>
+													<li class="dropdown">
+														<a href="searchshop">
+															매장찾기
+														</a>
+													</li>
+													<li class="dropdown active">
+														<a class="dropdown-toggle" href="photo">
+															커뮤니티
+														</a>
+														<ul class="dropdown-menu">
+															<li>
+																<a href="photo">
+																	포토존
+																</a>
+															</li>
+															<li>
+																<a href="swingvideo">
+																	스윙영상
+																</a>
+															</li>
+															<li>
+																<a href="hole">
+																	홀인원기록
+																</a>
+															</li>
+														</ul>
+													</li>
+												</ul>
+											</nav>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<div role="main" class="main">
+				<section class="page-header">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<ul class="breadcrumb">
+									<li><a href="#">홈</a></li>
+									<li class="active">커뮤니티</li>
+								</ul>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<h1>스윙영상</h1>
+							</div>
+						</div>
+					</div>
+				</section>
+				
+				<div class="container myswing best-swing-part">
+					<div class="best-swing-title">
+						<hr>
+						<p >베스트스윙 영상</p>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<video width="100%" controls>
+							  <source src="video/dark.mp4" type="video/mp4">
+							  <source src="video/dark.ogv" type="video/ogv">
+							  Your browser does not support HTML5 video.
+							</video>
+						</div>
+						<div class="col-md-6">
+							<table>
+								<tbody>
+									<tr>
+										<td>클럽</td>
+										<td>드라이버</td>
+									</tr>
+									<tr>
+										<td>비거리</td>
+										<td>430.23m</td>
+									</tr>
+									<tr>
+										<td>장소</td>
+										<td>TDG골프 하남점</td>
+									</tr>
+									<tr>
+										<td>일시</td>
+										<td>2018-08-25</td>
+									</tr>
+									<tr>
+										<td>코스</td>
+										<td>인터불고 경산 밸리 New</td>
+									</tr>
+									<tr>
+										<td>홀</td>
+										<td>4H</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<hr>
+				<div class="container mt-xl pd-xl hidden">
+					<div class="row center">
+						<div class="owl-carousel owl-theme" data-plugin-options='{"items": 4, "autoplay": true, "autoplayTimeout": 3000}'>
+							<div>
+								<img class="img-responsive" src="img/BA/swing1.png" alt="">
+							</div>
+							<div>
+								<img class="img-responsive" src="img/BA/swing2.png" alt="">
+							</div>
+							<div>
+								<img class="img-responsive" src="img/BA/swing3.png" alt="">
+							</div>
+							<div>
+								<img class="img-responsive" src="img/BA/swing4.png" alt="">
+							</div>
+							<div>
+								<img class="img-responsive" src="img/BA/swing3.png" alt="">
+							</div>
+							<div>
+								<img class="img-responsive" src="img/BA/swing2.png" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr>
+				<div class="container">
+					<div class="row">
+						<p class="vote-state">2018-08-20 / 조회 248 / 2 </p>
+						<div class="display-flex">
+							<span class="profile-img">Sn</span>
+							<div class="display-table comments-part vote-main-part">
+								<span class="comments-txt">안녕하세요</span>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<div class="row">
+						<p class="vote-state">2018-08-20 / 조회 248 / 2 </p>
+						<div class="display-flex">
+							<span class="profile-img">Sn</span>
+							<div class="display-table comments-part vote-main-part">
+								<span class="comments-txt">안녕하세요</span>
+							</div>
+						</div>
+					</div>
+					<hr>
+
+				</div>
+			</div>
+ 
+			<footer id="footer">
+				<div class="container">
+					<div class="row">
+						<div class="footer-ribbon">
+							<span>TDG GOLF</span>
+						</div>
+						<div class="col-md-3">
+							<div class="newsletter">
+								<h4>사업등록번호</h4>
+								<p><strong>주식회사 키루스:</strong> 대표이사 최환동</p>
+								<p>586-86-01040</p>
+			
+								<form id="newsletterForm" action="php/newsletter-subscribe.php" method="POST">
+									<div class="input-group">
+										<input class="form-control" placeholder="이메일 주소" name="newsletterEmail" id="newsletterEmail" type="text">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="submit">Go!</button>
+										</span>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<h4>통신판매업신고증</h4>
+							<div id="tweet" class="twitter" data-plugin-tweets data-plugin-options='{"username": "", "count": 2}'>
+								<p>추후등록예정</p>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="contact-details">
+								<h4>연락처</h4>
+								<ul class="contact">
+									<li><p><i class="fa fa-map-marker"></i> <strong>주소:</strong> (06367) 서울특별시 강남구 광평로 280 15층 41호(로즈데일빌딩) </p></li>
+									<li><p><i class="fa fa-phone"></i> <strong>대표번호 :</strong> 1811-8500</p></li>	
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<h4>Follow Us</h4>
+							<ul class="social-icons">
+								<li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+								<li class="social-icons-youtube"><a href="http://www.youtube.com/" target="_blank" title="Youtube"><i class="fa fa-youtube-play"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="footer-copyright">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-1 mb-none">
+								<a href="index" class="logo">
+									<img alt="Porto Website Template" class="img-responsive" src="img/logoWhite.png" style="width: 50px; margin-top: -20px">
+								</a>
+							</div>
+							<div class="col-md-4 mb-none">
+								<p>© Copyright 2018. All Rights Reserved.</p>
+							</div>
+							<div class="col-md-7 mb-none">
+								<nav id="sub-menu">
+									<ul>
+										<li><a href="intro">회사소개</a></li>
+										<li><a href="intro_founding">창업안내</a></li>
+										{{!-- <li><a href="contact-us">이용약관</a></li>
+										<li><a href="page-faq">개인정보취급방침</a></li>
+										<li><a href="sitemap">위치정보서비스 이용약관</a></li> --}}
+										<li><a href="intro_product">제품소개</a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+		<!-- Vendor -->
+		<script src="vendor/jquery/jquery.js"></script>
+		<script src="vendor/jquery.appear/jquery.appear.js"></script>
+		<script src="vendor/jquery.easing/jquery.easing.js"></script>
+		<script src="vendor/jquery-cookie/jquery-cookie.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.js"></script>
+		<script src="vendor/common/common.js"></script>
+		<script src="vendor/jquery.validation/jquery.validation.js"></script>
+		<script src="vendor/jquery.stellar/jquery.stellar.js"></script>
+		<script src="vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.js"></script>
+		<script src="vendor/jquery.gmap/jquery.gmap.js"></script>
+		<script src="vendor/jquery.lazyload/jquery.lazyload.js"></script>
+		<script src="vendor/isotope/jquery.isotope.js"></script>
+		<script src="vendor/owl.carousel/owl.carousel.js"></script>
+		<script src="vendor/magnific-popup/jquery.magnific-popup.js"></script>
+		<script src="vendor/vide/vide.js"></script>
+		
+		<!-- Theme Base, Components and Settings -->
+		<script src="js/theme.js"></script>
+		
+		<!-- Current Page Vendor and Views -->
+		<script src="vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+		<script src="vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+		<script src="vendor/circle-flip-slideshow/js/jquery.flipshow.js"></script>
+		<script src="js/views/view.home.js"></script>
+		
+		<!-- Theme Custom -->
+		<script src="js/custom.js"></script>
+		
+		<!-- Theme Initialization Files -->
+		<script src="js/theme.init.js"></script>
+
+		<script src="js/amchart/amcharts.js" type="text/javascript"></script>
+		<script src="js/amchart/serial.js" type="text/javascript"></script>
+		<script src="js/amchart/pie.js" type="text/javascript"></script>
+		<script src="js/amchart/radar.js" type="text/javascript"></script>
+		<script src="js/amchart/light.js" type="text/javascript"></script>
+		<!-- END PAGE LEVEL PLUGINS -->
+
+		<!-- DATA TABLES -->
+		<script src="js/datatable/jquery.min.js" type="text/javascript"></script>
+		<!-- <script type="text/javascript" src="js/datatable/select2.min.js"></script> -->
+		<script type="text/javascript" src="js/datatable/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" src="js/datatable/dataTables.tableTools.min.js"></script>
+		<script type="text/javascript" src="js/datatable/dataTables.bootstrap.js"></script>
+		<!-- <script src="js/datatable/table-advanced.js"></script> -->
+
+		<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information.
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+			ga('create', 'UA-12345678-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+		 -->
+		 <script>
+			jQuery(document).ready(function() {
+				
+
+			   var chart = AmCharts.makeChart("chart", {
+		            "type": "radar",
+		            "theme": "light",
+
+		            "fontFamily": 'Open Sans',
+		            
+		            "color":    '#888',
+
+		            "fillColor": '#ccc',
+
+		            "dataProvider": [{
+		                "country": "평균타수",
+		                "litres": "{{user.user_averscore}}"
+		            }, {
+		                "country": "그린적중률",
+		                "litres": "{{user.user_greenHitRate}}"
+		            }, {
+		                "country": "페어웨이 안착률",
+		                "litres": "{{user.user_fairwayHitRate}}"
+		            }, {
+		                "country": "평균퍼팅수",
+		                "litres": "{{user.user_averPuttingNum}}"
+		            }, {
+		                "country": "평균비거리",
+		                "litres": "{{user.user_averCarry}}"
+		            }],
+		            "valueAxes": [{
+		                "axisTitleOffset": 20,
+		                "minimum": 0,
+		                "axisAlpha": 0.15
+		            }],
+		            "startDuration": 2,
+		            "graphs": [{
+		                "balloonText": "[[value]]",
+		                "bullet": "round",
+		                "lineThickness": 2,
+		                "valueField": "litres"		                
+		            }],
+		            "categoryField": "country",
+		            "exportConfig": {
+		                "menuTop": "10px",
+		                "menuRight": "10px",
+		                "menuItems": [{
+		                    "icon": '/lib/3/images/export.png',
+		                    "format": 'png'
+		                }]
+		            }
+		        });
+
+		        $('#chart').closest('.portlet').find('.fullscreen').click(function() {
+		            chart.invalidateSize();
+		        });
+
+
+		        
+
+		        var table = $('#sample_1');
+		        /* Table tools samples: https://www.datatables.net/release-datatables/extras/TableTools/ */
+		        /* Set tabletools buttons and button container */
+
+		        $.extend(true, $.fn.DataTable.TableTools.classes, {
+		            "container": "btn-group tabletools-dropdown-on-portlet",
+		            "buttons": {
+		                "normal": "btn btn-sm default",
+		                "disabled": "btn btn-sm default disabled"
+		            },
+		            "collection": {
+		                "container": "DTTT_dropdown dropdown-menu tabletools-dropdown-menu"
+		            }
+		        });
+
+		        var oTable = table.dataTable({
+		            // Internationalisation. For more info refer to http://datatables.net/manual/i18n
+		            "language": {
+		                "aria": {
+		                    "sortAscending": ": activate to sort column ascending",
+		                    "sortDescending": ": activate to sort column descending"
+		                },
+		                "emptyTable": "자료가 없습니다.",
+		                "info": "_TOTAL_ 중 _START_ 부터 _END_ 까지",
+		                "infoEmpty": "No entries found",
+		                "infoFiltered": "(filtered1 from _MAX_ total entries)",
+		                "lengthMenu": "_MENU_",
+		                "search": "검색:",
+		                "zeroRecords": "No matching records found"
+		            },
+
+		            // Or you can use remote translation file
+		            //"language": {
+		            //   url: '//cdn.datatables.net/plug-ins/3cfcc339e89/i18n/Portuguese.json'
+		            //},
+
+		            "order": [
+		                [0, 'asc']
+		            ],
+		            
+		            "lengthMenu": [
+		                [5, 15, 20, -1],
+		                [5, 15, 20, "All"] // change per page values here
+		            ],
+		            // set the initial value
+		            "pageLength": 3,
+
+		            // "dom": "<'row' <'col-md-12'T>><'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r><'table-scrollable't><'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12'p>>" // horizobtal scrollable datatable
+
+		            // Uncomment below line("dom" parameter) to fix the dropdown overflow issue in the datatable cells. The default datatable layout
+		            // setup uses scrollable div(table-scrollable) with overflow:auto to enable vertical scroll(see: assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js). 
+		            // So when dropdowns used the scrollable div should be removed. 
+		            //"dom": "<'row' <'col-md-12'T>><'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r>t<'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12'p>>",
+
+		            // "tableTools": {
+		            //     "sSwfPath": "../../assets/global/plugins/datatables/extensions/TableTools/swf/copy_csv_xls_pdf.swf",
+		            //     "aButtons": [{
+		            //         "sExtends": "pdf",
+		            //         "sButtonText": "PDF"
+		            //     }, {
+		            //         "sExtends": "csv",
+		            //         "sButtonText": "CSV"
+		            //     }, {
+		            //         "sExtends": "xls",
+		            //         "sButtonText": "Excel"
+		            //     }, {
+		            //         "sExtends": "print",
+		            //         "sButtonText": "Print",
+		            //         "sInfo": 'Please press "CTR+P" to print or "ESC" to quit',
+		            //         "sMessage": "Generated by DataTables"
+		            //     }]
+		            // }
+		        });
+
+		        var tableWrapper = $('#sample_1_wrapper'); // datatable creates the table wrapper by adding with id {your_table_jd}_wrapper
+
+		        tableWrapper.find('.dataTables_length select').select2(); // initialize select2 dropdown
+			});
+
+
+		</script>
+
+	</body>
+</html>

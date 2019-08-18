@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=1200, initial-scale=1.0, maxium-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+		<meta name="format-detection" content="telephone=no" />
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+		<link rel="stylesheet" href="../style/css/reset.css" media="all">
+		<title>더 도어스 스크린 골프 회원가입</title>
+		<!--[if lt IE 9]>
+			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js" type="text/javascript"></script>
+			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/ie7-squish.js" type="text/javascript"></script>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<script type="text/javascript" src="../style/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="../style/js/jquery.bxslider/jquery.bxslider.min.js"></script>
+		<script type="text/javascript" src="../style/js/main.js"></script>
+	</head>
+	<body>
+
+	<!--헤더-->
+	{{>header}}
+	<!--헤더-->
+
+	<!--서브탑-->
+	<div class="subTop">
+		<div class="subTopInner">
+			<h1>회원가입</h1>
+			<div class="location">
+				<a href="#">회원</a> > <span>회원가입</span>
+			</div>
+		</div>
+	</div>
+	<!--서브탑-->
+
+	<!--바디-->
+	<article>
+	
+
+
+<div class="memberForm memberForm_02">
+	<h2>약관 동의</h2>
+
+	<div class="allAgree"><input type="checkbox" id="agreeAll" name="" value="" title="전체에 동의합니다">약관 전체에 동의 합니다.</div>
+	
+	<div class="ruleBox">
+		<h3>이용 약관 동의</h3>
+		<p>
+			제 1 조 (목적)<br>
+			이 약관은 더도어스 골프 주식회사 ( “회사” 또는 “더도어스 골프”)가 제공하는 더도어스 및 더도어스 관련 제반 서비스의 이용과 관련하여 회사와 회원과의
+			권리, 의무, 및 책임사항, 기타 필요한 사랑을 규정함을 목적으로 합니다.
+		</p>
+		<input type="checkbox" id="agree1" class="btn_agree" name="" value="" title="이용 약관 동의합니다">이용 약관 동의 합니다.
+	</div>
+
+	<div class="ruleBox">
+		<h3>마케팅 광고활용 약관 동의</h3>
+		<p>
+			제 1 조 (목적)<br>
+			이 약관은 더도어스 골프 주식회사 ( “회사” 또는 “더도어스 골프”)가 제공하는 더도어스 및 더도어스 관련 제반 서비스의 이용과 관련하여 회사와 회원과의
+			권리, 의무, 및 책임사항, 기타 필요한 사랑을 규정함을 목적으로 합니다.
+		</p>
+		<input type="checkbox" id="agree2" class="btn_agree" name="" value="" title="마케팅 광고활용 약관 동의합니다">마케팅 광고활용 약관 동의 합니다.
+	</div>
+
+	<div class="ruleBox">
+		<h3>개인정보수집 이용 약관 동의</h3>
+		<p>
+			제 1 조 (목적)<br>
+			이 약관은 더도어스 골프 주식회사 ( “회사” 또는 “더도어스 골프”)가 제공하는 더도어스 및 더도어스 관련 제반 서비스의 이용과 관련하여 회사와 회원과의
+			권리, 의무, 및 책임사항, 기타 필요한 사랑을 규정함을 목적으로 합니다.
+		</p>
+		<input type="checkbox" id="agree3" class="btn_agree" name="" value="" title="개인정보수집 이용 약관 동의합니다">개인정보수집 이용 약관 동의 합니다.
+	</div>
+
+	<div class="ruleBox">
+		<h3>위치정보 이용 약관 동의</h3>
+		<p>
+			제 1 조 (목적)<br>
+			이 약관은 더도어스 골프 주식회사 ( “회사” 또는 “더도어스 골프”)가 제공하는 더도어스 및 더도어스 관련 제반 서비스의 이용과 관련하여 회사와 회원과의
+			권리, 의무, 및 책임사항, 기타 필요한 사랑을 규정함을 목적으로 합니다.
+		</p>
+		<input type="checkbox" id="agree4" class="btn_agree" name="" value="" title="위치정보 이용 약관 동의합니다">위치정보 이용 약관 동의 합니다.
+	</div>
+
+	<div class="memberFormJoin"><input type="submit" name="button" id="btn_OK" value="다음" title="다음" class="btnJoin"  disabled/></div>
+
+</div>
+
+
+		<div>
+		<!--내용끝-->
+		</div>
+	</article>
+	<!--바디-->
+
+	{{>footer}}
+	
+	<script>
+		jQuery(document).ready(function() {
+
+			$('#btn_OK').click(function() {
+				var isAgree1 = $('#agree1').prop('checked');
+				var isAgree2 = $('#agree2').prop('checked');
+				var isAgree3 = $('#agree3').prop('checked');
+				var isAgree4 = $('#agree4').prop('checked');
+				if (isAgree1 && isAgree2 && isAgree3 && isAgree4) {
+					window.location.replace('/signupInput');
+				}
+			})
+
+			$('.btn_agree').change(function() {
+				var isAgree1 = $('#agree1').prop('checked');
+				var isAgree2 = $('#agree2').prop('checked');
+				var isAgree3 = $('#agree3').prop('checked');
+				var isAgree4 = $('#agree4').prop('checked');
+				if (isAgree1 && isAgree2 && isAgree3 && isAgree4) {
+					$('#btn_OK').removeAttr("disabled");
+				} else {
+					$('#btn_OK').attr('disabled', true);
+				}
+			})
+			$('#agreeAll').change(function() {
+				var isAgreeAll = $(this).prop('checked');
+				$('#agree1').prop('checked', isAgreeAll);
+				$('#agree2').prop('checked', isAgreeAll);
+				$('#agree3').prop('checked', isAgreeAll);
+				$('#agree4').prop('checked', isAgreeAll);
+				if (isAgreeAll) {
+					$('#btn_OK').removeAttr("disabled");
+				} else {
+					$('#btn_OK').attr('disabled', true);
+				}
+			})
+		});
+	</script>
+	</body>
+</html>

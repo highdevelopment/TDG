@@ -1,0 +1,21 @@
+{
+  "name": "GameConstants",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "club": {
+      "type": [
+        "object"
+      ],
+      "required": true,
+      "description": "클럽별 비거리"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

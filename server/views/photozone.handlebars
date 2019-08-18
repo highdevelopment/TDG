@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=1200, initial-scale=1.0, maxium-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+		<meta name="format-detection" content="telephone=no" />
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+		<link rel="stylesheet" href="../style/css/reset.css" media="all">
+		<title>더 도어스 스크린 골프 포토존</title>
+		<!--[if lt IE 9]>
+			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js" type="text/javascript"></script>
+			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/ie7-squish.js" type="text/javascript"></script>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<script type="text/javascript" src="../style/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="../style/js/jquery.bxslider/jquery.bxslider.min.js"></script>
+		<script type="text/javascript" src="../style/js/main.js"></script>
+	</head>
+	<body>
+
+	<!--헤더-->
+	{{>header}}
+	<!--헤더-->
+
+	<!--서브탑-->
+	<div class="subTop">
+		<div class="subTopInner">
+			<h1>포토존</h1>
+			<div class="location">
+				<a href="#">COMMUNITY</a> > <span>포토존</span>
+			</div>
+		</div>
+	</div>
+	<!--서브탑-->
+
+	<!--바디-->
+	<article>
+		<div id="bodyWrap">
+		<!--내용시작-->
+		<div class="wrap800">
+
+			<!--베스트-->
+			<ul class="photoBest">
+				<li>
+					<a href="#">
+						<img src="../images/community/topImg_01.jpg" alt="" style="width: 532px;">
+						<div>
+							<h4>김프로님<span>2012. 12. 11</span></h4>
+							<p>
+								<span>조회 : 43</span>
+								<span>112</span>
+							</p>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="../images/community/topImg_02.jpg" alt="" style="width: 266px;">
+						<div>
+							<h4>김프로님<span>2012. 12. 11</span></h4>
+							<p>
+								<span>조회 : 43</span>
+								<span>112</span>
+							</p>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="../images/community/topImg_03.jpg" alt="" style="width: 266px;">
+						<div>
+							<h4>김프로님<span>2012. 12. 11</span></h4>
+							<p>
+								<span>조회 : 43</span>
+								<span>112</span>
+							</p>
+						</div>
+					</a>
+				</li>
+			</ul>
+			<!--베스트-->
+
+			<!--목록-->
+			<ul class="photoList">
+			{{#for 1 14 1}}
+				<li>
+					<a href="#">
+						<img src="../images/community/photo_{{this}}.jpg">
+						<div>
+							<h4>김프로님<span>2012. 12. 11</span></h4>
+							<p>
+								<span>조회 : 43</span>
+								<span>112</span>
+							</p>
+						</div>
+					</a>
+				</li>
+			{{/for}}
+			</ul>
+			<!--목록-->
+
+			 <!--페이징-->
+			 <div class="paging">
+				<a href="#" class="prev10">이전10</a>
+				<a href="#" class="prev">이전</a>
+				<a href="#" class="on">1</a>
+				<a href="#" class="next">다음</a>
+				<a href="#" class="next10">다음10</a>
+			 </div>
+			 <!--페이징-->
+
+		</div>
+		<!--내용끝-->
+
+
+		</div>
+	</article>
+	<!--바디-->
+
+	{{>footer}}
+	
+	</body>
+</html>

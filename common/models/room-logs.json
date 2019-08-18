@@ -1,0 +1,36 @@
+{
+  "name": "RoomLogs",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "strictObjectIDCoercion": true
+  },
+  "properties": {
+    "roomId": {
+      "type": "string",
+      "required": true
+    },
+    "storeId": {
+      "type": "string",
+      "required": true
+    },
+    "startedAt": {
+      "type": "date",
+      "required": true
+    },
+    "playTime": {
+      "type": "number",
+      "required": true,
+      "default": 60
+    },
+    "endedAt": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

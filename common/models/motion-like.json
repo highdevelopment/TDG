@@ -1,0 +1,26 @@
+{
+  "name": "MotionLike",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "strictObjectIDCoercion": true
+  },
+  "properties": {
+    "createdAt": {
+      "type": "date",
+      "required": true,
+      "description": "",
+      "default": "$now"
+    },
+    "accountId": {
+      "type": "string",
+      "required": true,
+      "description": ""
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

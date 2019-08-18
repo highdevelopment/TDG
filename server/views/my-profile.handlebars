@@ -1,0 +1,566 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=1200, initial-scale=1.0, maxium-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+		<meta name="format-detection" content="telephone=no" />
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+		<link rel="stylesheet" href="../style/css/reset.css" media="all">
+		<title>더 도어스 스크린 골프 프로필 관리</title>
+		<!--[if lt IE 9]>
+			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js" type="text/javascript"></script>
+			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/ie7-squish.js" type="text/javascript"></script>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<script type="text/javascript" src="../style/js/jquery-1.11.3.min.js"></script>
+		{{!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"> --}}
+		<script type="text/javascript" src="../style/js/jquery.bxslider/jquery.bxslider.min.js"></script>
+		<script type="text/javascript" src="../style/js/main.js"></script>
+		<script type="text/javascript" src="../style/js/jquery.disableAutoFill.min.js"></script>
+	</head>
+	<body>
+
+	<!--헤더-->
+	{{>header}}
+	<!--헤더-->
+
+
+	<!--서브탑-->
+	<div class="subTop">
+		<div class="subTopInner">
+			<h1>프로필 관리</h1>
+			<div class="location">
+				<a href="#">MY DOORS</a> > <span>프로필 관리</span>
+			</div>
+		</div>
+	</div>
+	<!--서브탑-->
+
+	<!--바디-->
+	<article>
+		<div id="bodyWrap">
+		<!--내용시작-->
+		<div class="wrap800">
+
+
+<p class="profileGuide">회원정보는 개인정보취급방침에 따라 안전하게 보호되며 회원님의 동의 없이 공개 또는 제 3자에게 제공되지 않습니다.<br><span class="red">* 정보수정 후 수정완료를 하셔야 변경정보가 저장됩니다.</span></p>
+<div class="profileForm">
+
+	<dl>
+		<dt>프로필 이미지</dt>
+		<dd class="profileImage">
+		<div class="attachedFile filebox">
+			<label for="ex_filename" class="btn-primary btn btnBlue">직접 등록</label> 
+			<input type="file" id="ex_filename" class="upload-hidden">
+			<input type="button" id="btn_default" name="" value="기본 이미지" title="기본 이미지" class=""><br>
+			<input type="text" class="upload-name attachedFile" value="" disabled="disabled">
+			<p class="red">* JPG, GIF, PNG 파일을 지원하며 최대 1MB 까지 업로드 가능합니다.<p>
+			<p>
+				<img id="img_photo" src={{user.photo}} alt={{user.nickname}}>
+				* 등록된 이미지는 개인 프로필에 대표 이미지로 노출됩니다.
+			</p>
+			</div>
+		</dd>
+	</dl>
+
+	<dl>
+		<dt>이름</dt>
+		<dd>
+			<input type="text" id="text_realname" name="" value="{{user.realname}}" title="이름" placeholder="">
+		</dd>
+	</dl>
+
+	<dl>
+		<dt>아이디</dt>
+		<dd>
+			<input type="text" id="text_username" name="" value="{{user.username}}" title="아이디" placeholder="" readonly>
+		</dd>
+	</dl>
+
+	<form id="passwordForm">
+		<dl>
+			<dt>비밀번호</dt>
+			<dd>
+				<input type="password" id="password_old" name="asasdsd" value="" title="비밀번호" class="password" placeholder="비밀번호" autofill="off" autocomplete="off">
+				{{!-- <p class="red">입력정보가 올바르지 않습니다.<p> --}}
+			</dd>
+		</dl>
+
+		<dl>
+			<dt>변경할 비밀번호</dt>
+			<dd>
+				<input type="password" id="password_new" name="adsfkjadfkjskjnckjds" value="" title="변경할 비밀번호" class="password" placeholder="변경할 비밀번호" autofill="off" autocomplete="off">
+			</dd>
+		</dl>
+
+		<dl>
+			<dt>비밀번호 확인</dt>
+			<dd>
+				<input type="password" id="password_re" name="sdfsmdlmskldv" value="" title="비밀번호 확인" class="password" placeholder="비밀번호 확인" autofill="off" autocomplete="off">
+			</dd>
+		</dl>
+	</form>
+
+	<dl>
+		<dt>성별</dt>
+		<dd>
+			<input type="radio" id="radio_sex_male" name="" value="" title="남성">&nbsp;남성
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="radio" id="radio_sex_female" name="" value="" title="여성">&nbsp;여성
+		</dd>
+	</dl>
+
+	<dl>
+		<dt>닉네임</dt>
+		<dd>
+			<input type="text" id="text_nickname" name="" value={{user.nickname}} title="닉네임" placeholder="">
+			<input type="button" id="btn_CheckNickName" name="" value="변경" title="변경" class="btnBlue" disabled>
+			<label id="label_checkNickName" class="notify_label_ok" ok="ok"></label>
+		</dd>
+	</dl>
+
+	<dl>
+		<dt>휴대폰 번호</dt>
+		<dd class="cellPhone">
+			<select id="phone_number_prefix" name="" title="통신망 공급자 선택">
+				<option value="010">010</option>
+			</select>
+			-
+			<input type="text" class="phone_number" id="phone_number1" name="" title="" maxlength="4" value={{phone_number1}} >
+			-
+			<input type="text" class="phone_number" id="phone_number2" name="" title="" maxlength="4" value={{phone_number2}}>
+			<input type="button" id="btn_AskVerify" name="" value="휴대폰 인증" title="휴대폰 인증" class="" disabled>
+		</dd>
+	</dl>
+
+	<dl>
+		<dt>인증번호</dt>
+		<dd class="cellPhone">
+			<input type="text" id="verify_key" name="" value="" title="인증번호" disabled>
+			<input type="button" id="btn_CheckVerify" name="" value="확인" title="확인" class="btnGray" disabled>
+			<p id="label_verify" class="notify_label_ok red" ok= "ok"> <p>
+		</dd>
+	</dl>
+
+	<dl>
+		<dt>이메일 주소</dt>
+		<dd class="email">
+			<input type="text" id="text_mail_id" name="" value="{{mail_id}}" title="이메일 아이디">&nbsp;@
+			<input type="text" id="text_mail_type" name="" value="{{mail_type}}" title="이메일 주소">
+			<select id="select_mail_type" name="" value="{{mail_type}}" title="이메일 주소 선택">
+				<option value="">직접 입력</option>
+				<option value="naver.com">naver.com</option>
+				<option value="daum.net">daum.net</option>
+				<option value="hotmail.com">hotmail.com</option>
+				<option value="nate.com">nate.com</option>
+				<option value="yahoo.co.kr">yahoo.co.kr</option>
+				<option value="paran.com">paran.com</option>
+				<option value="empas.com">empas.com</option>
+				<option value="dreamwiz.com">dreamwiz.com</option>
+				<option value="freechal.com">freechal.com</option>
+				<option value="lycos.co.com">lycos.co.com</option>
+				<option value="korea.com">korea.com</option>
+				<option value="gmail.com">gmail.com</option>
+				<option value="hanmir.com">hanmir.com</option>
+			</select>
+		</dd>
+	</dl>
+
+	<dl>
+		<dt>마케팅 수신 동의</dt>
+		<dd>
+			<input type="button" id="agree_marketting_on" name="" value="전체 동의함" title="전체 동의함" class="btnMarketting">
+			<span>
+				[&nbsp;
+				<input type="checkbox" id="agree_marketting_email" name="" value="" title="이메일" class="checkMarketting">&nbsp;이메일
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="checkbox" id="agree_marketting_sns" name="" value="" title="SNS" class="checkMarketting">&nbsp;SNS
+				&nbsp;]
+			</span>
+			&nbsp;&nbsp;&nbsp;
+			<input type="button" id="agree_marketting_off" name="" value="동의안함" title="동의안함" class="btnMarketting">
+			<p>* 수신거부를 선택하신 경우에도, 약관변경, 비밀번호 찾기, 주요 공지메일은 발송되며 SMS로 모바일이용권, 쿠폰 등은 받을실 수 없습니다.</p>
+		</dd>
+	</dl>
+
+	<dl>
+		<dt class="option_01">개인정보 제3자 제공 동의(선택)</dt>
+		<dd>
+			<input type="radio" id="radio_agree_on" name="" value="" title="동의">&nbsp;동의
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="radio" id="radio_agree_off" name="" value="" title="동의안함">&nbsp;동의안함
+		</dd>
+	</dl>
+
+	<dl>
+		<dt>TDG 소식 받기</dt>
+		<dd>
+			<input type="checkbox" id="check_NotifyEmail" name="" value="" title="이메일 알림">&nbsp;이메일 알림
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="checkbox" id="check_NotifyPhone" name="" value="" title="휴대폰 알림">&nbsp;휴대폰 알림
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="checkbox" id="check_NotifyNone" name="" value="" title="받지않음">&nbsp;받지않음
+		</dd>
+	</dl>
+
+</div>
+<br><br>
+<div class="center">
+	<a id="btnSubmit" class="btnDone">수정완료</a>
+	<a href="/" class="btnCancel">취소</a>
+</div>
+
+
+		</div>
+		<!--내용끝-->
+		</div>
+	</article>
+	<!--바디-->
+
+	{{>footer}}
+
+	<script type="text/javascript">
+		$.fn.switchClass = function(a, b){
+			var t = $(this).hasClass(a);
+			$(this).addClass( t ? b : a ).removeClass( a );
+			{{!-- $(this).addClass( t ? b : a ).removeClass( t ? a : b ); --}}
+		}
+		$(document).ready(function() {
+			{{!-- $('#passwordForm').disableAutoFill({
+  				textToPassword: true,
+				passwordField: '.password',
+				debugMode: false,
+				randomizeInputName: true,
+				callback: function() {
+					return checkForm();
+				}
+			});
+			function checkForm() {
+				form = document.getElementById('passwordForm');
+
+				if (form.password.value == '') {
+					alert('Cannot leave Password field blank.');
+					form.password.focus();
+					return false;
+				}
+				if (form.username.value == '') {
+					alert('Cannot leave User Id field blank.');
+					form.username.focus();
+					return false;
+				}
+				return true;
+			} --}}
+
+			$('#select_mail_type').change(function(e) {
+				$('#text_mail_type').val($(this).val());
+			})
+			const api_url = "{{user.api_url}}";
+			var fileTarget = $('.filebox .upload-hidden'); 
+			fileTarget.on('change', function() { // 값이 변경되면 
+				if(window.FileReader){ // modern browser 
+					var filename = $(this)[0].files[0].name;
+				} else { // old IE 
+					var filename = $(this).val().split('/').pop().split('\\').pop(); // 파일명만 추출 
+				}
+				const access_token = "{{user.access_token}}";
+				const api_url = "{{user.api_url}}";
+				var form = new FormData();
+				form.append('upload', $(this)[0].files[0], filename);
+				$.ajax({
+					url: api_url + 'api/containers/upload-userpicture?access_token=' + access_token,
+					type: 'POST',
+					data: form,
+					processData: false,
+					contentType: false,
+					success: function (data) {
+						if (data.success) {
+							console.log('upload successful!');
+							location.reload();
+						} else {
+							alert('업로드가 실패하였습니다.')
+						}
+					}
+				});
+				// 추출한 파일명 삽입 
+				$(this).siblings('.upload-name').val(filename);
+			});
+			
+			$('#btn_default').click(function(e) {
+				var server_url = '{{user.FILE_SERVER_PATH}}';
+				$('#img_photo').attr('src', server_url + 'user-picture/user_default.png');
+				var params = {
+					access_token: '{{user.access_token}}',
+					photo: 'user-picture/user_default.png',
+				}
+				$.post(api_url + 'api/Accounts/update-photo', params, function(result) {
+					if (result.res.success) {
+					} else {
+						alert(result.res.content);
+					}
+				})
+			})
+
+			$('dd input[type=radio]').click(function(e) {
+				var brothers = $(this).siblings('input[type=radio]');
+				brothers.attr('checked', false);
+			})
+
+			// 성별
+			const isMale = ('{{user.sex}}' == 'male') ? true : false;
+			$('#radio_sex_male').attr('checked', isMale);
+			$('#radio_sex_female').attr('checked', !isMale);
+
+			$('#text_nickname').on('input', function(e) {
+				const text = $(this).val();
+				if (text == "{{user.nickname}}") {
+					$('#label_checkNickName').attr('ok', 'ok');
+					$('#label_checkNickName').text('닉네임을 변경시키시려면 변경버튼을 눌러주세요.');
+					$('#label_checkNickName').switchClass("notify_label_error", "notify_label_ok");
+					$('#btn_CheckNickName').attr('disabled', true);
+					$('#btnSubmit').attr('disabled', false);
+				} else {
+					$('#label_checkNickName').attr('ok', 'changed');
+					$('#label_checkNickName').text('변경된 닉네임을 저장하시려면 변경버튼을 눌러주세요.');
+					$('#label_checkNickName').switchClass("notify_label_ok", "notify_label_error");
+					$('#btn_CheckNickName').attr('disabled', false);
+					$('#btnSubmit').attr('disabled', true);
+				}
+			})
+			$('#btn_CheckNickName').click(function() {
+				var nickname = $('#text_nickname').val();
+				if (!nickname || nickname.length == 0) {
+					return alert('닉네임을 입력해주십시오.');
+				}
+				var params = {
+					nickname: nickname,
+				}
+				$.post(api_url + 'api/Accounts/check-nickname', params, function(result) {
+					if (result.res.success) {
+						$('#label_checkNickName').text('사용가능한 닉네임입니다.');
+						$('#label_checkNickName').attr('ok', 'ok');
+						$('#label_checkNickName').switchClass("notify_label_error", "notify_label_ok");
+						$('#btnSubmit').attr('disabled', false);
+					} else {
+						$('#label_checkNickName').text('중복된 닉네임이 있습니다.');
+						$('#label_checkNickName').attr('ok', 'cancel');
+						$('#label_checkNickName').switchClass("notify_label_ok", "notify_label_error");
+					}
+				});
+			})
+			
+			function getPhonenumber() {
+				var phone_number_prefix = $('#phone_number_prefix').val();
+				var phone1 = $('#phone_number1').val();
+				var phone2 = $('#phone_number2').val();
+				return phone_number_prefix + phone1 + phone2;
+			}
+			$('.phone_number').on('input', function(e) {
+				const text = getPhonenumber();
+				if (text == "{{user.phone_number}}") {
+					$('#label_verify').attr('ok', 'ok');
+					$('#label_verify').text('전화번호를 변경하시려면 인증버튼을 눌러주세요.');
+					$('#label_verify').switchClass("notify_label_error", "notify_label_ok");
+					$('#btn_AskVerify').prop('disabled', true);
+					$('#btnSubmit').prop('disabled', false);
+				} else {
+					$('#label_verify').attr('ok', 'changed');
+					$('#label_verify').text('변경된 전화번호를 저장하시려면 인증해주세요.');
+					$('#label_verify').switchClass("notify_label_ok", "notify_label_error");
+					$('#btn_AskVerify').prop('disabled', false);
+					$('#btnSubmit').prop('disabled', true);
+				}
+			})
+			$('#btn_AskVerify').click(function() {
+				var phone_number = getPhonenumber();
+				if (!phone_number) {
+					return alert('전화번호를 입력해주십시오.');
+				}
+				if(phone_number.length < 8) {
+					return alert('정확한 전화번호를 입력해주십시오.');
+				}
+				var params = {
+					phone_number: phone_number
+				}
+				$.post(api_url + 'api/Accounts/ask-verify', params, function(result) {
+					if (result.res.success) {
+						alert('인증번호를 발송하였습니다.');
+						$('#verify_key').prop('disabled', false);
+						$('#btn_CheckVerify').prop('disabled', false);
+						$('#label_verify').text('인증코드를 입력해주세요.');
+						$('#label_verify').switchClass("notify_label_ok", "notify_label_error");
+					} else {
+						alert(result.res.result);
+					}
+				});
+			})
+			
+			$('#btn_CheckVerify').click(function() {
+				var phone_number = getPhonenumber();
+				var verify_key = $('#verify_key').val();
+				if (!verify_key) {
+					return alert('인증코드를 입력해주십시오.');
+				}
+				var params = {
+					phone_number: phone_number,
+					verify_key: verify_key
+				}
+				$.post(api_url + 'api/Accounts/check-verify', params, function(result) {
+					if (result.res.success) {
+						$('#label_verify').text('인증이 성공하였습니다.');
+						$('#label_verify').attr('ok', 'ok');
+						$('#label_verify').switchClass("notify_label_error", "notify_label_ok");
+						$('#btnSubmit').attr('disabled', false);
+					} else {
+						alert(result.res.result);
+					}
+				});
+			})
+
+			function getMail() {
+				return $('#text_mail_id').val() + '@' + $('#text_mail_type').val();
+			}
+			function changePassword(callback) {
+				// 비밀번호
+				const password_old = $('#password_old').val();
+				const password_new = $('#password_new').val();
+				const password_re = $('#password_re').val();
+				if (password_old.length > 0 || password_new.length > 0 || password_re > 0) {
+					if (password_new != password_re) {
+						return callback('비밀번호가 일치하지 않습니다.');
+					}
+					if (password_old.length == 0) {
+						return callback('현재 비밀번호를 입력해주세요.');
+					}
+					if (password_new.length == 0) {
+						return callback('신규 비밀번호를 입력해주세요.');
+					}
+					if (password_new.length < 4) {
+						return callback('4자리이상의 비밀번호를 입력해주세요.');
+					}
+					var params = {
+						access_token: "{{user.access_token}}",
+						current_pass: password_old,
+						new_pass: password_new
+					}
+					$.post(api_url + 'api/Accounts/update-password', params, function(result) {
+						if (result.res.success) {
+							return callback();//alert('비밀번호가 업데이트 되였습니다.');
+						} else {
+							return callback('비밀번호변경이 실패하였습니다.');
+						}
+					});
+				} else {
+					return callback();
+				}
+			}
+			$('#btnSubmit').click(function(e) {
+				var text_realname = $('#text_realname').val();
+				if (text_realname.length == 0) {
+					return alert('이름을 입력해주세요');
+				}
+				if ($('#label_checkNickName').attr('ok') != 'ok') {
+					alert('변경된 닉네임을 변경단추를 눌러 확인해주세요');
+				} else if ($('#label_verify').attr('ok') != 'ok') {
+					alert('변경된 전화번호를 인증해주세요');
+				} else {
+					{{!-- $('#form_updateprofile')[0].submit(); --}}
+					var bEmail = $('#agree_marketting_email').prop('checked');
+					var bSns = $('#agree_marketting_sns').prop('checked');
+					var bAgree_thridParty = $('#radio_agree_on').prop('checked');
+					var bNotify_email = $('#check_NotifyEmail').prop('checked');
+					var bNotify_phone = $('#check_NotifyPhone').prop('checked');
+					const params = {
+						access_token: '{{user.access_token}}',
+						sex: $('#radio_sex_male').attr('checked') ? 'male' : 'female',
+						nickname: $('#text_nickname').val(),
+						phone_number: getPhonenumber(),
+						mail: getMail(),
+						realname: text_realname,
+						agree_marketting_email: bEmail,
+						agree_marketting_sns: bSns,
+						agree_thirdparty: bAgree_thridParty,
+						notify_email: bNotify_email,
+						notify_phone: bNotify_phone
+					}
+					$.post(api_url + 'api/Accounts/update-profile', params, function(result) {
+						if (result.res.success) {
+							changePassword(function(err) {
+								if (err) {
+									alert(err);
+								} else {
+									alert('성공적으로 보관되였습니다.');
+								}
+								location.reload();
+							})
+						} else {
+							alert(result.res.content);
+						}
+					})
+				}
+			})
+
+			function setAgreeMarket(agree_marketting_email, agree_marketting_sns) {
+				$('#agree_marketting_email').prop('checked', agree_marketting_email);
+				$('#agree_marketting_sns').prop('checked', agree_marketting_sns);
+				if (agree_marketting_email || agree_marketting_sns) {
+					$('#agree_marketting_off').removeClass('btnBlue');
+					$('#agree_marketting_off').addClass('btnGray');
+					$('#agree_marketting_on').removeClass('btnGray');
+					$('#agree_marketting_on').addClass('btnBlue');
+				} else {
+					$('#agree_marketting_off').removeClass('btnGray');
+					$('#agree_marketting_off').addClass('btnBlue');
+					$('#agree_marketting_on').removeClass('btnBlue');
+					$('#agree_marketting_on').addClass('btnGray');
+				}
+			}
+			var agree_marketting_email = {{user.agree_marketting_email}};
+			var agree_marketting_sns = {{user.agree_marketting_sns}};
+			setAgreeMarket(agree_marketting_email, agree_marketting_sns);
+
+			$('#agree_marketting_on').click(function(e) {
+				setAgreeMarket(true, true);
+			})
+			$('#agree_marketting_off').click(function(e) {
+				setAgreeMarket(false, false);
+			})
+			$('.checkMarketting').change(function(e) {
+				$('#agree_marketting_off').switchClass("btnBlue", "btnGray");
+				$('#agree_marketting_on').switchClass("btnGray", "btnBlue");
+			})
+
+			if ({{user.agree_thirdparty}}) $('#radio_agree_on').prop('checked', true);
+			else $('#radio_agree_off').prop('checked', true);
+
+			function setNotifty(email, phone) {
+				if (email) $('#check_NotifyEmail').prop('checked', true);
+				if (phone) $('#check_NotifyPhone').prop('checked', true);
+				if (email || phone) {
+					$('#check_NotifyNone').prop('checked', false);
+				} else {
+					$('#check_NotifyNone').prop('checked', true);
+				}
+			}
+			var notify_email = {{user.notify_email}};
+			var notify_phone = {{user.notify_phone}};
+			setNotifty(notify_email, notify_phone);
+			$('#check_NotifyEmail').change(function(e) {
+				$('#check_NotifyNone').prop('checked', false);
+			})
+			$('#check_NotifyPhone').change(function(e) {
+				$('#check_NotifyNone').prop('checked', false);
+			})
+			$('#check_NotifyNone').change(function(e) {
+				$('#check_NotifyEmail').prop('checked', false);
+				$('#check_NotifyPhone').prop('checked', false);
+				$('#check_NotifyNone').prop('checked', true);
+			})
+		});
+
+	</script>	
+	</body>
+</html>

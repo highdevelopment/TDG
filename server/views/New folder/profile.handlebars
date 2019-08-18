@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">	
+
+		<title>The Doors Golf</title>	
+
+		<meta name="keywords" content="HTML5 Template" />
+		<meta name="description" content="Porto - Responsive HTML5 Template">
+		<meta name="author" content="okler.net">
+		<meta name="naver-site-verification" content="edf9bb2ea9dcc8fdc7701dbab11b58f0c5369b7b"/>
+		<meta name="google-site-verification" content="4CnREwPIlYSQ6M2oc_Xb8b0KIFiQCVMzyT48HcKdKPw" />
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+		<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<!-- Web Fonts  -->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
+
+		<!-- Vendor CSS -->
+		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.css">
+		<link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
+		<link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.min.css">
+		<link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.min.css">
+		<link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.css">
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="css/theme.css">
+		<link rel="stylesheet" href="css/theme-elements.css">
+		<link rel="stylesheet" href="css/theme-blog.css">
+		<link rel="stylesheet" href="css/theme-shop.css">
+		<link rel="stylesheet" href="css/theme-animate.css">
+
+		<!-- Current Page CSS -->
+		<link rel="stylesheet" href="vendor/rs-plugin/css/settings.css" media="screen">
+		<link rel="stylesheet" href="vendor/rs-plugin/css/layers.css" media="screen">
+		<link rel="stylesheet" href="vendor/rs-plugin/css/navigation.css" media="screen">
+		<link rel="stylesheet" href="vendor/circle-flip-slideshow/css/component.css" media="screen">
+
+		<!-- Skin CSS -->
+		<link rel="stylesheet" href="css/skins/default.css">
+
+		<!-- Theme Custom CSS -->
+		<link rel="stylesheet" href="css/custom.css">
+
+		<!-- Head Libs -->
+		<script src="vendor/modernizr/modernizr.js"></script>
+
+	</head>
+	<body>
+		<div class="body">
+			<header id="header" data-plugin-options='{"stickyEnabled": true, "stickyEnableOnBoxed": true, "stickyEnableOnMobile": true, "stickyStartAt": 47, "stickySetTop": "-47px", "stickyChangeLogo": true}'>
+				<div class="header-body">
+					<div class="header-container container">
+						<div class="header-row">
+							<div class="header-column">
+								<div class="header-logo">
+									<a href="index">
+										<img alt="Porto" width="109" height="80" data-sticky-width="82" data-sticky-height="50" data-sticky-top="33" src="img/logo.png">
+									</a>
+								</div>
+							</div>
+							<div class="header-column">
+								<div class="header-row">
+									<nav class="header-nav-top">
+										<ul class="nav nav-pills">
+											{{#if user.isManager}}
+												<li class="hidden-xs">
+													<a href="manager"><i class="fa fa-angle-right"></i> TDG매니저</a>
+												</li>
+											{{/if}}
+											<li class="hidden-xs">
+												<a href="contact-us"><i class="fa fa-angle-right"></i> 고객센터</a>
+											</li>
+											<li class="hidden-xs">
+												<a href="intro"><i class="fa fa-angle-right"></i> 창업안내</a>
+											</li>
+											{{#if user.isAuth}}
+												<li class="hidden-xs">
+													<a id="btnLogOut" style="cursor: pointer;"><i class="fa fa-angle-right"></i>로그아웃</a>
+													<form id="form_logout" action="/logOutUser" method="post"></form>
+												</li>
+											{{else}}
+												<li class="hidden-xs">
+													<a href="login"><i class="fa fa-angle-right"></i>로그인</a>
+												</li>
+												<li class="hidden-xs">
+													<a href="signupAgree"><i class="fa fa-angle-right"></i>회원가입</a>
+												</li>
+											{{/if}}
+										</ul>
+									</nav>
+								</div>
+								<div class="header-row">
+									<div class="header-nav">
+										<button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main">
+											<i class="fa fa-bars"></i>
+										</button>
+										<ul class="header-social-icons social-icons hidden-xs">
+											<li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+											<li class="social-icons-youtube"><a href="http://www.youtube.com/" target="_blank" title="Youtube"><i class="fa fa-youtube-play"></i></a></li>
+										</ul>
+										<div class="header-nav-main header-nav-main-effect-1 header-nav-main-sub-effect-1 collapse">
+											<nav>
+												<ul class="nav nav-pills" id="mainNav">
+													<li class="dropdown active">
+														<a class="dropdown-toggle" href="analy">
+															My TDG
+														</a>
+														<ul class="dropdown-menu">
+															<li>
+																<a href="analy">
+																	내 기록 분석
+																</a>
+															</li>
+															<li>
+																<a href="swing">
+																	내 스윙 영상
+																</a>
+															</li>
+															<li>
+																<a href="gameset">
+																	게임설정
+																</a>
+															</li>
+															<li>
+																<a href="qa">
+																	1:1 문의
+																</a>
+															</li>
+															<li>
+																<a href="profile">
+																	프로필관리
+																</a>
+															</li>
+														</ul>
+													</li>
+													<li class="dropdown">
+														<a href="meeting">
+															대회
+														</a>
+													</li>
+													<li class="dropdown">
+														<a class="dropdown-toggle" href="event">
+															이벤트
+														</a>
+														<ul class="dropdown-menu">
+															<li>
+																<a href="event">
+																	이벤트
+																</a>
+															</li>
+															<li>
+																<a href="notice">
+																	공지사항
+																</a>
+															</li>
+														</ul>
+													</li>
+													<li class="dropdown">
+														<a href="course">
+															코스소개
+														</a>
+													</li>
+													<li class="dropdown">
+														<a href="searchshop">
+															매장찾기
+														</a>
+													</li>
+													<li class="dropdown">
+														<a class="dropdown-toggle" href="photo">
+															커뮤니티
+														</a>
+														<ul class="dropdown-menu">
+															<li>
+																<a href="photo">
+																	포토존
+																</a>
+															</li>
+															<li>
+																<a href="swingvideo">
+																	스윙영상
+																</a>
+															</li>
+															<li>
+																<a href="hole">
+																	홀인원기록
+																</a>
+															</li>
+														</ul>
+													</li>
+												</ul>
+											</nav>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<div role="main" class="main">
+				<section class="page-header">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<ul class="breadcrumb">
+									<li><a href="#">홈</a></li>
+									<li class="active">MY TDG</li>
+								</ul>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<h1>프로필관리</h1>								
+							</div>
+						</div>
+					</div>
+				</section>
+				<div class="container mt-xl">
+					<div class="row" style="margin-top: 40px;">
+						<div class="col-md-4">
+							<div style="width: 60%; margin: auto;"><img src="{{user.photo}}" style="width: 100%;"></div>							
+						</div>
+						<div class="col-md-8" style="padding-top: 4%;">
+							<h4 style="text-align: left;">프로필사진</h4>
+							<p>JPG, PNG파일을 지원하며 최대 2MB까지 업로드 가능합니다. </p>
+
+							<div class="filebox"> 
+								<input class="upload-name" value="파일선택" disabled="disabled"> 
+								<label for="ex_filename" class="btn-primary btn">업로드</label> 
+								<input type="file" name="upload" id="ex_filename" class="upload-hidden"> 
+							</div>
+						</div>
+					</div>					
+				</div>
+
+				<form id="form_updateprofile" action="updateProfile" method="post">
+					<div class="container mt-xl editProfile">
+						<div class="row gameset" style="border-top: 2px solid #333;">
+							<div class="col-md-12">
+								<label class="checkLabel">이름</label>
+								<input type="text" name="realname" class="form-control" style="width: 200px" value={{user.realname}}>
+							</div>
+						</div>
+						<div class="row gameset">
+							<div class="col-md-12">
+								<label class="checkLabel">아이디</label>
+								<input type="text" name="username" class="form-control" style="width: 200px" value={{user.username}} disabled>
+							</div>
+						</div>
+						<div class="row gameset">
+							<div class="col-md-12">
+								<label class="checkLabel">비밀번호</label>
+								<a href="confirm_password" class="form-control change_pass_button">비밀번호 변경</a>
+							</div>
+						</div>
+						<div class="row gameset hidden">
+							<div class="col-md-12">
+								<label class="checkLabel">생년월일</label>
+								<select class="form-control" style="width: 100px;" name="birthday_year" value={{birthday_year}}>
+									{{#each years}}
+										<option value="{{this}}">{{this}}</option>
+									{{/each}}
+								</select>&nbsp;&nbsp;&nbsp;
+								<input type="text" name="birthday_month" class="form-control" style="width: 50px" value={{birthday_month}}>&nbsp;월&nbsp;&nbsp;&nbsp;
+								<input type="text" name="birthday_date" class="form-control" style="width: 50px" value={{birthday_date}}>&nbsp;일
+							</div>
+						</div>
+						<div class="row gameset">
+							<div class="col-md-12">
+								<label class="checkLabel">성별</label>
+								<label class="checkLabel" style="width: 110px; margin-left: 0;">남
+								<input type="radio" {{sex_male}} name="sex" value="male">
+								<span class="checkmark"></span>
+								</label>
+								<label class="checkLabel" style="width: 110px; margin-left: 0;">녀
+								<input type="radio" {{sex_female}} name="sex" value="female">
+								<span class="checkmark"></span>
+								</label>
+							</div>
+						</div>
+						<div class="row gameset">
+							<div class="col-md-12">
+								<label class="checkLabel">닉네임</label>
+								<input id="text_nickname" type="text" name="nickname" class="form-control" style="width: 200px" value="{{user.nickname}}">&nbsp;&nbsp;&nbsp;
+								<button id="btn_CheckNickName" type="button" class="btn btn-primary" disabled>닉네임 변경</button>
+								<label id="label_checkNickName" class="notify_label_ok" ok="ok"></label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12" style="color: red; margin-top: 20px;"><label class="checkLabel"></label>휴대폰 변경시 재인증 바랍니다.</div>
+						</div>
+						<div class="row gameset" style="border-bottom: none;">
+							<div class="col-md-12">
+								<label class="checkLabel">휴대폰 번호</label>
+								<input id="phone_number" type="text" name="phone_number" class="form-control" style="width: 200px" value={{user.phone_number}}>&nbsp;&nbsp;&nbsp;
+								<button id="btn_AskVerify" type="button" class="btn btn-primary" disabled>인증요청</button>
+							</div>
+						</div>
+						<div class="row gameset">
+							<div class="col-md-12">
+								<label class="checkLabel">인증번호</label>
+								<input id="verify_key" type="text" name="" class="form-control" style="width: 100px; margin-right: 100px" disabled>&nbsp;&nbsp;&nbsp;
+								<button id="btn_CheckVerify" type="button" class="btn btn-primary" disabled>확인</button>
+								<label id="label_verify" class="notify_label_ok" ok= "ok">인증요청을 해주십시오.</label>
+							</div>
+						</div>
+						<div class="row gameset">
+							<div class="col-md-12">
+								<label class="checkLabel">이메일</label>
+								<input type="text" name="mail" class="form-control" style="width: 300px" value={{user.mail}}>
+							</div>
+						</div>
+						<div class="row gameset">
+							<div class="col-md-12">
+								<label class="checkLabel">TDG소식 받기</label>
+								<input type="checkbox" checked="checked" name="notice">
+								<label class="" style="width: 150px; margin-left: 10px;">이메일 알림
+								{{!-- <span class="checkmark"></span> --}}
+								</label>
+								<input type="checkbox" name="notice">
+								<label class="" style="width: 150px; margin-left: 10px;">휴대폰 알림
+								{{!-- <span class="checkmark"></span> --}}
+								</label>
+							</div>
+						</div>
+						<a href="/" type="button" class="btn btn-3d btn-danger btn-lg" style="float: right; margin: 30px;">취소</a>
+						<button id="btnSubmit" class="btn btn-3d btn-primary btn-lg" style="float: right; margin: 30px 0px;" value="">저장</button>
+					</div>
+				</form>
+			</div>
+ 
+			<footer id="footer">
+				<div class="container">
+					<div class="row">
+						<div class="footer-ribbon">
+							<span>TDG GOLF</span>
+						</div>
+						<div class="col-md-3">
+							<div class="newsletter">
+								<h4>사업등록번호</h4>
+								<p><strong>주식회사 키루스:</strong> 대표이사 최환동</p>
+								<p>586-86-01040</p>
+			
+								<form id="newsletterForm" action="php/newsletter-subscribe.php" method="POST">
+									<div class="input-group">
+										<input class="form-control" placeholder="이메일 주소" name="newsletterEmail" id="newsletterEmail" type="text">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="submit">Go!</button>
+										</span>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<h4>통신판매업신고증</h4>
+							<div id="tweet" class="twitter" data-plugin-tweets data-plugin-options='{"username": "", "count": 2}'>
+								<p>추후등록예정</p>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="contact-details">
+								<h4>연락처</h4>
+								<ul class="contact">
+									<li><p><i class="fa fa-map-marker"></i> <strong>주소:</strong> (06367) 서울특별시 강남구 광평로 280 15층 41호(로즈데일빌딩) </p></li>
+									<li><p><i class="fa fa-phone"></i> <strong>대표번호 :</strong> 1811-8500</p></li>	
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<h4>Follow Us</h4>
+							<ul class="social-icons">
+								<li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+								<li class="social-icons-youtube"><a href="http://www.youtube.com/" target="_blank" title="Youtube"><i class="fa fa-youtube-play"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="footer-copyright">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-1 mb-none">
+								<a href="index" class="logo">
+									<img alt="Porto Website Template" class="img-responsive" src="img/logoWhite.png" style="width: 50px; margin-top: -20px">
+								</a>
+							</div>
+							<div class="col-md-4 mb-none">
+								<p>© Copyright 2018. All Rights Reserved.</p>
+							</div>
+							<div class="col-md-7 mb-none">
+								<nav id="sub-menu">
+									<ul>
+										<li><a href="intro">회사소개</a></li>
+										<li><a href="intro_founding">창업안내</a></li>
+										{{!-- <li><a href="contact-us">이용약관</a></li>
+										<li><a href="page-faq">개인정보취급방침</a></li>
+										<li><a href="sitemap">위치정보서비스 이용약관</a></li> --}}
+										<li><a href="intro_product">제품소개</a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+		<!-- Vendor -->
+		<script src="vendor/jquery/jquery.js"></script>
+		<script src="vendor/jquery.appear/jquery.appear.js"></script>
+		<script src="vendor/jquery.easing/jquery.easing.js"></script>
+		<script src="vendor/jquery-cookie/jquery-cookie.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.js"></script>
+		<script src="vendor/common/common.js"></script>
+		<script src="vendor/jquery.validation/jquery.validation.js"></script>
+		<script src="vendor/jquery.stellar/jquery.stellar.js"></script>
+		<script src="vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.js"></script>
+		<script src="vendor/jquery.gmap/jquery.gmap.js"></script>
+		<script src="vendor/jquery.lazyload/jquery.lazyload.js"></script>
+		<script src="vendor/isotope/jquery.isotope.js"></script>
+		<script src="vendor/owl.carousel/owl.carousel.js"></script>
+		<script src="vendor/magnific-popup/jquery.magnific-popup.js"></script>
+		<script src="vendor/vide/vide.js"></script>
+		
+		<!-- Theme Base, Components and Settings -->
+		<script src="js/theme.js"></script>
+		
+		<!-- Current Page Vendor and Views -->
+		<script src="vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+		<script src="vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+		<script src="vendor/circle-flip-slideshow/js/jquery.flipshow.js"></script>
+		<script src="js/views/view.home.js"></script>
+		
+		<!-- Theme Custom -->
+		<script src="js/custom.js"></script>
+		
+		<!-- Theme Initialization Files -->
+		<script src="js/theme.init.js"></script>
+
+		<script src="js/amchart/amcharts.js" type="text/javascript"></script>
+		<script src="js/amchart/serial.js" type="text/javascript"></script>
+		<script src="js/amchart/pie.js" type="text/javascript"></script>
+		<script src="js/amchart/radar.js" type="text/javascript"></script>
+		<script src="js/amchart/light.js" type="text/javascript"></script>
+		<!-- END PAGE LEVEL PLUGINS -->
+
+		<!-- DATA TABLES -->
+		<script src="js/datatable/jquery.min.js" type="text/javascript"></script>
+		<!-- <script type="text/javascript" src="js/datatable/select2.min.js"></script> -->
+		<script type="text/javascript" src="js/datatable/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" src="js/datatable/dataTables.tableTools.min.js"></script>
+		<script type="text/javascript" src="js/datatable/dataTables.bootstrap.js"></script>
+		<!-- <script src="js/datatable/table-advanced.js"></script> -->
+
+		<script type="text/javascript">
+			 $.fn.switchClass = function(a, b){
+				var t = $(this).hasClass(a);
+				$(this).addClass( t ? b : a ).removeClass( a );
+				{{!-- $(this).addClass( t ? b : a ).removeClass( t ? a : b ); --}}
+			}
+			$(document).ready(function() { 
+				const api_url = "{{user.api_url}}";
+				var fileTarget = $('.filebox .upload-hidden'); 
+				fileTarget.on('change', function() { // 값이 변경되면 
+					if(window.FileReader){ // modern browser 
+						var filename = $(this)[0].files[0].name;
+					} else { // old IE 
+						var filename = $(this).val().split('/').pop().split('\\').pop(); // 파일명만 추출 
+					}
+					const access_token = "{{user.access_token}}";
+					const api_url = "{{user.api_url}}";
+					var form = new FormData();
+					form.append('upload', $(this)[0].files[0], filename);
+					$.ajax({
+						url: api_url + 'api/containers/upload-userpicture?access_token=' + access_token,
+						type: 'POST',
+						data: form,
+						processData: false,
+						contentType: false,
+						success: function (data) {
+							if (data.success) {
+								console.log('upload successful!');
+								location.reload();
+							} else {
+								alert('업로드가 실패하였습니다.')
+							}
+						}
+					});
+					// 추출한 파일명 삽입 
+					$(this).siblings('.upload-name').val(filename); 
+				});
+				
+				$('#text_nickname').on('input', function(e) {
+					const text = $(this).val();
+					if (text == "{{user.nickname}}") {
+						$('#label_checkNickName').attr('ok', 'ok');
+						$('#label_checkNickName').text('닉네임을 변경시키시려면 변경버튼을 눌러주세요.');
+						$('#label_checkNickName').switchClass("notify_label_error", "notify_label_ok");
+						$('#btn_CheckNickName').attr('disabled', true);
+						$('#btnSubmit').attr('disabled', false);
+					} else {
+						$('#label_checkNickName').attr('ok', 'changed');
+						$('#label_checkNickName').text('변경된 닉네임을 저장하시려면 변경버튼을 눌러주세요.');
+						$('#label_checkNickName').switchClass("notify_label_ok", "notify_label_error");
+						$('#btn_CheckNickName').attr('disabled', false);
+						$('#btnSubmit').attr('disabled', true);
+					}
+				})
+				$('#btn_CheckNickName').click(function() {
+					var nickname = $('#text_nickname').val();
+					if (!nickname || nickname.length == 0) {
+						return alert('닉네임을 입력해주십시오.');
+					}
+					var params = {
+						nickname: nickname,
+					}
+					$.post(api_url + 'api/Accounts/check-nickname', params, function(result) {
+						if (result.res.success) {
+							$('#label_checkNickName').text('사용가능한 닉네임입니다.');
+							$('#label_checkNickName').attr('ok', 'ok');
+							$('#label_checkNickName').switchClass("notify_label_error", "notify_label_ok");
+							$('#btnSubmit').attr('disabled', false);
+						} else {
+							$('#label_checkNickName').text('중복된 닉네임이 있습니다.');
+							$('#label_checkNickName').attr('ok', 'cancel');
+							$('#label_checkNickName').switchClass("notify_label_ok", "notify_label_error");
+						}
+					});
+				})
+				
+				$('#phone_number').on('input', function(e) {
+					const text = $(this).val();
+					if (text == "{{user.phone_number}}") {
+						$('#label_verify').attr('ok', 'ok');
+						$('#label_verify').text('전화번호를 변경하시려면 인증버튼을 눌러주세요.');
+						$('#label_verify').switchClass("notify_label_error", "notify_label_ok");
+						$('#btn_AskVerify').attr('disabled', true);
+						$('#btnSubmit').attr('disabled', false);
+					} else {
+						$('#label_verify').attr('ok', 'changed');
+						$('#label_verify').text('변경된 전화번호를 저장하시려면 인증해주세요.');
+						$('#label_verify').switchClass("notify_label_ok", "notify_label_error");
+						$('#btn_AskVerify').attr('disabled', false);
+						$('#btnSubmit').attr('disabled', true);
+					}
+				})
+				$('#btn_AskVerify').click(function() {
+					var phone_number = $('#phone_number').val();
+					if (!phone_number) {
+						return alert('전화번호를 입력해주십시오.');
+					}
+					if(phone_number.length < 8) {
+						return alert('정확한 전화번호를 입력해주십시오.');
+					}
+					var params = {
+						phone_number: phone_number
+					}
+					$.post(api_url + 'api/Accounts/ask-verify', params, function(result) {
+						if (result.res.success) {
+							alert('인증번호를 발송하였습니다.');
+							$('#verify_key').prop('disabled', false);
+							$('#btn_CheckVerify').prop('disabled', false);
+							$('#label_verify').text('인증코드를 입력해주세요.');
+							$('#label_verify').switchClass("notify_label_ok", "notify_label_error");
+						} else {
+							alert(result.res.result);
+						}
+					});
+				})
+				
+				$('#btn_CheckVerify').click(function() {
+					var phone_number = $('#phone_number').val();
+					var verify_key = $('#verify_key').val();
+					if (!verify_key) {
+						return alert('인증코드를 입력해주십시오.');
+					}
+					var params = {
+						phone_number: phone_number,
+						verify_key: verify_key
+					}
+					$.post(api_url + 'api/Accounts/check-verify', params, function(result) {
+						if (result.res.success) {
+							$('#label_verify').text('인증이 성공하였습니다.');
+							$('#label_verify').attr('ok', 'ok');
+							$('#label_verify').switchClass("notify_label_error", "notify_label_ok");
+							$('#btnSubmit').attr('disabled', false);
+						} else {
+							alert(result.res.result);
+						}
+					});
+				})
+
+				$('#btnSubmit').click(function(e) {
+					if ($('#label_checkNickName').attr('ok') != 'ok') {
+						alert('변경된 닉네임을 변경단추를 눌러 확인해주세요');
+					} else if ($('#label_verify').attr('ok') != 'ok') {
+						alert('변경된 전화번호를 인증해주세요');
+					} else {
+      					$('#form_updateprofile')[0].submit();
+					}
+				})
+			}); 
+
+
+		</script>
+	</body>
+</html>

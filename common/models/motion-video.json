@@ -1,0 +1,246 @@
+{
+  "name": "MotionVideo",
+  "description": "스윙모션",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "strictObjectIDCoercion": true
+  },
+  "properties": {
+    "filepath": {
+      "type": "string",
+      "required": true,
+      "description": "모션비디오파일경로",
+      "default": ""
+    },
+    "filepath_thumb": {
+      "type": "string",
+      "required": true,
+      "description": "모션비디오파일경로",
+      "default": ""
+    },
+    "title": {
+      "type": "string",
+      "description": "모션타이틀",
+      "default": ""
+    },
+    "content": {
+      "type": "string",
+      "description": "내용",
+      "default": ""
+    },
+    "holeIndex": {
+      "type": "number",
+      "required": true,
+      "description": "홀번호",
+      "default": 0
+    },
+    "club": {
+      "type": "number",
+      "required": false,
+      "description": "클럽",
+      "default": 0
+    },
+    "carry": {
+      "type": "number",
+      "required": false,
+      "description": "캐리거리(m)",
+      "default": 0
+    },
+    "courseName": {
+      "type": "string",
+      "required": true,
+      "description": "코스이름",
+      "default": ""
+    },
+    "storeName": {
+      "type": "string",
+      "required": true,
+      "description": "매장이름",
+      "default": ""
+    },
+    "status": {
+      "type": "string",
+      "required": true,
+      "default": "normal"
+    },
+    "isPublic": {
+      "type": "boolean",
+      "required": true,
+      "description": "모션공유",
+      "default": false
+    },
+    "userId": {
+      "type": "string",
+      "required": false,
+      "description": "유저디비아이디",
+      "default": ""
+    },
+    "gender": {
+      "type": "number",
+      "required": false,
+      "description": "성별 0: 남자, 1: 여자",
+      "default": 0
+    },
+    "user_nickname": {
+      "type": "string",
+      "required": false,
+      "description": "유저닉네임",
+      "default": ""
+    },
+    "like": {
+      "type": "number",
+      "required": true,
+      "description": "좋아요",
+      "default": 0
+    },
+    "visit": {
+      "type": "number",
+      "required": true,
+      "description": "조회수",
+      "default": 0
+    },
+    "chat_num": {
+      "type": "number",
+      "required": false,
+      "description": "댓글수",
+      "default": 0
+    },
+    "createdAt": {
+      "type": "date",
+      "required": true,
+      "default": "$now"
+    },
+    "updatedAt": {
+      "type": "date",
+      "required": true,
+      "default": "$now"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "gameLog": {
+      "type": "belongsTo",
+      "model": "GameLogs",
+      "foreignKey": ""
+    },
+    "chats": {
+      "type": "hasMany",
+      "model": "MotionChat",
+      "foreignKey": ""
+    },
+    "likes": {
+      "type": "hasMany",
+      "model": "MotionLike",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "user",
+      "permission": "ALLOW",
+      "property": "createVideo"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "manager",
+      "permission": "ALLOW",
+      "property": "createVideo"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "user",
+      "permission": "ALLOW",
+      "property": "deleteVideo"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "manager",
+      "permission": "ALLOW",
+      "property": "deleteVideo"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "user",
+      "permission": "ALLOW",
+      "property": "updatePublicVideo"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "manager",
+      "permission": "ALLOW",
+      "property": "updatePublicVideo"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "getVideo"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "user",
+      "permission": "ALLOW",
+      "property": "getVideoList"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "user",
+      "permission": "ALLOW",
+      "property": "getVideoList_v2"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "manager",
+      "permission": "ALLOW",
+      "property": "getVideoList_v2"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "getVideoList"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "getPublicVideoList"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "user",
+      "permission": "ALLOW",
+      "property": "likeVideo"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "manager",
+      "permission": "ALLOW",
+      "property": "likeVideo"
+    }
+  ],
+  "methods": {}
+}

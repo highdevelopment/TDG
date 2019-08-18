@@ -1,0 +1,599 @@
+{
+  "name": "Accounts",
+  "description": "유저관리",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "username": {
+      "type": "string",
+      "required": true,
+      "description": "유저 아이디"
+    },
+    "nickname": {
+      "type": "string",
+      "required": true,
+      "description": "닉네임"
+    },
+    "realname": {
+      "type": "string",
+      "required": true,
+      "description": "등록에서 쓰이는 실명"
+    },
+    "password": {
+      "type": "string",
+      "required": true
+    },
+    "role": {
+      "type": "string",
+      "required": true,
+      "description": "user(일반유저) / manager(매장관리자) / admin(최고관리자)",
+      "default": "user"
+    },
+    "phone_number": {
+      "type": "string",
+      "required": false
+    },
+    "sex": {
+      "type": "string",
+      "required": false,
+      "description": "male/female",
+      "default": "male"
+    },
+    "birthday": {
+      "type": "date",
+      "required": false,
+      "default": "$now"
+    },
+    "status": {
+      "type": "string",
+      "required": false,
+      "description": "유저상태 normal(정상) / stop(차단) / pause(정지)",
+      "default": "normal"
+    },
+    "verified": {
+      "type": "boolean",
+      "required": false,
+      "description": "true(전화인증됨) / false(인증안됨)",
+      "default": false
+    },
+    "photo": {
+      "type": "string",
+      "required": false,
+      "description": "사진파일경로",
+      "default": "user-picture/user_default.png"
+    },
+    "mail": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "agree_marketting_email": {
+      "type": "boolean",
+      "required": true,
+      "description": "마케팅 수신 동의(이메일)",
+      "default": true
+    },
+    "agree_marketting_sns": {
+      "type": "boolean",
+      "required": true,
+      "description": "마케팅 수신 동의(SNS)",
+      "default": true
+    },
+    "age_less14": {
+      "type": "boolean",
+      "required": true,
+      "description": "14살아래 (true) / 14살이상 (false)",
+      "default": false
+    },
+    "agree_thirdparty": {
+      "type": "boolean",
+      "required": false,
+      "description": "개인정보 제3자 제공 동의 true, 안함 false",
+      "default": false
+    },
+    "notify_email": {
+      "type": "boolean",
+      "required": false,
+      "description": "이메일 알림",
+      "default": true
+    },
+    "notify_phone": {
+      "type": "boolean",
+      "required": false,
+      "description": "휴대폰 알림",
+      "default": true
+    },
+    "address": {
+      "type": "object",
+      "required": false,
+      "description": "주소"
+    },
+    "createdAt": {
+      "type": "date",
+      "required": true,
+      "description": "창조된 시간",
+      "default": "$now"
+    },
+    "modifiedAt": {
+      "type": "date",
+      "description": "변경된 시간",
+      "default": "$now"
+    },
+    "user_level": {
+      "type": "number",
+      "description": "유저등급",
+      "default": 5
+    },
+    "user_cash": {
+      "type": "number",
+      "description": "유저가 보유하고 있는 현금",
+      "default": 0
+    },
+    "user_point": {
+      "type": "number",
+      "description": "유저가 보유하고 있는 포인트",
+      "default": 0
+    },
+    "user_setTeePos": {
+      "type": "number",
+      "description": "게임에서 로그인시 쓰이는 티위치 (0: Black, 1: Blue, 2: White, 3: Yellow, 4: Red)",
+      "default": 2
+    },
+    "user_setTeeHeight": {
+      "type": "number",
+      "description": "게임에서 로그인시 쓰이는 티높이 (0: 35mm, 1: 40mm, ... 6: 65mm)",
+      "default": 4
+    },
+    "user_setDifficulty": {
+      "type": "number",
+      "description": "게임에서 로그인시 쓰이는 난이도 (0: 일반 / 1: 세미투어 / 2: 투어)",
+      "default": 1
+    },
+    "user_setTasekPos": {
+      "type": "number",
+      "description": "게임에서 로그인시 쓰이는 타석위치 (0: 오른손, 1: 왼손)",
+      "default": 0
+    },
+    "user_unitType": {
+      "type": "number",
+      "description": "0: 미터 / 1: 야드",
+      "default": 0
+    },
+    "user_averscore": {
+      "type": "number",
+      "description": "평균타수",
+      "default": 0
+    },
+    "user_bestscore": {
+      "type": "number",
+      "description": "베스트타수",
+      "default": 9999
+    },
+    "user_handicap": {
+      "type": "number",
+      "description": "핸디",
+      "default": 0
+    },
+    "user_averCarry": {
+      "type": "number",
+      "description": "평균비거리",
+      "default": 0
+    },
+    "user_averCarry_recent": {
+      "type": "number",
+      "description": "평균비거리",
+      "default": 0
+    },
+    "user_record_count": {
+      "type": "number",
+      "description": "기록개수",
+      "default": 0
+    },
+    "user_bestCarry": {
+      "type": "number",
+      "description": "최대비거리",
+      "default": 0
+    },
+    "user_bestCarryDate": {
+      "type": "date",
+      "description": "최대비거리기록날자",
+      "default": "$now"
+    },
+    "user_averPuttingDist": {
+      "type": "number",
+      "description": "평균퍼팅거리",
+      "default": 0
+    },
+    "user_bestPuttingDist": {
+      "type": "number",
+      "description": "최대퍼팅거리",
+      "default": 0
+    },
+    "user_averPuttingNum": {
+      "type": "number",
+      "description": "평균퍼팅수",
+      "default": 0
+    },
+    "user_averPuttingNum_recent": {
+      "type": "number",
+      "description": "평균퍼팅수",
+      "default": 0
+    },
+    "user_fairwayHitRate": {
+      "type": "number",
+      "description": "패어안착률",
+      "default": 0
+    },
+    "user_greenHitRate": {
+      "type": "number",
+      "description": "그린적중률",
+      "default": 0
+    },
+    "user_parSaveRate": {
+      "type": "number",
+      "description": "파세이브률",
+      "default": 0
+    },
+    "user_sandSaveRate": {
+      "type": "number",
+      "description": "샌드세이브률",
+      "default": 0
+    },
+    "user_clubdist_driver": {
+      "type": "number",
+      "description": "드라이버 비거리",
+      "default": 220
+    },
+    "user_clubdist_w3": {
+      "type": "number",
+      "description": "우드3 비거리",
+      "default": 190
+    },
+    "user_clubdist_u3": {
+      "type": "number",
+      "description": "유틸리티3 비거리",
+      "default": 180
+    },
+    "user_clubdist_u5": {
+      "type": "number",
+      "description": "유틸리티5 비거리",
+      "default": 170
+    },
+    "user_clubdist_i3": {
+      "type": "number",
+      "description": "아이언3 비거리",
+      "default": 175
+    },
+    "user_clubdist_i4": {
+      "type": "number",
+      "description": "아이언4 비거리",
+      "default": 165
+    },
+    "user_clubdist_i5": {
+      "type": "number",
+      "description": "아이언5 비거리",
+      "default": 160
+    },
+    "user_clubdist_i6": {
+      "type": "number",
+      "description": "아이언6 비거리",
+      "default": 150
+    },
+    "user_clubdist_i7": {
+      "type": "number",
+      "description": "아이언7 비거리",
+      "default": 140
+    },
+    "user_clubdist_i8": {
+      "type": "number",
+      "description": "아이언8 비거리",
+      "default": 130
+    },
+    "user_clubdist_i9": {
+      "type": "number",
+      "description": "아이언9 비거리",
+      "default": 120
+    },
+    "user_clubdist_pw": {
+      "type": "number",
+      "description": "pw 비거리",
+      "default": 110
+    },
+    "user_clubdist_aw": {
+      "type": "number",
+      "description": "aw 비거리",
+      "default": 90
+    },
+    "user_clubdist_sw": {
+      "type": "number",
+      "description": "sw 비거리",
+      "default": 80
+    },
+    "register_type": {
+      "type": "string",
+      "description": "유저등록타입, site: 웹싸이트, android: 앱, kat: 카톡",
+      "default": "site"
+    },
+    "club_data": {
+      "type": "object",
+      "description": "클럽별 비거리분석 결과"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "store": {
+      "type": "hasOne",
+      "model": "Store",
+      "foreignKey": ""
+    },
+    "game_log": {
+      "type": "hasMany",
+      "model": "GameLogs",
+      "foreignKey": ""
+    },
+    "user_log": {
+      "type": "hasMany",
+      "model": "UserLog",
+      "foreignKey": ""
+    },
+    "questions": {
+      "type": "hasMany",
+      "model": "Question",
+      "foreignKey": ""
+    },
+    "AccessLogs": {
+      "type": "hasMany",
+      "model": "AccessLogs",
+      "foreignKey": ""
+    },
+    "app_notify": {
+      "type": "hasMany",
+      "model": "AccessLogs",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "registerUser"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "registerUserMobile"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "registerAdmin"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "loginUser"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "loginUserMobile"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "searchUser"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "logOutUser"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "getUserInfo"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "updatePhoto"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "updateProfile"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "updateRole"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "findById"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "updateUserInfo"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "updateGameSetting"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "user",
+      "permission": "ALLOW",
+      "property": "getRanking"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "manager",
+      "permission": "ALLOW",
+      "property": "getRanking"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "user",
+      "permission": "ALLOW",
+      "property": "getSelfInfo"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "manager",
+      "permission": "ALLOW",
+      "property": "getSelfInfo"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "user",
+      "permission": "ALLOW",
+      "property": "getUserLogs"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "updateClubInfo"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "manager",
+      "permission": "ALLOW",
+      "property": "getUserLogs"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "askVerification"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "checkVerification"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "checkDoubleUsername"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "checkDoubleNickname"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "manager",
+      "permission": "ALLOW",
+      "property": "getStoreInfoByToken"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "retrieveUserID"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "retrievePassword"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "updatePassword"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "getRegisterType"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "user",
+      "permission": "ALLOW",
+      "property": "getAppNotify"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "manager",
+      "permission": "ALLOW",
+      "property": "getAppNotify"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "resetAverageScoreAllUser"
+    }
+  ],
+  "methods": {}
+}

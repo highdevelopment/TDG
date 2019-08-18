@@ -1,0 +1,418 @@
+{
+  "name": "Store",
+  "description": "매장",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "customer_branch": {
+      "type": "string",
+      "required": false,
+      "description": "영업지사"
+    },
+    "customer_name": {
+      "type": "string",
+      "required": false,
+      "description": "영업담당자이름 "
+    },
+    "customer_phone": {
+      "type": "string",
+      "required": false,
+      "description": "영업담당자 전화번호"
+    },
+    "contractDate": {
+      "type": "date",
+      "required": true,
+      "description": "계약일",
+      "default": "$now"
+    },
+    "manager_name": {
+      "type": "string",
+      "required": true,
+      "description": "점주성명",
+      "default": "새 점주"
+    },
+    "manager_phone": {
+      "type": "string",
+      "required": false,
+      "description": "점주 전화번호"
+    },
+    "manager_residentNumber": {
+      "type": "string",
+      "required": false,
+      "description": "점주 주민등록번호"
+    },
+    "manager_businessNumber": {
+      "type": "string",
+      "required": false,
+      "description": "사업자등록번호"
+    },
+    "manager_address": {
+      "type": "string",
+      "required": false,
+      "description": "점주 주소"
+    },
+    "manager_mail": {
+      "type": "string",
+      "required": false,
+      "description": "점주 메일주소"
+    },
+    "storeName": {
+      "type": "string",
+      "required": true,
+      "description": "점포명",
+      "default": "새 매장"
+    },
+    "storeAddress": {
+      "type": "string",
+      "required": false,
+      "description": "설치장소 주소"
+    },
+    "storeGeoLocation": {
+      "type": "geopoint",
+      "required": false,
+      "description": "매장 맵위치"
+    },
+    "province": {
+      "type": "number",
+      "required": false,
+      "description": "매장지역 0: 수도권, 1: 강원도, 2: 충청도, 3: 전라도, 4: 경상도, 5: 제주도, 6: 해외",
+      "default": 0
+    },
+    "storePhone": {
+      "type": "string",
+      "required": false,
+      "description": "매장전화번호"
+    },
+    "installedDate": {
+      "type": "date",
+      "required": false,
+      "description": "설치일",
+      "default": "$now"
+    },
+    "payment_mode": {
+      "type": "string",
+      "description": "결제방식",
+      "default": "일시불"
+    },
+    "contract_pay_date": {
+      "type": "date",
+      "description": "계약금 납입일"
+    },
+    "contract_amount": {
+      "type": "number",
+      "description": "계약금액"
+    },
+    "interpayment_date": {
+      "type": "date",
+      "description": "중도금 납입일"
+    },
+    "interpayment_amount": {
+      "type": "number",
+      "description": "중도금액"
+    },
+    "balance_date": {
+      "type": "date",
+      "description": "잔금 납입일"
+    },
+    "balance_amount": {
+      "type": "number",
+      "description": "잔금액"
+    },
+    "distance_limit": {
+      "type": "number",
+      "description": "거리제한"
+    },
+    "round_price": {
+      "type": "number",
+      "description": "라운드 이용요금"
+    },
+    "others": {
+      "type": "string",
+      "description": "기타 사항"
+    },
+    "system_info": {
+      "type": "string",
+      "description": ""
+    },
+    "payment_date": {
+      "type": "date",
+      "description": "요금납부일"
+    },
+    "createdAt": {
+      "type": "date",
+      "required": true,
+      "default": "$now"
+    },
+    "modifiedAt": {
+      "type": "date",
+      "required": true,
+      "default": "$now"
+    },
+    "cash": {
+      "type": "number",
+      "description": "매장요금",
+      "default": 0
+    },
+    "status": {
+      "type": "string",
+      "required": true,
+      "description": "normal: 정상, deleted: 삭제",
+      "default": "normal"
+    },
+    "photo": {
+      "type": "string",
+      "required": false,
+      "description": "매장이미지"
+    },
+    "system_name": {
+      "type": "string",
+      "description": "시스템명",
+      "default": "The Doors Golf"
+    },
+    "system_lefthand": {
+      "type": "string",
+      "description": "타석위치",
+      "default": "없음"
+    },
+    "working_time": {
+      "type": "string",
+      "description": "운영시간",
+      "default": "오전 10시 ~ 12시, 오후 2시 ~ 6시"
+    },
+    "swingplate": {
+      "type": "string",
+      "description": "스윙플레이트",
+      "default": "없음"
+    },
+    "parking_status": {
+      "type": "string",
+      "description": "주차",
+      "default": "주차가능"
+    },
+    "default_time": {
+      "type": "number",
+      "description": "타석형기본시간",
+      "default": 50
+    }
+  },
+  "validations": [],
+  "relations": {
+    "manager": {
+      "type": "hasOne",
+      "model": "Accounts",
+      "foreignKey": ""
+    },
+    "room": {
+      "type": "hasMany",
+      "model": "room",
+      "foreignKey": ""
+    },
+    "notices": {
+      "type": "hasMany",
+      "model": "NoticeStore",
+      "foreignKey": ""
+    },
+    "cashLog": {
+      "type": "hasMany",
+      "model": "CashLog",
+      "foreignKey": ""
+    },
+    "CustomerService": {
+      "type": "hasMany",
+      "model": "CustomerService",
+      "foreignKey": ""
+    },
+    "reservation": {
+      "type": "hasMany",
+      "model": "Reservation",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "saveStoreInfo"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "searchStore"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "getStoreAndRoom"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "searchStoreWidthLocation"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "getStoreById"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "manager",
+      "permission": "ALLOW",
+      "property": "getStoreInfoByToken"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "manager",
+      "permission": "ALLOW",
+      "property": "getStoreCountDay"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "getUnpaidStores"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "getPaidStoresAtToday"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "verifyChargeStore"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "getPaymentStatistics"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "getAllSystemInfo"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "getRoomsOfStore"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "saveRoomsOfStore"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "getStoreStatistics"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "getGameCountsMonthly"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "getPaymentStatistics2"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "manager",
+      "permission": "ALLOW",
+      "property": "getGameStatisticsByManager"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "manager",
+      "permission": "ALLOW",
+      "property": "getUsersAtStore"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "manager",
+      "permission": "ALLOW",
+      "property": "getManagerGameStatusByRoom"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "manager",
+      "permission": "ALLOW",
+      "property": "getManagerGameStatusByDate"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "manager",
+      "permission": "ALLOW",
+      "property": "getManagerPayement"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "manager",
+      "permission": "ALLOW",
+      "property": "getUserGameLogAtStore"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "getGamesOfAllStore"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "manager",
+      "permission": "ALLOW",
+      "property": "saveDefaultTime"
+    }
+  ],
+  "methods": {}
+}

@@ -1,0 +1,81 @@
+
+	<header>
+
+		<div class="headerInner">
+			<!--로고-->
+			<div class="logo"><a href="/"><img src="images/common/logo.png" alt="더 도어스 스크린 골프"></a></div>
+			<!--로고-->
+			<!--유틸메뉴-->
+			<div class="unb">
+				<form id="form_logout" action="/logOutUser" method="post"></form>
+				{{#if user.isAuth}}
+					{{#if user.isManager}}
+						<a href="manager">TDG매니저</a>
+					{{/if}}
+					<a id="btnLogOut">LOGOUT</a>
+				{{else}}
+					<a href="login">LOGIN</a>
+					<a href="signupAgree">JOIN</a>
+				{{/if}}
+				<a href="intro-company">COMPANY</a>
+				<a href="intro-founding">BUSINESS CENTER</a>
+				<a href="contact-us">CUSTOMER CENTER</a>
+			</div>
+			<!--유틸메뉴-->
+			<!--SNS-->
+			<div class="sns">
+				<a href="http://facebook.com/">페이스북</a>
+				<a href="https://www.instagram.com/">인스타그램</a>
+				<a href="https://www.youtube.com/">유튜브</a>
+			</div>
+			<!--SNS-->
+			<!--메인메뉴-->
+			<nav>
+				<ul>
+					<li><a href="#">MY DOORS</a>
+						<ul>
+							<li><a href="my-analy">내 기록 분석</a>
+							<li><a href="my-swing">내 스윙 영상</a>
+							<li><a href="my-gamesetting">게임 설정</a>
+							<li><a href="my-qalist">1:1 문의</a>
+							<li><a href="my-profile">프로필 관리</a>
+						</ul>
+					</li>
+					<li><a href="#">COURSE</a>
+						<ul>
+							<li><a href="course-search">코스 찾기</a>
+							<li><a href="course-new">신규 코스</a>
+							<li><a href="course-recommend">추천 코스</a>
+							<li><a href="course-all">전체 코스</a>
+						</ul>
+					</li>
+					<li><a href="#">EVENT</a>
+						<ul>
+							<li><a href="champion">대회</a>
+							<li><a href="event-list">이벤트</a>
+						</ul>					
+					</li>
+					<li><a href="#">COMMUNITY</a>
+						<ul>
+							<li><a href="notice-list">공지사항</a>
+							<li><a href="photozone">포토죤</a>
+							<li><a href="swingvideo">스윙 영상</a>
+							<li><a href="holeinone-list">홀인원 기록</a>
+						</ul>					
+					</li>
+					<li><a href="#">BRAND</a>
+						<ul>
+							<li><a href="intro-brand">브랜드 소개</a>
+							<li><a href="intro-product">제품 소개</a>
+						</ul>					
+					</li>
+					<li><a href="#">매장</a>
+						<ul>
+							<li><a href="store-search">매장 찾기</a>
+						</ul>					
+					</li>
+				</ul>
+			</nav>
+			<!--메인메뉴-->
+		</div>
+	</header>

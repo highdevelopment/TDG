@@ -1,0 +1,72 @@
+{
+  "name": "UserLog",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "strictObjectIDCoercion": true
+  },
+  "properties": {
+    "username": {
+      "type": "string",
+      "required": true,
+      "description": "유저아이디"
+    },
+    "access_token": {
+      "type": "string",
+      "required": true,
+      "description": "유저토큰"
+    },
+    "loginType": {
+      "type": "string",
+      "required": true
+    },
+    "room_id": {
+      "type": "string",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true,
+      "default": "$now"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "accounts": {
+      "type": "belongsTo",
+      "model": "Accounts",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "loginQR"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "loginNFC"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "checkingQRLoggedIn"
+    }
+  ],
+  "methods": {}
+}

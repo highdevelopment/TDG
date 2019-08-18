@@ -1,0 +1,339 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=1200, initial-scale=1.0, maxium-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+		<meta name="format-detection" content="telephone=no" />
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+		<link rel="stylesheet" href="../style/css/reset.css" media="all">
+		<title>더 도어스 스크린 골프 코스찾기</title>
+		<!--[if lt IE 9]>
+			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js" type="text/javascript"></script>
+			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/ie7-squish.js" type="text/javascript"></script>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<script type="text/javascript" src="../style/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="../style/js/jquery.bxslider/jquery.bxslider.min.js"></script>
+		<script type="text/javascript" src="../style/js/main.js"></script>
+	</head>
+	<body>
+
+	<!--헤더-->
+	{{>header}}
+	<!--헤더-->
+
+	<!--서브탑-->
+	<div class="subTop">
+		<div class="subTopInner">
+			<h1>코스찾기</h1>
+			<div class="location">
+				<a href="#">코스</a> > <span>코스찾기</span>
+			</div>
+		</div>
+	</div>
+	<!--서브탑-->
+
+	<!--바디-->
+	<article>
+		<div id="bodyWrap">
+		<!--내용시작-->
+		<div class="wrap1200">
+	
+
+		<!--카테고리-->
+		<form id="form_search" action="/course-search">
+			<div class="coursrCategory">
+				<h3>지역</h3>
+				<div id="select_province">
+					<a option="0" class="" >전체</a>
+					<a option="1">수도권</a>
+					<a option="2">강원권</a>
+					<a option="3">충청권</a>
+					<a option="4">전라도</a>
+					<a option="5">경상도</a>
+					<a option="6">제주도</a>
+					<a option="7">해외</a>
+					<input id="province" name="province" type="hidden" value="0">
+				</div>
+			</div>
+			<!--카테고리-->
+
+			<!--옵션-->
+			<div class="sortSearch">
+				<!--정렬-->
+				<div id="select_sort">
+					<a option="0">신규코스</a>
+					<a option="1">난이도 높은 순</a>
+					<a option="2">난이도 낮은 순</a>
+					<input id="sort_option" name="sort_option" type="hidden" value="0">
+				</div>
+				<!--정렬-->
+				<!--검색-->
+				<div class="swingMovieSearch"><input type="text" id="" name="search_key" value="{{search_key}}"  title="검색어">
+					<input type="submit" value="검색" title="검색">
+				</div>
+				<!--검색-->
+			</div>
+		</form>
+		<!--옵션-->
+
+		<!--코스찾기-->
+		<div class="storeListMapWrap courseFindWrap">
+			<div class="storeList">	
+				<h4>더도어스골프  코스 찾기</h4>
+				<div>검색 결과 <b>{{courses.length}}건</b> <a href="#">지역 재검색</a></div>
+				<!--검색없을시-->
+				{{#if (eq courses.length 0)}}
+					<p class="noData">검색결과가 존재하지 않습니다.</p>
+				{{/if}}
+				<!--검색없을시-->
+				<!--검색결과-->
+				<ul>
+					{{#each courses}}
+					<li address_lat="{{this.address.lat}}" address_lng="{{this.address.lng}}" id="{{this.id}}" logo="{{this.logo}}" 
+						hole_level="{{this.imgHoleLevel}}" green_level="{{this.imgGreenLevel}}" name="{{this.name_kr}}" website="{{this.website}}"
+						photo="{{this.photo}}" address_kr="{{this.address_kr}}" distance="{{this.distance}}" comment_kr="{{this.comment_kr}}"
+					>
+						<a>
+							<img src={{this.logo}} alt="">
+							<p>
+								<b>{{this.name_kr}}</b>
+								<span>
+									<em>{{this.address_kr}}</em>
+									<i>코스 난이도
+										<img src={{this.imgHoleLevel}}>
+									</i><br>
+									<i>그린 난이도
+										<img src={{this.imgGreenLevel}}>
+									</i>
+								</span>
+							</p>
+						</a>
+					</li>
+					{{/each}}
+				</ul>
+				<!--검색결과-->
+			</div>
+			<div class="storeMap">
+				<div id="googlemap" style="height: 100%;"></div>
+				<!--포인터-->
+				<!--포인터-->
+				<!--코스정보창-->
+				<div class="ccInfoPop popupview">
+					<div class="lev_1">
+						<img id="course_logo" src={{course.logo}} alt="" class="logo">
+						<h3 id="course_name">{{course.name}}<span><a id="course_website" href={{course.website}} title="새창" target="_blank">{{course.website}}</a></span></h3>
+						<span class="level">
+							<i>코스 난이도
+								<img id="course_hole_level" src={{course.imgHoleLevel}}>
+							</i>
+							<i>그린 난이도
+								<img id="course_green_level" src={{course.imgGreenLevel}}>
+							</i>
+						</span>
+					</div>
+					<div class="lev_2">
+						<img id="course_photo" src={{course.photo}} alt="">
+						<p id="course_address_kr" class="p_01">{{course.address_kr}}<span id="course_distance">총거리 : {{course.distance}}m</span></p>
+						<p id="course_comment_kr" class="p_02">{{course.comment_kr}}</p>
+					</div>
+					<div class="lev_3">
+						<dl>
+							<dt>운영시간</dt>
+							<dd>평일 06:00 ~ 00:00<br>주말 06:00 ~ 00:00</dd>
+							<dt>타석수</dt>
+							<dd>17</dd>
+							<dt>클럽대여</dt>
+							<dd>가능</dd>
+							<dt>주차</dt>
+							<dd>가능</dd>
+						</dl>
+						<table>
+								<tr>
+									<th>Hill</th>
+									<th>1</th>
+									<th>2</th>
+									<th>3</th>
+									<th>4</th>
+									<th>5</th>
+									<th>6</th>
+									<th>7</th>
+									<th>8</th>
+									<th>9</th>
+								</tr>
+								<tr>
+									<td>Par</td>
+									<td>4</td>
+									<td>4</td>
+									<td>4</td>
+									<td>3</td>
+									<td>5</td>
+									<td>6</td>
+									<td>3</td>
+									<td>3</td>
+									<td>2</td>
+								</tr>
+								<tr>
+									<th>Lake</th>
+									<th>1</th>
+									<th>2</th>
+									<th>3</th>
+									<th>4</th>
+									<th>5</th>
+									<th>6</th>
+									<th>7</th>
+									<th>8</th>
+									<th>9</th>
+								</tr>
+								<tr>
+									<td>Par</td>
+									<td>4</td>
+									<td>4</td>
+									<td>4</td>
+									<td>3</td>
+									<td>5</td>
+									<td>6</td>
+									<td>3</td>
+									<td>3</td>
+									<td>2</td>
+								</tr>
+						</table>
+					</div>
+					<a href="#" class="closeCcInfo">닫기</a>
+				</div>
+				<!--코스정보창-->
+			</div>
+
+		</div>
+	</div>
+	<!--코스찾기-->
+
+
+		<div>
+		<!--내용끝-->
+		</div>
+	</article>
+	<!--바디-->
+
+	<!--풋터-->
+	{{>footer}}
+	<!--풋터-->
+	
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1FdRrALRymgE_4iBvhKdN30Qrg1OND2E&callback=initMap" async defer></script>
+	<script>
+		var map;
+      	var markers = [];
+		function initMap() {
+			if (markers.length > 0) {}
+			map = new google.maps.Map(document.getElementById('googlemap'), {
+				center: {lat: -34.397, lng: 150.644},
+				zoom: 10
+			});
+			refreshMarkers();
+			const courseId = '{{courseId}}';
+			if (courseId.length > 0) {
+				$('.ccInfoPop').show();
+			} else {
+				$('.ccInfoPop').hide();
+			}
+		}
+		function showCourseInfo(data) {
+			$('.ccInfoPop').show();
+			$('#course_logo').attr('src', data.logo);
+			$('#course_name').text(data.name);
+			$('#course_website').attr('href', data.website);
+			$('#course_website').text(data.website);
+			$('#course_photo').attr('src', data.photo);
+			$('#course_address_kr').text(data.address_kr);
+			$('#course_distance').text('총거리 : ' + data.distance + 'm');
+			$('#course_comment_kr').text(data.comment_kr);
+			$('#course_par_num').attr('src', data.par_num);
+			$('#course_hole_level').attr('src', data.hole_level);
+			$('#course_green_level').attr('src', data.green_level);
+		}
+		function addMarker(index, location, data) {
+			var marker = new google.maps.Marker({
+				index, index,
+				position: location,
+				title: data.name,
+				icon: '../../images/course/mapPointer.png',
+				data: data
+			});
+			marker.setMap(map);
+			google.maps.event.addListener(marker, 'click', (function() {
+				showCourseInfo(data);
+			}))
+		}
+		function setMapOnAll(map) {
+			for (var i = 0; i < markers.length; i++) {
+				markers[i].setMap(map);
+			}
+		}
+		function clearMarkers() {
+			setMapOnAll(null);
+		}
+		function deleteMarkers() {
+			clearMarkers();
+			markers = [];
+		}
+		function refreshMarkers() {
+			deleteMarkers();
+			var address0;
+			$('div.storeList li').each(function(index) {
+				var address_lat = $(this).attr('address_lat');
+				var address_lng = $(this).attr('address_lng');
+				if (address_lat.length > 0 && address_lng.length > 0) {
+					var address = new google.maps.LatLng(address_lat, address_lng);
+					const data = {
+						hole_level: $(this).attr('hole_level'),
+						green_level: $(this).attr('green_level'),
+						logo: $(this).attr('logo'),
+						name: $(this).attr('name'),
+						website: $(this).attr('website'),
+						photo: $(this).attr('photo'),
+						address_kr: $(this).attr('address_kr'),
+						distance: $(this).attr('distance'),
+						comment_kr: $(this).attr('comment_kr'),
+					}
+					addMarker(index, address, data);
+					if (!address0) address0 = address;
+				}
+			})
+			if (address0)
+				map.panTo(address0);
+		}
+		$(document).ready(function() {
+			$("#select_province a").eq('{{province}}').addClass("active");
+			$("#select_province a").click(function() {
+				$(this).siblings().removeClass("active");
+				$(this).addClass("active");
+				var province = $(this).attr('option');
+				$('#province').val(province);
+				$('#form_search')[0].submit();
+			});
+			$("#select_sort a").eq('{{sort_option}}').addClass("active");
+			$("#select_sort a").click(function() {
+				$(this).siblings().removeClass("active");
+				$(this).addClass("active");
+				var sort_option = $(this).attr('option');
+				$('#sort_option').val(sort_option);
+				$('#form_search')[0].submit();
+			});
+			$('div.storeList li').click(function(e) {
+				var address_lat = $(e.currentTarget).attr('address_lat');
+				var address_lng = $(e.currentTarget).attr('address_lng');
+				var center = new google.maps.LatLng(address_lat, address_lng);
+				map.panTo(center);
+				$('.ccInfoPop').hide();
+			})
+			$('.closeCcInfo').click(function() {
+				$('.ccInfoPop').hide();
+			})
+		})
+	</script>
+	</body>
+</html>

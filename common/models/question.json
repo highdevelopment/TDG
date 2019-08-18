@@ -1,0 +1,152 @@
+{
+  "name": "Question",
+  "description": "1:1질문 & 답변",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "type": {
+      "type": "number",
+      "required": false,
+      "description": "0: 유저질문 / 1: 유저FAQ / 2: 매장질문 / 3: 매장FAQ",
+      "default": "0"
+    },
+    "mail": {
+      "type": "string",
+      "required": false,
+      "description": "질문자메일"
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "description": "질문제목"
+    },
+    "content": {
+      "type": "string",
+      "description": "질문내용"
+    },
+    "photo_question": {
+      "type": "string",
+      "description": "이미지파일경로",
+      "default": null
+    },
+    "photo_answer": {
+      "type": "string",
+      "description": "이미지파일경로",
+      "default": null
+    },
+    "answer": {
+      "type": "string",
+      "description": "답변"
+    },
+    "visit": {
+      "type": "number",
+      "description": "조회수",
+      "default": 0
+    },
+    "status": {
+      "type": "string",
+      "required": true,
+      "description": "상태 (waitting: 답변대기중, checked: 답변완료, deleted: 삭제됨)",
+      "default": "waitting"
+    },
+    "read": {
+      "type": "boolean",
+      "required": false,
+      "description": "읽지 않았으면 false, 읽었으면 true",
+      "default": false
+    },
+    "createdAt": {
+      "type": "date",
+      "required": true,
+      "default": "$now"
+    },
+    "modifiedAt": {
+      "type": "date",
+      "required": true,
+      "default": "$now"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "Accounts",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "getQuestionList"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "getAllQuetionList"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "getQuestion"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "user",
+      "permission": "ALLOW",
+      "property": "createQuestion"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "manager",
+      "permission": "ALLOW",
+      "property": "createQuestion"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "createPublicQuestion"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "answerQuestion"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "updatePublicQuestion"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "deleteQuestion"
+    }
+  ],
+  "methods": {}
+}

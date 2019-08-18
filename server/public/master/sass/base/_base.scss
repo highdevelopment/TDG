@@ -1,0 +1,40 @@
+html {
+	direction: $dir;
+	overflow-x: hidden;
+}
+
+body {
+	background-color: $light-bg;
+	color: $color-font-default;
+	font-family: $font-primary;
+	font-size: $body-font-size;
+	line-height: $body-line-height;
+	margin: 0;
+	overflow-x: hidden;
+
+	a {
+		outline: none !important;
+	}
+
+}
+
+li {
+	line-height: 24px;
+}
+
+/* Body */
+@media (max-width: 991px) {
+	body > .body {
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+}
+
+/* Responsive */
+@media (max-width: 479px) {
+
+	body {
+		font-size: 13px;
+	}
+
+}

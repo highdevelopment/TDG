@@ -1,0 +1,235 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=1200, initial-scale=1.0, maxium-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+		<meta name="format-detection" content="telephone=no" />
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+		<link rel="stylesheet" href="../style/css/reset.css" media="all">
+		<title>더 도어스 스크린 골프 매장찾기</title>
+		<!--[if lt IE 9]>
+			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js" type="text/javascript"></script>
+			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/ie7-squish.js" type="text/javascript"></script>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<script type="text/javascript" src="../style/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="../style/js/jquery.bxslider/jquery.bxslider.min.js"></script>
+		<script type="text/javascript" src="../style/js/main.js"></script>
+	</head>
+	<body>
+
+	<!--헤더-->
+	{{>header}}
+	<!--헤더-->
+
+	<!--서브탑-->
+	<div class="subTop">
+		<div class="subTopInner">
+			<h1>매장찾기</h1>
+			<div class="location">
+				<a href="#">매장</a> > <span>매장찾기</span>
+			</div>
+		</div>
+	</div>
+	<!--서브탑-->
+
+	<!--바디-->
+	<article>
+		<div id="bodyWrap">
+		<!--내용시작-->
+		<div class="wrap1200">
+	
+
+<div class="storeWrap">
+	<!--매장찾기-->
+	<h3 class="searchStoreH3"><a href="#">매장 찾기</a></h3>
+	<div class="searchStore">
+		<form action="/store-search" method="get">
+			<div class="searchStoreBox">
+				<label for="store">매장검색</label>
+				<input type="text" name="search_key" id="search_key" value="{{search_key}}" title="검색어" placeholder="매장명 또는 지역명을 입력해 주세요!"/>
+				<input type="submit" name="button" id="btn_search" value="검색" title="검색" />		
+			</div>
+		</form>
+		<div class="storeListMapWrap">
+			<div class="storeList">	
+				<h4>더도어스골프 매장 찾기</h4>
+				<div>검색 결과 <b>{{stores.length}}건</b> <a href="#">지역 재검색</a></div>
+				<!--검색없을시-->
+				{{#if (eq stores.length 0)}}
+				<p class="noData">검색결과가 존재하지 않습니다.</p>
+				{{/if}}
+				<!--검색없을시-->
+				<!--검색결과-->
+				<ul>
+					{{#each stores}}
+					<li address_lat={{this.storeGeoLocation.lat}} address_lng={{this.storeGeoLocation.lng}}
+						photo={{this.photo}} name={{this.storeName}}>
+						<a href="#">
+							<img src={{this.photo}} alt="">
+							<p><b>{{this.storeName}}</b><br>{{this.storeAddress}}<br>{{this.storePhone}}</p>
+						</a>
+					</li>
+					{{/each}}
+				</ul>
+				<!--검색결과-->
+			</div>
+			<div class="storeMap">
+				<div id="googlemap" style="height: 100%;"></div>
+				<div class="storeInfoPop popupview">
+					<div>매장상세보기는 준비중 입니다.</div>
+					<a href="#" class="closeCcInfo">닫기</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--매장찾기-->
+
+	<!--나의단골매장-->
+	<h3 class="frequenterStoreH3"><a href="#">나의 단골매장</a></h3>
+	<div class="frequenterStore">
+		<!--목록-->
+         <div class="bbsList">
+            <table>
+               <colgroup>
+               </colgroup>
+               <thead>
+                  <tr>
+                     <th>매장명</th>
+                     <th>전화번호</th>
+                     <th>주소</th>
+                     <th>삭제</th>
+                  </tr>
+               </thead>
+               <tbody>
+						{{#each stores_regular}}
+                  <tr>
+                     <td>{{this.storeName}}</td>
+                     <td>{{this.storePhone}}</td>
+                     <td class="center">{{this.storeAddress}}</td>
+                     <td><btn id="btn_delete" storeId="{{this.id}}">삭제</btn></td>
+                  </tr>
+						{{/each}}
+               </tbody>
+            </table>
+          </div>
+		<!--목록-->
+		<!--페이징-->
+		<div class="paging pagingW">
+			<a href="#" class="prev10">이전10</a>
+			<a href="#" class="prev">이전</a>
+			<a href="#" class="on">1</a>
+			<a href="#">2</a>
+			<a href="#">3</a>
+			<a href="#">4</a>
+			<a href="#">5</a>
+			<a href="#">6</a>
+			<a href="#">7</a>
+			<a href="#">8</a>
+			<a href="#">9</a>
+			<a href="#">10</a>
+			<a href="#" class="next">다음</a>
+			<a href="#" class="next10">다음10</a>
+		</div>
+		<!--페이징-->
+	</div>
+	<!--나의단골매장-->
+</div>
+
+
+		<div>
+		<!--내용끝-->
+		</div>
+	</article>
+	<!--바디-->
+
+	{{>footer}}
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1FdRrALRymgE_4iBvhKdN30Qrg1OND2E&callback=initMap" async defer></script>
+	<script>
+		var map;
+      var markers = [];
+		function initMap() {
+			map = new google.maps.Map(document.getElementById('googlemap'), {
+				center: {lat: -34.397, lng: 150.644},
+				zoom: 10
+			});
+			refreshMarkers();
+		}
+		function addMarker(index, location, data) {
+			var marker = new google.maps.Marker({
+				index, index,
+				position: location,
+				title: data.name,
+				icon: '../../images/course/mapPointer.png',
+				data: data
+			});
+			marker.setMap(map);
+			google.maps.event.addListener(marker, 'click', (function() {
+				$('.storeInfoPop').show();
+				{{!-- 
+				$('#course_logo').attr('src', data.logo);
+				$('#course_name').text(data.name);
+				$('#course_website').attr('href', data.website);
+				$('#course_website').text(data.website);
+				$('#course_photo').attr('src', data.photo);
+				$('#course_address_kr').text(data.address_kr);
+				$('#course_distance').text('총거리 : ' + data.distance + 'm');
+				$('#course_comment_kr').text(data.comment_kr);
+				$('#course_par_num').attr('src', data.par_num); --}}
+			}))
+		}
+		function setMapOnAll(map) {
+			for (var i = 0; i < markers.length; i++) {
+				markers[i].setMap(map);
+			}
+		}
+		function clearMarkers() {
+			setMapOnAll(null);
+		}
+		function deleteMarkers() {
+			clearMarkers();
+			markers = [];
+		}
+		function refreshMarkers() {
+			deleteMarkers();
+			var address0;
+			$('div.storeList li').each(function(index) {
+				var address_lat = $(this).attr('address_lat');
+				var address_lng = $(this).attr('address_lng');
+				var address = new google.maps.LatLng(address_lat, address_lng);
+				const data = {
+					hole_level: $(this).attr('hole_level'),
+					green_level: $(this).attr('green_level'),
+					logo: $(this).attr('logo'),
+					name: $(this).attr('name'),
+					website: $(this).attr('website'),
+					photo: $(this).attr('photo'),
+					address_kr: $(this).attr('address_kr'),
+					distance: $(this).attr('distance'),
+					comment_kr: $(this).attr('comment_kr'),
+				}
+				addMarker(index, address, data);
+				if (!address0) address0 = address;
+			})
+			map.panTo(address0);
+		}
+		$(document).ready(function() {
+			$('.storeInfoPop').hide();
+			$('div.storeList li').click(function(e) {
+				var address_lat = $(e.currentTarget).attr('address_lat');
+				var address_lng = $(e.currentTarget).attr('address_lng');
+				var center = new google.maps.LatLng(address_lat, address_lng);
+				map.panTo(center);
+				$('.storeInfoPop').hide();
+			})
+			$('.closeCcInfo').click(function() {
+				$('.storeInfoPop').hide();
+			})
+		})
+	</script>
+	</body>
+</html>

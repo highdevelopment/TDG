@@ -1,0 +1,224 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=1200, initial-scale=1.0, maxium-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+		<meta name="format-detection" content="telephone=no" />
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+		<link rel="stylesheet" href="../style/css/reset.css" media="all">
+		<title>더 도어스 스크린 골프 1:1 문의하기</title>
+		<!--[if lt IE 9]>
+			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js" type="text/javascript"></script>
+			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/ie7-squish.js" type="text/javascript"></script>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<script type="text/javascript" src="../style/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="../style/js/jquery.bxslider/jquery.bxslider.min.js"></script>
+		<script type="text/javascript" src="../style/js/main.js"></script>
+	</head>
+	<body>
+
+	<!--헤더-->
+	{{>header}}
+	<!--헤더-->
+
+	<!--서브탑-->
+	<div class="subTop">
+		<div class="subTopInner">
+			<h1>1:1 문의하기</h1>
+			<div class="location">
+				<a href="#">MY DOORS</a> > <span>1:1 문의하기</span>
+			</div>
+		</div>
+	</div>
+	<!--서브탑-->
+
+	<!--바디-->
+	<article>
+		<div id="bodyWrap">
+		<!--내용시작-->
+		<div class="wrap835">
+
+
+			<p class="inputCaution"><span>*</span>모두 필수 입력사항입니다.</p>
+			<!--개인정보 항목-->
+			<div class="privateInput">
+				<h3>개인정보 입력</h3>
+				<div class="formTable">
+					<table>
+						<caption></caption>
+						<colgroup>
+							<col style="width:20%;">
+							<col style="width:80%;">
+						</colgroup>
+						<tr>
+							<th><span class="noStar"></span>이름</th>
+							<td><input type="text" id="" name="" placeholder="{{user.nickname}}" title="이름" value={{user.nickname}} readonly></td>
+						</tr>
+						<tr>
+							<th><span class="star">*</span>답변 받을 이메일</th>
+							<td>
+								<input type="text" id="text_mail_id" name="" value="{{mail_id}}" title="이메일 아이디"> @
+								<input type="text" id="text_mail_type" name="" value="{{mail_type}}"" title="이메일 주소">
+								<select id="select_mail_type" name="" value="{{mail_type}}"" title="이메일 주소 선택">
+									<option value="">직접 입력</option>
+									<option value="naver.com">naver.com</option>
+									<option value="daum.net">daum.net</option>
+									<option value="hotmail.com">hotmail.com</option>
+									<option value="nate.com">nate.com</option>
+									<option value="yahoo.co.kr">yahoo.co.kr</option>
+									<option value="paran.com">paran.com</option>
+									<option value="empas.com">empas.com</option>
+									<option value="dreamwiz.com">dreamwiz.com</option>
+									<option value="freechal.com">freechal.com</option>
+									<option value="lycos.co.com">lycos.co.com</option>
+									<option value="korea.com">korea.com</option>
+									<option value="gmail.com">gmail.com</option>
+									<option value="hanmir.com">hanmir.com</option>
+								</select>
+								<p class="notification">* 입력하신 내용은 회원 정보에 반영되지 않습니다.</p>
+							</td>
+						</tr>
+					</table>
+				</div>
+			 </div>
+			<!--개인정보 항목-->
+
+			<!--문의정보 항목-->
+			<div class="askInput">
+				<h3>문의정보</h3>
+				<div class="formTable">
+					<table>
+						<caption></caption>
+						<colgroup>
+							<col style="width:20%;">
+							<col style="width:80%;">
+						</colgroup>
+						<tr>
+							<th><span class="star">*</span>분류</th>
+							<td>
+								<select id="" name="" title="분류 선택1">
+									<option value="">시스템</option>
+								</select>
+								<select id="" name=""  title="분류 선택2">
+										<option value="">프로그램</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th><span class="star">*</span>제목</th>
+							<td><input type="text" id="title" name="" value="" class="w100"  title="제목"></td>
+						</tr>
+						<tr>
+							<th><span class="star">*</span>내용</th>
+							<td>
+								<textarea id="content" title="내용"></textarea>
+								<p class="notification">정확한 장애(오류)해결을 위해 고객님의 브라우저 및 OS정보가 필요하며, 수집된 정보는 문제해결 이외의 다른 용도로 사용하지 않습니다.</p>
+								<a class="privateAgree" id="btnAgree">정보제공에 동의합니다.</a>
+								<br><br>
+							</td>
+						</tr>
+						<tr>
+							<th>첨부파일</th>
+							<td class="attachedFile filebox">
+								<input type="text" class="upload-name attachedFile" value="" disabled="disabled">
+								{{!-- <input type="button" id="" name="" value="첨부파일" title="첨부파일찾기"> --}}
+								<label for="ex_filename" class="btn-primary btn">첨부파일</label> 
+								<input type="file" id="ex_filename" class="upload-hidden">
+								<input type="hidden" id="filepath">
+								<p class="notification">*단일 파일 용량은 5MB 이상 첨부할 수 없습니다.(jpg, gif, png, tiff, hwp, xls, xlsx, ppt, ppt, doc, docx, pdf)</p>
+							</td>
+						</tr>
+					</table>
+				</div>
+			 </div>
+			<!--문의정보 항목-->
+
+			<!--버튼-->
+			<div class="center"><a id="btnSubmit" class="btnDone">문의하기</a> <a href="my-qalist" class="btnCancel">취소하기</a></div>
+			<!--버튼-->
+		
+
+		</div>		
+		<!--내용끝-->
+		</div>
+	</article>
+	<!--바디-->
+
+	{{>footer}}
+	
+	<script>
+		$(document).ready(function() {
+			$('#select_mail_type').change(function(e) {
+				$('#text_mail_type').val($(this).val());
+			})
+			const api_url = "{{user.api_url}}";
+			var fileTarget = $('.filebox .upload-hidden'); 
+			fileTarget.on('change', function(){ // 값이 변경되면 
+				if(window.FileReader){ // modern browser 
+					var filename = $(this)[0].files[0].name; 
+				} else { // old IE 
+					var filename = $(this).val().split('/').pop().split('\\').pop(); // 파일명만 추출 
+				}
+
+				const access_token = "{{user.access_token}}";
+				var form = new FormData();
+				form.append('upload', $(this)[0].files[0], filename);
+				$.ajax({
+					url: api_url + 'api/containers/upload-file?access_token=' + access_token,
+					type: 'POST',
+					data: form,
+					processData: false,
+					contentType: false,
+					success: function (data) {
+						if (data.success) {
+							$('#filepath').attr('path', data.result.path);
+							console.log('upload successful!');
+						} else {
+							alert('업로드가 실패하였습니다.')
+						}
+					}
+				});
+				// 추출한 파일명 삽입 
+				$(this).siblings('.upload-name').val(filename);
+			});
+
+			$('#btnAgree').click(function(e) {
+				$(this).addClass('selected');
+			})
+			
+			$('#btnSubmit').click(function() {
+				if (!$('#btnAgree').hasClass('selected')) {
+					return alert('정보제공에 동의 바랍니다.');
+				}
+				const title = $('#title').val();
+				if (!title || title.length == 0) {
+					return alert('제목을 입력해주세요.');
+				}
+				const content = $('#content').val();
+				const photo_question = $('#filepath').attr('path');
+				const access_token = "{{user.access_token}}";
+				var params = {
+					access_token: access_token,
+					title: title,
+					content: content,
+					photo_question: photo_question
+				}
+				$.post(api_url + 'api/Questions/create-question?access_token=' + access_token, params, function(result) {
+					if (result.res.success) {
+						alert('성공적으로 등록되였습니다.');
+						window.location.href = '/my-qalist';
+					} else {
+						alert('로그인이 실패하였습니다.');
+						location.reload();
+					}
+				});
+			})
+		});
+	</script>
+	</body>
+</html>

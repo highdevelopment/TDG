@@ -1,0 +1,164 @@
+{
+  "name": "CustomerService",
+  "description": "매장서비스, AS",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "service_no": {
+      "type": "number",
+      "required": true,
+      "description": "결제번호"
+    },
+    "type": {
+      "type": "string",
+      "required": true,
+      "description": "접수형태 online: 온라인 / phone: 유선",
+      "default": "online"
+    },
+    "category": {
+      "type": "string",
+      "required": true,
+      "default": "분류 pc: 컴퓨터 / autotee: 오토티업기 / mat: 매트 / project: 프로젝터 / sensor: 센서 / swingcamera: 스윙카메라 / other: 기타"
+    },
+    "storeName": {
+      "type": "string",
+      "required": true,
+      "description": "매장명"
+    },
+    "roomName": {
+      "type": "string",
+      "description": "룸이름"
+    },
+    "request_name": {
+      "type": "string",
+      "required": true,
+      "description": "요청자이름"
+    },
+    "request_contact": {
+      "type": "string",
+      "required": true,
+      "description": "요청자 연락처"
+    },
+    "recept_name": {
+      "type": "string",
+      "description": "접수자이름"
+    },
+    "recept_contact": {
+      "type": "string",
+      "description": "접수자 연락처"
+    },
+    "receptedAt": {
+      "type": "date",
+      "required": true,
+      "description": "접수날짜",
+      "default": "$now"
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "description": "제목"
+    },
+    "content": {
+      "type": "string",
+      "description": "내용"
+    },
+    "status": {
+      "type": "string",
+      "required": true,
+      "description": "상태 waitting: 대기 / processing: 진행중 / phone: 유선처리중 / visit: 방문 / done: 완료 / deleted: 삭제됨",
+      "default": "waitting"
+    },
+    "note": {
+      "type": "string",
+      "description": "비고"
+    },
+    "photo": {
+      "type": "string",
+      "description": "이미지파일경로"
+    },
+    "createdAt": {
+      "type": "date",
+      "required": true,
+      "default": "$now"
+    },
+    "modifiedAt": {
+      "type": "date",
+      "required": true,
+      "default": "$now"
+    },
+    "endedAt": {
+      "type": "date",
+      "description": "완료일",
+      "default": "$now"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "store": {
+      "type": "belongsTo",
+      "model": "store",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "listServices"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "registerServiceByAdmin"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "manager",
+      "permission": "ALLOW",
+      "property": "registerServiceByManager"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "manager",
+      "permission": "ALLOW",
+      "property": "getServiceById"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "getServiceById"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "procService"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "manager",
+      "permission": "ALLOW",
+      "property": "getManagerServices"
+    }
+  ],
+  "methods": {}
+}

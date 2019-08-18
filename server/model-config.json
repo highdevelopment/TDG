@@ -1,0 +1,150 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "ScreenGolf",
+    "public": false
+  },
+  "AccessToken": {
+    "dataSource": "ScreenGolf",
+    "public": false,
+    "relations": {
+      "Accounts": {
+        "type": "belongsTo",
+        "model": "Accounts",
+        "foreignKey": "userId"
+      }
+    }
+  },
+  "ACL": {
+    "dataSource": "ScreenGolf",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "ScreenGolf",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "ScreenGolf",
+    "public": false
+  },
+  "Accounts": {
+    "dataSource": "ScreenGolf",
+    "public": true
+  },
+  "room": {
+    "dataSource": "ScreenGolf",
+    "public": true
+  },
+  "Store": {
+    "dataSource": "ScreenGolf",
+    "public": true
+  },
+  "games": {
+    "dataSource": "ScreenGolf",
+    "public": true
+  },
+  "Reservation": {
+    "dataSource": "ScreenGolf",
+    "public": true
+  },
+  "UserLog": {
+    "dataSource": "ScreenGolf",
+    "public": true
+  },
+  "Notices": {
+    "dataSource": "ScreenGolf",
+    "public": true
+  },
+  "GameLogs": {
+    "dataSource": "ScreenGolf",
+    "public": true
+  },
+  "Course": {
+    "dataSource": "ScreenGolf",
+    "public": true
+  },
+  "container": {
+    "dataSource": "storage",
+    "public": true
+  },
+  "SubCourse": {
+    "dataSource": "ScreenGolf",
+    "public": false
+  },
+  "MotionVideo": {
+    "dataSource": "ScreenGolf",
+    "public": true
+  },
+  "Question": {
+    "dataSource": "ScreenGolf",
+    "public": true
+  },
+  "CashLog": {
+    "dataSource": "ScreenGolf",
+    "public": true
+  },
+  "Event": {
+    "dataSource": "ScreenGolf",
+    "public": true
+  },
+  "Verification": {
+    "dataSource": "ScreenGolf",
+    "public": false
+  },
+  "CustomerService": {
+    "dataSource": "ScreenGolf",
+    "public": true
+  },
+  "ManualData": {
+    "dataSource": "ScreenGolf",
+    "public": true
+  },
+  "PhotoZone": {
+    "dataSource": "ScreenGolf",
+    "public": true
+  },
+  "AccessLogs": {
+    "dataSource": "ScreenGolf",
+    "public": false
+  },
+  "AppNotify": {
+    "dataSource": "ScreenGolf",
+    "public": false
+  },
+  "card": {
+    "dataSource": "ScreenGolf",
+    "public": true
+  },
+  "GameConstants": {
+    "dataSource": "ScreenGolf",
+    "public": false
+  },
+  "MotionChat": {
+    "dataSource": "ScreenGolf",
+    "public": false
+  },
+  "MotionLike": {
+    "dataSource": "ScreenGolf",
+    "public": true
+  },
+  "RoomLogs": {
+    "dataSource": "ScreenGolf",
+    "public": true
+  }
+}

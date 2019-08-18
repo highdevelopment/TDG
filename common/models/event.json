@@ -1,0 +1,113 @@
+{
+  "name": "Event",
+  "description": "이벤트",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "description": "이벤트제목"
+    },
+    "content": {
+      "type": "string",
+      "required": true,
+      "description": "이벤트내용",
+      "default": null
+    },
+    "photo": {
+      "type": "string",
+      "required": false,
+      "description": "이벤트 이미지파일경로",
+      "default": null
+    },
+    "image_main": {
+      "type": "string",
+      "required": false,
+      "description": "이벤트 메인이미지파일경로"
+    },
+    "visit": {
+      "type": "number",
+      "required": true,
+      "description": "조회수",
+      "default": 0
+    },
+    "status": {
+      "type": "number",
+      "required": true,
+      "description": "0: 대기중, 1: 진행중, 2: 완료",
+      "default": 0
+    },
+    "startAt": {
+      "type": "date",
+      "required": false,
+      "description": "이벤트 시작날짜",
+      "default": "$now"
+    },
+    "endAt": {
+      "type": "date",
+      "required": false,
+      "description": "이벤트 마감날짜",
+      "default": "$now"
+    },
+    "createdAt": {
+      "type": "date",
+      "required": true,
+      "default": "$now"
+    },
+    "modifiedAt": {
+      "type": "date",
+      "required": true,
+      "default": "$now"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "getEvents"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "getEvent"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "updateEvent"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "registerEvent"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "deleteEvent"
+    }
+  ],
+  "methods": {}
+}

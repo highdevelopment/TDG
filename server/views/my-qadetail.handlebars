@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=1200, initial-scale=1.0, maxium-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+		<meta name="format-detection" content="telephone=no" />
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+		<link rel="stylesheet" href="../style/css/reset.css" media="all">
+		<title>더 도어스 스크린 골프 1:1 문의하기</title>
+		<!--[if lt IE 9]>
+			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js" type="text/javascript"></script>
+			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/ie7-squish.js" type="text/javascript"></script>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<script type="text/javascript" src="../style/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="../style/js/jquery.bxslider/jquery.bxslider.min.js"></script>
+		<script type="text/javascript" src="../style/js/main.js"></script>
+	</head>
+	<body>
+
+	<!--헤더-->
+	{{>header}}
+	<!--헤더-->
+
+	<!--서브탑-->
+	<div class="subTop">
+		<div class="subTopInner">
+			<h1>1:1 문의하기</h1>
+			<div class="location">
+				<a href="#">MY DOORS</a> > <span>1:1 문의하기</span>
+			</div>
+		</div>
+	</div>
+	<!--서브탑-->
+
+	<!--바디-->
+	<article>
+		<div id="bodyWrap">
+		<!--내용시작-->
+		<div class="wrap1200">
+
+			<ul class="privateView">
+				<li>
+					<dl>
+						<dt>{{question.title}}</dt>
+						<dd>
+							<span>작성자 : {{user.nickname}}</span>
+							<span>일자 : {{question.time}}</span>
+						</dd>
+					</dl>
+					<p>{{question.content}}</p>
+					{{#if question.file_question}}
+						<a href="{{question.file_question}}">
+							<img class="attached_icon" src="/images/mydoors/attached_file.png"/>
+							{{question.file_question_name}}
+						</a>
+					{{/if}}
+					{{#if question.photo_question}}
+						<img src="{{question.photo_question}}">
+					{{/if}}
+				</li>
+				{{#if question.answer}}
+					<li>
+						<dl>
+							<dt>문의에 답변 드립니다.</dt>
+							<dd>
+								<span>작성자 : The Doors Golf</span>
+								<span>일자 : {{question.answer_time}}</span>
+							</dd>
+						</dl>
+						<p>{{question.answer}}</p>
+						{{#if question.file_answer}}
+							<a href="{{question.file_answer}}">
+								<img class="attached_icon" src="/images/mydoors/attached_file.png"/>
+								{{question.file_answer_name}}
+							</a>
+						{{/if}}
+						{{#if question.photo_answer}}
+							<img src="{{question.photo_answer}}">
+						{{/if}}
+					</li>
+				{{/if}}
+			</ul>
+
+			<!--버튼-->
+			<div class="right"><a href="my-qalist" class="btnDone">목록보기</a></div>
+			<!--버튼-->
+
+		</div>		
+		<!--내용끝-->
+		</div>
+	</article>
+	<!--바디-->
+
+	{{>footer}}
+	
+	</body>
+</html>

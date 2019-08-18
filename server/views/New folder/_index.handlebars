@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Basic -->
+		<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">	
+
+		<title>The Doors Golf</title>	
+
+		<meta name="keywords" content="HTML5 Template" />
+		<meta name="description" content="Porto - Responsive HTML5 Template">
+		<meta name="author" content="okler.net">
+		<meta name="naver-site-verification" content="edf9bb2ea9dcc8fdc7701dbab11b58f0c5369b7b"/>
+		<meta name="google-site-verification" content="4CnREwPIlYSQ6M2oc_Xb8b0KIFiQCVMzyT48HcKdKPw" />
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+		<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<!-- Web Fonts  -->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
+
+		<!-- Vendor CSS -->
+		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.css">
+		<link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
+		<link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.min.css">
+		<link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.min.css">
+		<link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.css">
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="css/theme.css">
+		<link rel="stylesheet" href="css/theme-elements.css">
+		<link rel="stylesheet" href="css/theme-blog.css">
+		<link rel="stylesheet" href="css/theme-shop.css">
+		<link rel="stylesheet" href="css/theme-animate.css">
+
+		<!-- Current Page CSS -->
+		<link rel="stylesheet" href="vendor/rs-plugin/css/settings.css" media="screen">
+		<link rel="stylesheet" href="vendor/rs-plugin/css/layers.css" media="screen">
+		<link rel="stylesheet" href="vendor/rs-plugin/css/navigation.css" media="screen">
+		<link rel="stylesheet" href="vendor/circle-flip-slideshow/css/component.css" media="screen">
+
+		<!-- Skin CSS -->
+		<link rel="stylesheet" href="css/skins/default.css">
+
+		<!-- Theme Custom CSS -->
+		<link rel="stylesheet" href="css/custom.css">
+
+		<!-- Head Libs -->
+		<script src="vendor/modernizr/modernizr.js"></script>
+
+	</head>
+	<body>
+		<div class="body">
+			<header id="header" data-plugin-options='{"stickyEnabled": true, "stickyEnableOnBoxed": true, "stickyEnableOnMobile": true, "stickyStartAt": 47, "stickySetTop": "-47px", "stickyChangeLogo": true}'>
+				<div class="header-body">
+					<div class="header-container container">
+						<div class="header-row">
+							<div class="header-column">
+								<div class="header-logo">
+									<a href="index">
+										<img alt="Porto" width="109" height="80" data-sticky-width="82" data-sticky-height="50" data-sticky-top="33" src="img/logo.png">
+									</a>
+								</div>
+							</div>
+							<div class="header-column">
+								<div class="header-row">
+									<nav class="header-nav-top">
+										<ul class="nav nav-pills">
+											{{#if user.isManager}}
+												<li class="hidden-xs">
+													<a href="manager"><i class="fa fa-angle-right"></i> TDG매니저</a>
+												</li>
+											{{/if}}
+											<li class="hidden-xs">
+												<a href="contact-us"><i class="fa fa-angle-right"></i> 고객센터</a>
+											</li>
+											<li class="hidden-xs">
+												<a href="intro"><i class="fa fa-angle-right"></i> 창업안내</a>
+											</li>
+											{{#if user.isAuth}}
+												<li class="hidden-xs">
+													<a id="btnLogOut" style="cursor: pointer;"><i class="fa fa-angle-right"></i>로그아웃</a>
+													<form id="form_logout" action="/logOutUser" method="post"></form>
+												</li>
+											{{else}}
+												<li class="hidden-xs">
+													<a href="login"><i class="fa fa-angle-right"></i>로그인</a>
+												</li>
+												<li class="hidden-xs">
+													<a href="signupAgree"><i class="fa fa-angle-right"></i>회원가입</a>
+												</li>
+											{{/if}}
+										</ul>
+									</nav>
+								</div>
+								<div class="header-row">
+									<div class="header-nav">
+										<button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main">
+											<i class="fa fa-bars"></i>
+										</button>
+										<ul class="header-social-icons social-icons hidden-xs">
+											<li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+											<li class="social-icons-youtube"><a href="http://www.youtube.com/" target="_blank" title="Youtube"><i class="fa fa-youtube-play"></i></a></li>
+										</ul>
+										<div class="header-nav-main header-nav-main-effect-1 header-nav-main-sub-effect-1 collapse">
+											<nav>
+												<ul class="nav nav-pills" id="mainNav">
+													<li class="dropdown">
+														<a class="dropdown-toggle" href="analy">
+															My TDG
+														</a>
+														<ul class="dropdown-menu">
+															<li>
+																<a href="analy">
+																	내 기록 분석
+																</a>
+															</li>
+															<li>
+																<a href="swing">
+																	내 스윙 영상
+																</a>
+															</li>
+															<li>
+																<a href="gameset">
+																	게임설정
+																</a>
+															</li>
+															<li>
+																<a href="qa">
+																	1:1 문의
+																</a>
+															</li>
+															<li>
+																<a href="profile">
+																	프로필관리
+																</a>
+															</li>
+														</ul>
+													</li>
+													<li class="dropdown">
+														<a href="meeting">
+															대회
+														</a>
+													</li>
+													<li class="dropdown">
+														<a class="dropdown-toggle" href="event">
+															이벤트
+														</a>
+														<ul class="dropdown-menu">
+															<li>
+																<a href="event">
+																	이벤트
+																</a>
+															</li>
+															<li>
+																<a href="notice">
+																	공지사항
+																</a>
+															</li>
+														</ul>
+													</li>
+													<li class="dropdown">
+														<a href="course">
+															코스소개
+														</a>
+													</li>
+													<li class="dropdown">
+														<a href="searchshop">
+															매장찾기
+														</a>
+													</li>
+													<li class="dropdown">
+														<a class="dropdown-toggle" href="photo">
+															커뮤니티
+														</a>
+														<ul class="dropdown-menu">
+															<li>
+																<a href="photo">
+																	포토존
+																</a>
+															</li>
+															<li>
+																<a href="swingvideo">
+																	스윙영상
+																</a>
+															</li>
+															<li>
+																<a href="hole">
+																	홀인원기록
+																</a>
+															</li>
+														</ul>
+													</li>
+												</ul>
+											</nav>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<div role="main" class="main">
+				<!-- <div class="slider-container rev_slider_wrapper">
+					<div id="revolutionSlider" class="slider rev_slider" data-plugin-revolution-slider>
+						<ul>
+							<li data-transition="fade">
+								<img src="img/slides/first.jpg"  
+									alt=""
+									data-bgposition="center center" 
+									data-bgfit="cover" 
+									data-bgrepeat="no-repeat" 
+									class="rev-slidebg">
+								<div class="tp-caption main-label"
+									data-x="center" data-hoffset="-120"
+									data-y="center" data-voffset="-95"
+									data-start="500"
+									style="z-index: 5"
+									data-transform_in="y:[-300%];opacity:0;s:500;">THE</div>
+
+								<div class="tp-caption main-label"
+									data-x="center" data-hoffset="0"
+									data-y="center" data-voffset="-15"
+									data-start="1500"
+									data-whitespace="nowrap"						 
+									data-transform_in="y:[100%];s:500;"
+									data-transform_out="opacity:0;s:500;"
+									style="z-index: 5"
+									data-mask_in="x:0px;y:0px;">DOORS</div>
+
+								<div class="tp-caption main-label"
+									data-x="center" data-hoffset="0"
+									data-y="center" data-voffset="65"
+									data-start="2000"
+									style="z-index: 5"
+									data-transform_in="y:[100%];opacity:0;s:500;">GOLF</div>
+
+								<div class="tp-caption"
+									data-x="center" data-hoffset="500"
+									data-y="center" data-voffset="150"
+									data-start="2200"
+									data-whitespace="nowrap"						 
+									data-transform_in="y:[100%];s:500;opacity:0.5;"
+									data-transform_out="opacity:0;s:500;"
+									style="z-index: 5"
+									data-mask_in="x:0px;y:0px;"><img src="img/logoWhite.png" style="width: 100px; opacity: 0.5 !important"></div>
+								
+							</li>
+
+							<li data-transition="fade">
+								<img src="img/slides/first.jpg"  
+									alt=""
+									data-bgposition="center center" 
+									data-bgfit="cover" 
+									data-bgrepeat="no-repeat" 
+									class="rev-slidebg">
+
+								<div class="tp-caption main-label"
+									data-x="center" data-hoffset="-120"
+									data-y="center" data-voffset="-95"
+									data-start="500"
+									style="z-index: 5"
+									data-transform_in="y:[-300%];opacity:0;s:500;">THE</div>
+								<div class="tp-caption main-label"
+									data-x="center" data-hoffset="0"
+									data-y="center" data-voffset="-15"
+									data-start="1500"
+									data-whitespace="nowrap"						 
+									data-transform_in="y:[100%];s:500;"
+									data-transform_out="opacity:0;s:500;"
+									style="z-index: 5"
+									data-mask_in="x:0px;y:0px;">DOORS</div>
+
+								<div class="tp-caption main-label"
+									data-x="center" data-hoffset="0"
+									data-y="center" data-voffset="65"
+									data-start="2000"
+									style="z-index: 5"
+									data-transform_in="y:[100%];opacity:0;s:500;">GOLF</div>
+
+								<div class="tp-caption"
+									data-hash
+									data-hash-offset="85"
+									href="#home-intro"
+									data-x="center" data-hoffset="500"
+									data-y="center" data-voffset="150"
+									data-start="2200"
+									data-whitespace="nowrap"						 
+									data-transform_in="y:[100%];s:500;"
+									data-transform_out="opacity:0;s:500;"
+									style="z-index: 5"
+									data-mask_in="x:0px;y:0px;"><img src="img/logoWhite.png" style="width: 100px; opacity: 0.5 !important"></div>
+								
+							</li>
+
+						</ul>
+					</div>
+				</div> -->
+				{{!-- <video width="100%" height="100%" autoplay="true" loop muted style="margin-top: -132px;">
+		            <!-- <source src="" type="video/webm"> -->
+		            <source src="video/main.mp4" type="video/mp4">
+		        </video> --}}
+				<div class="container">
+					<div class="row">
+						<video width="100%" height="100%" autoplay="true" loop muted style="margin-top: -132px;">
+							<source src="video/main.mp4" type="video/mp4">
+						</video>
+					</div>
+				</div>
+				<div class="container loginSection">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="notice">
+								<div id="" style="margin-right: 12px;">
+									<i class="fa fa-angle-right more"></i>
+									<i class="fa fa-angle-right more"></i>
+									<i class="fa fa-angle-right more"></i>
+								</div>
+								<h4>공지사항</h4>
+								<hr>
+								<ul>
+									<li>{{notices.0.title}}</li>
+									<li>{{notices.1.title}}</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="notice">
+								<div style="margin-right: 12px;">
+									<i class="fa fa-angle-right more"></i>
+									<i class="fa fa-angle-right more"></i>
+									<i class="fa fa-angle-right more"></i>
+								</div>
+								<h4>이벤트</h4>
+								<hr style="margin: 10px;">
+								<ul>
+									<li>{{events.0.title}}</li>
+									<li>{{events.1.title}}</li>
+								</ul>
+							</div>
+						</div>
+						{{#if user.isAuth}}
+							<div class="col-md-4">
+								<h5 style="color: #eee; padding: 30px 21px;">
+									<img style="height:50px" src="{{user.photo}}">
+									&nbsp&nbsp&nbsp{{user.nickname}} 님 환영합니다
+								</h5>
+							</div>
+						{{else}}
+							<div class="col-md-4">
+								{{!-- <form action='/loginUser' method="post"> --}}
+									<input id="username" type="text" name="username" placeholder="아이디" style="width: 100px; color: black;">
+									<input id="password" type="password" name="password" placeholder="비밀번호" style="color:black;width: 100px;">
+									<input id="btn_submit" type="submit" name="" class="btn btn-small btn-primary btn-primary-scale-2 mr-md" value="로그인">
+								{{!-- </form> --}}
+								<div style="padding-left: 0px; margin-left: -6px; font-size: 12px;">
+									<a href="javascript:void()"><input type="checkbox" id="saveId" style="margin-right: 10px;"><label for="saveId">아이디 저장</label></a>
+									<a href="/signupAgree">회원가입</a>
+									<a href="/resetpassword">아이디 / 비밀번호 찾기</a>
+								</div>
+							</div>
+						{{/if}}
+					</div>
+				</div>
+				<section class="section section-default mt-xl mb-none course">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6">
+								<h4>신규 코스소개</h4>
+								<a href="/course-detail?id={{newCourses.0.id}}">
+									<img src="{{newCourses.0.photo}}">
+									<div style="height: 88px; background-color: #1b1b1b;opacity: 0.6;position: absolute;width: calc(100% - 10px);bottom: 8px;"></div>
+								</a>
+							</div>
+							<div class="col-md-6 course_list">
+								<h4>코스리스트</h4>
+								{{#each courses}}
+									<a href="/course-detail?id={{this.id}}">
+										<img src="{{this.photo}}">
+									</a>
+								{{/each}}
+							</div>
+						</div>
+						
+					</div>
+				</section>
+				<div class="container mt-xl pd-xl">
+					<div class="row center" style="position: relative;">
+						<h4>스윙영상</h4>
+						<a href="swingvideo" class="show_more">더보기 ></a>
+						<div class="owl-carousel owl-theme" data-plugin-options='{"items": 4, "autoplay": true, "autoplayTimeout": 3000}'>
+							{{#each videos}}
+								<div>								
+									<span class="thumb-info thumb-info-lighten thumb-info-bottom-info thumb-info-centered-icons">
+										<span class="thumb-info-wrapper">
+											<img class="img-responsive" src="{{this.filepath_thumb}}" alt="">
+											<span class="video-info-title">
+												<span class="thumb-info-inner">{{this.storeName}}</span>
+												<span class="thumb-info-type">{{this.courseName}}</span><br>
+												<span class="thumb-info-type">{{this.time}}</span>
+											</span>													
+											<span class="thumb-info-action">									
+												<a href="myswing?id={{this.id}}">
+													<span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fa fa-play"></i></span>
+												</a>
+											</span>
+										</span>
+									</span>
+								</div>
+							{{/each}}
+							{{!-- <div>
+								<span class="thumb-info thumb-info-lighten thumb-info-bottom-info thumb-info-centered-icons">
+									<span class="thumb-info-wrapper">
+										<img class="img-responsive" src="img/BA/swing2.jpg" alt="">
+										<span class="video-info-title">
+											<span class="thumb-info-inner">스크린 골프</span>
+											<span class="thumb-info-type">인터불고 경산 마운틴</span><br>
+											<span class="thumb-info-type">2018-08-20</span>
+										</span>													
+										<span class="thumb-info-action">										
+											<a href="myswing">
+												<span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fa fa-play"></i></span>
+											</a>
+										</span>
+									</span>
+								</span>
+							</div>
+							<div>
+								<span class="thumb-info thumb-info-lighten thumb-info-bottom-info thumb-info-centered-icons">
+									<span class="thumb-info-wrapper">
+										<img class="img-responsive" src="img/BA/swing3.jpg" alt="">
+										<span class="video-info-title">
+											<span class="thumb-info-inner">스크린 골프</span>
+											<span class="thumb-info-type">인터불고 경산 마운틴</span><br>
+											<span class="thumb-info-type">2018-08-20</span>
+										</span>													
+										<span class="thumb-info-action">										
+											<a href="myswing">
+												<span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fa fa-play"></i></span>
+											</a>
+										</span>
+									</span>
+								</span>
+							</div>
+							<div>
+								<span class="thumb-info thumb-info-lighten thumb-info-bottom-info thumb-info-centered-icons">
+									<span class="thumb-info-wrapper">
+										<img class="img-responsive" src="img/BA/swing2.jpg" alt="">
+										<span class="video-info-title">
+											<span class="thumb-info-inner">스크린 골프</span>
+											<span class="thumb-info-type">인터불고 경산 마운틴</span><br>
+											<span class="thumb-info-type">2018-08-20</span>
+										</span>													
+										<span class="thumb-info-action">										
+											<a href="myswing">
+												<span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fa fa-play"></i></span>
+											</a>
+										</span>
+									</span>
+								</span>
+							</div> --}}
+						</div>
+					</div>
+				</div>
+				<hr>
+				<div class="container mt-xl pd-xl">
+					<div class="row center" style="position: relative;">
+						<h4>포토게시판</h4>
+						<a href="photo" class="show_more">더보기 ></a>
+						<div class="owl-carousel owl-theme" data-plugin-options='{"items": 4, "autoplay": true, "autoplayTimeout": 5000}'>
+							<div>
+								<img class="img-responsive" src="img/BA/1.png" alt="">
+							</div>
+							<div>
+								<img class="img-responsive" src="img/BA/2.png" alt="">
+							</div>
+							<div>
+								<img class="img-responsive" src="img/BA/3.png" alt="">
+							</div>
+							<div>
+								<img class="img-responsive" src="img/BA/4.png" alt="">
+							</div>
+							<div>
+								<img class="img-responsive" src="img/BA/3.png" alt="">
+							</div>
+							<div>
+								<img class="img-responsive" src="img/BA/2.png" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+ 
+			<footer id="footer">
+				<div class="container">
+					<div class="row">
+						<div class="footer-ribbon">
+							<span>TDG GOLF</span>
+						</div>
+						<div class="col-md-3">
+							<div class="newsletter">
+								<h4>사업등록번호</h4>
+								<p><strong>주식회사 키루스:</strong> 대표이사 최환동</p>
+								<p>586-86-01040</p>
+			
+								<form id="newsletterForm" action="php/newsletter-subscribe.php" method="POST">
+									<div class="input-group">
+										<input class="form-control" placeholder="이메일 주소" name="newsletterEmail" id="newsletterEmail" type="text">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="submit">Go!</button>
+										</span>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<h4>통신판매업신고증</h4>
+							<div id="tweet" class="twitter" data-plugin-tweets data-plugin-options='{"username": "", "count": 2}'>
+								<p>추후등록예정</p>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="contact-details">
+								<h4>연락처</h4>
+								<ul class="contact">
+									<li><p><i class="fa fa-map-marker"></i> <strong>주소:</strong> (06367) 서울특별시 강남구 광평로 280 15층 41호(로즈데일빌딩) </p></li>
+									<li><p><i class="fa fa-phone"></i> <strong>대표번호 :</strong> 1811-8500</p></li>	
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<h4>Follow Us</h4>
+							<ul class="social-icons">
+								<li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+								<li class="social-icons-youtube"><a href="http://www.youtube.com/" target="_blank" title="Youtube"><i class="fa fa-youtube-play"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="footer-copyright">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-1 mb-none">
+								<a href="index" class="logo">
+									<img alt="Porto Website Template" class="img-responsive" src="img/logoWhite.png" style="width: 50px; margin-top: -20px">
+								</a>
+							</div>
+							<div class="col-md-4 mb-none">
+								<p>© Copyright 2018. All Rights Reserved.</p>
+							</div>
+							<div class="col-md-7 mb-none">
+								<nav id="sub-menu">
+									<ul>
+										<li><a href="intro">회사소개</a></li>
+										<li><a href="intro_founding">창업안내</a></li>
+										{{!-- <li><a href="contact-us">이용약관</a></li>
+										<li><a href="page-faq">개인정보취급방침</a></li>
+										<li><a href="sitemap">위치정보서비스 이용약관</a></li> --}}
+										<li><a href="intro_product">제품소개</a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+		<!-- Vendor -->
+		<script src="vendor/jquery/jquery.js"></script>
+		<script src="vendor/jquery.appear/jquery.appear.js"></script>
+		<script src="vendor/jquery.easing/jquery.easing.js"></script>
+		<script src="vendor/jquery-cookie/jquery-cookie.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.js"></script>
+		<script src="vendor/common/common.js"></script>
+		<script src="vendor/jquery.validation/jquery.validation.js"></script>
+		<script src="vendor/jquery.stellar/jquery.stellar.js"></script>
+		<script src="vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.js"></script>
+		<script src="vendor/jquery.gmap/jquery.gmap.js"></script>
+		<script src="vendor/jquery.lazyload/jquery.lazyload.js"></script>
+		<script src="vendor/isotope/jquery.isotope.js"></script>
+		<script src="vendor/owl.carousel/owl.carousel.js"></script>
+		<script src="vendor/magnific-popup/jquery.magnific-popup.js"></script>
+		<script src="vendor/vide/vide.js"></script>
+		
+		<!-- Theme Base, Components and Settings -->
+		<script src="js/theme.js"></script>
+		
+		<!-- Current Page Vendor and Views -->
+		<script src="vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+		<script src="vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+		<script src="vendor/circle-flip-slideshow/js/jquery.flipshow.js"></script>
+		<script src="js/views/view.home.js"></script>
+		
+		<!-- Theme Custom -->
+		<script src="js/custom.js"></script>
+		
+		<!-- Theme Initialization Files -->
+		<script src="js/theme.init.js"></script>
+
+		<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information.
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+			ga('create', 'UA-12345678-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+		 -->
+		 
+		 <script>
+			jQuery(document).ready(function() {
+				var userInputId = getCookie("userInputId");
+				$("input[name='username']").val(userInputId);
+				if($("input[name='username']").val() != ""){ // 그 전에 ID를 저장해서 처음 페이지 로딩 시, 입력 칸에 저장된 ID가 표시된 상태라면,
+					$("#saveId").attr("checked", true); // ID 저장하기를 체크 상태로 두기.
+				}
+				
+				$("#saveId").change(function(){ // 체크박스에 변화가 있다면,
+					if($("#saveId").is(":checked")){ // ID 저장하기 체크했을 때,
+						var userInputId = $("input[name='username']").val();
+						setCookie("userInputId", userInputId, 7); // 7일 동안 쿠키 보관
+					}else{ // ID 저장하기 체크 해제 시,
+						deleteCookie("userInputId");
+					}
+				});
+				
+				// ID 저장하기를 체크한 상태에서 ID를 입력하는 경우, 이럴 때도 쿠키 저장.
+				$("input[name='username']").keyup(function(){ // ID 입력 칸에 ID를 입력할 때,
+					if($("#saveId").is(":checked")){ // ID 저장하기를 체크한 상태라면,
+						var userInputId = $("input[name='username']").val();
+						setCookie("userInputId", userInputId, 7); // 7일 동안 쿠키 보관
+					}
+				});
+				
+				const msg = "{{msg}}";
+				if (msg) {
+					alert(msg);
+				}
+				$('#btn_submit').click(function() {
+					const username = $('#username').val();
+					if (!username || username.length == 0) {
+						return alert('아이디를 입력해주세요.');
+					}
+					const password = $('#password').val();
+					if (!password || password.length == 0) {
+						return alert('비밀번호를 입력해주세요.');
+					}
+					var params = {
+						username: username,
+						password: password
+					}
+					var origin   = window.location.origin;   // Returns base URL
+					$.post(origin + '/loginUser', params, function(result) {
+						if (result.res.success) {
+							window.location.href = "/";
+						} else {
+							return alert(result.res.content);
+						}
+					});
+				})
+			});
+
+
+		</script>
+
+	</body>
+</html>

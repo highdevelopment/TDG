@@ -1,0 +1,6 @@
+
+{
+    "SERVER_ADDRESS": "http://doorsgolf.com",
+    "FILE_SERVER_PATH": "http://doorsgolf.com:5000/",
+    "api_url": "http://localhost:3000/"
+}

@@ -1,0 +1,190 @@
+{
+  "name": "room",
+  "description": "룸 (장비)",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "Index": {
+      "type": "number",
+      "required": true,
+      "description": "방번호"
+    },
+    "sensorId": {
+      "type": "string",
+      "description": "센서마크주소"
+    },
+    "pcId": {
+      "type": "string",
+      "description": "피시아이디"
+    },
+    "name": {
+      "type": "string",
+      "required": true,
+      "description": "방이름"
+    },
+    "handType": {
+      "type": "number",
+      "description": "센서없음 0, 우타 1, 양타 2, 좌타 3",
+      "default": 1
+    },
+    "machineType": {
+      "type": "number",
+      "description": "장비형태 0: 룸형, 1: 타석형",
+      "default": 0
+    },
+    "isAllowPlay": {
+      "type": "boolean",
+      "description": "타석형장비에서 차단 false / 허가 true",
+      "default": false
+    },
+    "time": {
+      "type": "number",
+      "description": "운영시간",
+      "default": 60
+    },
+    "playStatus": {
+      "type": "number",
+      "description": "타석형에서 0: 매니저승인을 기다리고 있는 상태, 1: 매니저승인이 되였지만 실행이 되지 않은 상태, 2: 로비 상태, 3: 게임플레이, 4: 시간이 다 되여 대기중인 상태, 5: 연장승인을 받고 대기하는 상태",
+      "default": 0
+    },
+    "playStartTime": {
+      "type": "date",
+      "description": "타석형에서 경기시작시간",
+      "default": "$now"
+    },
+    "playEndTime": {
+      "type": "date",
+      "description": "타석형에서 경기시작시간",
+      "default": "$now"
+    },
+    "payment": {
+      "type": "number",
+      "required": true,
+      "description": "월과금",
+      "default": "70000"
+    },
+    "status": {
+      "type": "string",
+      "description": "new: 새로 설치하고 등록전 상태, waitting: 등록후 게임이 작동안하는 상태, working: 등록후 작동중, stopped: 정지상태, deleted: 삭제",
+      "default": "new"
+    },
+    "createdAt": {
+      "type": "date",
+      "required": true,
+      "default": "$now"
+    },
+    "modifiedAt": {
+      "type": "date",
+      "required": true,
+      "default": "$now"
+    },
+    "practice_time": {
+      "type": "number",
+      "required": false,
+      "description": "룸형에서 연습장시간 (분)",
+      "default": 5
+    }
+  },
+  "validations": [],
+  "relations": {
+    "store": {
+      "type": "belongsTo",
+      "model": "store",
+      "foreignKey": ""
+    },
+    "game": {
+      "type": "hasMany",
+      "model": "games",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "getNewRoom"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "deleteRoomById"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "verifyRooms"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "startPC"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "registerPC"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "quitGameAtRoom"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "manager",
+      "permission": "ALLOW",
+      "property": "allowPlayingByManager"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "allowPlayingByApp"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "getPlayStatus"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "updateSetting"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "getRoomAndGame"
+    }
+  ],
+  "methods": {}
+}

@@ -1,0 +1,40 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "ScreenGolf": {
+    "host": "doorsgolf.com",
+    "port": 31260,
+    "database": "tdg",
+    "username": "dev_master",
+    "password": "RmO3j8lc04P4mQV6c5G2drXRiCdADtF0ssI2GHG07BnjEHKDRcx8VoxM7WH",
+    "name": "ScreenGolf",
+    "connector": "mongodb"
+  },
+  "storage": {
+    "name": "storage",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "./storage",
+    "maxFileSize": "5000000000",
+    "nameConflict": "makeUnique"
+  },
+  "storage_mongo": {
+    "host": "doorsgolf.com",
+    "port": 31260,
+    "database": "screengolf",
+    "name": "storage_mongo",
+    "provider": "filestore-mongo",
+    "connector": "loopback-component-storage-mongo",
+    "maxFileSize": "5000000000"
+  },
+  "storage_s3": {
+    "name": "storage_s3",
+    "connector": "loopback-component-storage",
+    "provider": "amazon",
+    "keyId": "<ACCESS_KEY_ID>",
+    "key": "<SECRET_ACCESS_KEY>",
+    "acl": "public-read"
+  }
+}

@@ -1,0 +1,205 @@
+{
+  "name": "Course",
+  "description": "코스",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "description": "디비상에서의 이름"
+    },
+    "country": {
+      "type": "string",
+      "required": true,
+      "description": "나라이름, kor, chn, jpn...",
+      "default": "kor"
+    },
+    "hole_level": {
+      "type": "number",
+      "required": true,
+      "description": "홀난이도",
+      "default": 3
+    },
+    "green_level": {
+      "type": "number",
+      "required": true,
+      "description": "그린난이도",
+      "default": 3
+    },
+    "website": {
+      "type": "string",
+      "required": false,
+      "description": "홈페이지"
+    },
+    "subCC_num": {
+      "type": "number",
+      "required": true,
+      "description": "서브코스개수",
+      "default": 2
+    },
+    "name_kr": {
+      "type": "string",
+      "description": "한국식이름"
+    },
+    "province": {
+      "type": "number",
+      "description": "매장지역 0: 수도권, 1: 강원도, 2: 충청도, 3: 전라도, 4: 경상도, 5: 제주도, 6: 해외",
+      "default": 0
+    },
+    "address_kr": {
+      "type": "string",
+      "description": "한국식주소"
+    },
+    "comment_kr": {
+      "type": "string",
+      "description": "한국식해설문"
+    },
+    "name_cn": {
+      "type": "string",
+      "description": "중국식이름"
+    },
+    "address_cn": {
+      "type": "string",
+      "description": "중국식주소"
+    },
+    "comment_cn": {
+      "type": "string",
+      "description": "중국식해설문"
+    },
+    "name_en": {
+      "type": "string",
+      "description": "영식이름"
+    },
+    "address_en": {
+      "type": "string",
+      "description": "영식주소"
+    },
+    "comment_en": {
+      "type": "string",
+      "description": "영식해설문"
+    },
+    "name_jp": {
+      "type": "string",
+      "description": "일본식이름"
+    },
+    "address_jp": {
+      "type": "string",
+      "description": "일본식주소"
+    },
+    "comment_jp": {
+      "type": "string",
+      "description": "일본식해설문"
+    },
+    "logo": {
+      "type": "string",
+      "description": "코스로고"
+    },
+    "photo": {
+      "type": "string",
+      "description": "코스소개이미지"
+    },
+    "address": {
+      "type": "geopoint",
+      "required": false,
+      "description": "실제주소"
+    },
+    "visit": {
+      "type": "number",
+      "required": false,
+      "description": "조회수",
+      "defalt": 0
+    },
+    "visit_male": {
+      "type": "number",
+      "required": false,
+      "description": "조회수",
+      "defalt": 0
+    },
+    "visit_Female": {
+      "type": "number",
+      "required": false,
+      "description": "조회수",
+      "defalt": 0
+    },
+    "createdAt": {
+      "type": "date",
+      "required": true,
+      "default": "$now"
+    },
+    "modifiedAt": {
+      "type": "date",
+      "required": true,
+      "default": "$now"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "sub_course": {
+      "type": "hasMany",
+      "model": "SubCourse",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "searchCourse"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "getCourseInfo"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "saveCourse"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "deleteCourse"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "getNewCourse"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "getOldCourse"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "resetAllVisit"
+    }
+  ],
+  "methods": {}
+}

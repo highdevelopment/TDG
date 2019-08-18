@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=1200, initial-scale=1.0, maxium-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+		<meta name="format-detection" content="telephone=no" />
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+		<link rel="stylesheet" href="../style/css/reset.css" media="all">
+		<title>더 도어스 스크린 골프 신규 코스</title>
+		<!--[if lt IE 9]>
+			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js" type="text/javascript"></script>
+			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/ie7-squish.js" type="text/javascript"></script>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<script type="text/javascript" src="../style/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="../style/js/jquery.bxslider/jquery.bxslider.min.js"></script>
+		<script type="text/javascript" src="../style/js/main.js"></script>
+	</head>
+	<body>
+
+	<!--헤더-->
+	{{>header}}
+	<!--헤더-->
+
+	<!--서브탑-->
+	<div class="subTop">
+		<div class="subTopInner">
+			<h1>신규 코스</h1>
+			<div class="location">
+				<a href="#">코스</a> > <span>신규 코스</span>
+			</div>
+		</div>
+	</div>
+	<!--서브탑-->
+
+	<!--바디-->
+	<article>
+		<div id="bodyWrap">
+		<!--내용시작-->
+
+<!--신규 코스-->
+<div class="newCourse wrap1000">
+	<h2>신규 코스</h2>
+	<!--목록-->
+	<ul class="newCourseList">
+		{{#each newCourses}}
+		<li>
+			<a href="course-search?id={{this.id}}">
+				<span class="tagNew"><img src="../images/common/tagNew.png" alt="new"></span><img src={{this.photo}} alt="">
+				<div class="detail">
+					<h3>{{this.name_kr}}</h3>
+					<span>코스난이도<img src="{{this.imgHoleLevel}}" alt=""></span>
+					<span>그린난이도<img src="{{this.imgGreenLevel}}" alt=""></span>
+					<span>자세히 보기&nbsp;&nbsp;></span>
+				</div>
+			</a>
+		</li>
+		{{/each}}
+	</ul>
+	<!--목록-->
+</div>
+<!--신규 코스-->
+
+<!--베스트 코스-->
+<div class="bestCourse">
+	<div class="wrap1000">
+		<h2>베스트 코스</h2>
+		<!--목록-->
+		<ul class="bestCourseList">
+			<li>
+				<a href="course-search?id={{bestCourses.0.id}}">
+					<img src="{{bestCourses.0.photo}}" alt="">
+					<img src="{{bestCourses.1.photo}}" alt="">
+					<img src="{{bestCourses.2.photo}}" alt="">
+					<div class="detail">
+						<h3>{{bestCourses.0.name_kr}}</h3>
+						<span>코스난이도<img src="{{bestCourses.1.imgHoleLevel}}" alt=""></span>
+						<span>그린난이도<img src="{{bestCourses.2.imgGreenLevel}}" alt=""></span>
+						<p>{{bestCourses.0.comment_kr}}</p>
+						<span>자세히 보기&nbsp;&nbsp;></span>
+					</div>
+				</a>
+			</li>
+		</ul>
+		<!--목록-->
+	</div>
+</div>
+<!--베스트 코스-->
+
+<!--여성,남성 베스트 코스-->
+<div class="bestCourseGender wrap1000">
+	<!--여성-->
+	<div class="bestCourseFemale">
+		<h2>베스트 코스<br>(여성 회원)</h2>
+		<ul class="bestGenderList">
+			<li>
+				<a href="course-search?id={{bestCourses_Female.0.id}}">
+					<img src="{{bestCourses_Female.0.photo}}" alt="" class="large">
+					<img src="{{bestCourses_Female.1.photo}}" alt="" class="small">
+					<img src="{{bestCourses_Female.2.photo}}" alt="" class="small">
+					<div class="detail">
+						<h3>{{bestCourses_Female.0.name_kr}}</h3>
+						<span>코스난이도<img src="{{bestCourses_Female.0.imgHoleLevel}}" alt=""></span>
+						<span>그린난이도<img src="{{bestCourses_Female.0.imgGreenLevel}}" alt=""></span>
+						<span>자세히 보기&nbsp;&nbsp;></span>
+					</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!--여성-->
+	<!--남성-->
+	<div class="bestCourseMale">
+		<h2>베스트 코스<br>(남성 회원)</h2>
+		<ul class="bestGenderList">
+			<li>
+				<a href="course-search?id={{bestCourses_Male.0.id}}">
+					<img src={{bestCourses_Male.0.photo}} alt="" class="large">
+					<img src={{bestCourses_Male.1.photo}} alt="" class="small">
+					<img src={{bestCourses_Male.2.photo}} alt="" class="small">
+					<div class="detail">
+						<h3>{{bestCourses_Male.0.name_kr}}</h3>
+						<span>코스난이도<img src="{{bestCourses_Male.0.imgHoleLevel}}" alt=""></span>
+						<span>그린난이도<img src="{{bestCourses_Male.0.imgGreenLevel}}" alt=""></span>
+						<span>자세히 보기&nbsp;&nbsp;></span>
+					</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!--남성-->
+</div>
+<!--여성,남성 베스트 코스-->
+
+
+		</div>
+		<!--내용끝-->
+		</div>
+	</article>
+	<!--바디-->
+
+	<!--풋터-->
+	{{>footer}}
+	<!--풋터-->
+	
+	</body>
+</html>

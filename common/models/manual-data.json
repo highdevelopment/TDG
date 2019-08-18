@@ -1,0 +1,113 @@
+{
+  "name": "ManualData",
+  "description": "매뉴얼&자료실",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "type": {
+      "type": "number",
+      "required": true,
+      "description": "자료타입",
+      "default": "0: 매뉴얼, 1: 자료"
+    },
+    "data_no": {
+      "type": "number",
+      "required": true,
+      "description": "자료번호",
+      "default": 1
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "description": "제목"
+    },
+    "visit": {
+      "type": "number",
+      "required": true,
+      "description": "조회수",
+      "default": 0
+    },
+    "content": {
+      "type": "string",
+      "description": "내용"
+    },
+    "data_links": {
+      "type": "array",
+      "description": "자료링크목록",
+      "default": []
+    },
+    "createdAt": {
+      "type": "date",
+      "required": true,
+      "default": "$now"
+    },
+    "modifiedAt": {
+      "type": "date",
+      "required": true,
+      "default": "$now"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "getDataList"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "manager",
+      "permission": "ALLOW",
+      "property": "getDataList"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "registerData"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "getDataById"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "manager",
+      "permission": "ALLOW",
+      "property": "getDataById"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "updateManualData"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "deleteData"
+    }
+  ],
+  "methods": {}
+}

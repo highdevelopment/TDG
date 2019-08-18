@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=1200, initial-scale=1.0, maxium-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+		<meta name="format-detection" content="telephone=no" />
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+		<link rel="stylesheet" href="../style/css/reset.css" media="all">
+		<title>더 도어스 스크린 골프 추천 코스</title>
+		<!--[if lt IE 9]>
+			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js" type="text/javascript"></script>
+			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/ie7-squish.js" type="text/javascript"></script>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<script type="text/javascript" src="../style/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="../style/js/jquery.bxslider/jquery.bxslider.min.js"></script>
+		<script type="text/javascript" src="../style/js/main.js"></script>
+	</head>
+	<body>
+
+	<!--헤더-->
+	{{>header}}
+	<!--헤더-->
+
+
+	<!--서브탑-->
+	<div class="subTop">
+		<div class="subTopInner">
+			<h1>추천 코스</h1>
+			<div class="location">
+				<a href="#">코스</a> > <span>추천 코스</span>
+			</div>
+		</div>
+	</div>
+	<!--서브탑-->
+
+	<!--바디-->
+	<article>
+		<div id="bodyWrap">
+		<!--내용시작-->
+
+
+		<!--추천코스_탑-->
+		<div class="recommendCourseTop wrap1200">
+			<h2>{{user.nickname}} 프로님을 위한 이달의 추천 코스</h2>
+			<figure>
+				<img src="../images/course/memberPic.png" alt="김도어님 사진">
+				<figcaption>{{user.nickname}} 님<span>{{user.username}}</span></figcaption>
+			</figure>
+		</div>
+		<!--추천코스_탑-->
+
+		<!--추천코스_슬라이더-->
+		<div class="recommendCourse">
+			<h2>12월</h2>
+			<ul class="recommendCourseList">
+					<li>
+						<a href="course-search?id={{courses.0.id}}">
+							<img src="{{courses.0.photo}}" alt="">
+							<img src="{{courses.1.photo}}" alt="">
+							<img src="{{courses.2.photo}}" alt="">
+							<div class="detail">
+								<h3>{{courses.0.name_kr}}</h3>
+								<span>코스난이도<img src="{{courses.0.imgHoleLevel}}" alt=""></span>
+								<span>그린난이도<img src="{{courses.0.imgGreenLevel}}" alt=""></span>
+								<p>{{courses.0.comment_kr}}</p>
+								<span>자세히 보기&nbsp;&nbsp;></span>
+							</div>
+						</a>
+					</li>
+			</ul>
+		</div>
+		<!--추천코스_슬라이더-->
+
+		
+		<!--내용끝-->
+		</div>
+	</article>
+	<!--바디-->
+
+	<!--풋터-->
+	{{>footer}}
+	<!--풋터-->
+	
+	</body>
+</html>

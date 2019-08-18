@@ -1,0 +1,209 @@
+@charset "utf-8";
+
+/*** content4 '브랜드, 커뮤니티' CSS를 가지고 있습니다. ***/
+
+/*브랜드********************/
+	/*브랜드소개*/
+		.brandTopLogo {text-align:center; margin-top:90px; margin-bottom:115px;}
+		.brandMeaning {text-align:center;}
+		.brandMeaning h3 {color:#8c8c8c; font-family: 'Roboto', sans-serif;}
+		.brandMeaning h4 {color:#191e64; font-size:40px; margin:30px 0;font-family: 'Roboto', sans-serif;}
+		.brandMeaning h5 {font-size:20px; color:#575756;}
+		.brandMeaning p {color:#8c8c8c; line-height:170%; margin:40px 0;}
+		.brandMethod {text-align:center;background:#e2e0e0; margin:50px 0;}
+		.methodText {padding:30px 0 30px 0;}
+		.methodText h3 {color:#8c8c8c; margin:30px 0 0 0;}
+		.methodText p {color:#8c8c8c; line-height:170%; margin:0 0 30px 0;}
+		.brandIdentity{text-align:center;padding:10px 0 110px 0;}
+		.brandDirection {text-align:center;margin:30px 0 30px 0;}
+		.brandDirection h3 {color:#8c8c8c; margin:30px 0;}
+		.brandDirection h4 {color:#191e64; font-size:30px; margin:0 0 50px 80px;}
+		.brandDirection p {color:#8c8c8c; line-height:170%; margin:30px 0;}
+		.brandDesign {text-align:center;margin:80px 0 0 0;}
+		.brandDesign h3 {color:#8c8c8c; margin:30px 0;}
+		.brandDesign p {color:#8c8c8c; line-height:170%;}
+		.logo4ea {margin:80px 0 100px 0;text-align:center;}
+		.golfImg {margin:30px 0;text-align:center;}
+		.golfImg img:first-child{margin-right:30px;}
+	/*제품소개*/
+		h2.doorsRoom{font-size:25px; padding:20px 0 20px 30px;background:#eeeeee; color:#191e64;}
+		h2.doorsRoom span {font-family: 'Roboto', sans-serif;font-size:30px; padding-right:30px;}
+		.roombro{position:relative;margin:80px 0 0 0;}
+		.roombro > img{margin-left:160px;}
+		.roombro dl{position:absolute;}
+		.roombro dt{font-size:15px;}
+		.roombro dd{font-size:12px; background:url(../../images/product/bul_room_dl.png) no-repeat left 10px; padding-left:8px;}
+		dl.room_dl_01 {top:0;left:0;}
+		dl.room_dl_02 {top:160px;left:0;}
+		dl.room_dl_03 {top:320px;left:0;}
+		dl.room_dl_04 {top:0;right:20px;}
+		dl.room_dl_05 {top:95px;right:0;}
+		dl.room_dl_06 {top:200px;right:95px;}
+		dl.room_dl_07 {top:305px;right:20px;}
+		dl.room_dl_08 {top:425px;right:72px;}
+		h2.doorPro{font-size:25px; padding:20px 0 20px 30px;background:#eeeeee; color:#191e64;margin:130px auto 30px auto;}
+		h2.doorPro span {font-family: 'Roboto', sans-serif;font-size:30px; padding-right:30px;}
+		p.proP {font-size:20px; color:#191e64;}
+		ul.proImg {overflow:hidden;margin-top:50px;}
+		ul.proImg li{width:50%;float:left;text-align:center;font-size:15px; color:#191e64;}
+		ul.proImg li img{margin-bottom:10px;}
+		h2.programBar{font-size:25px; padding:20px 0 20px 30px;background:#eeeeee; margin:130px auto 30px auto; color:#191e64;}
+		h2.programBar span {font-family: 'Roboto', sans-serif;font-size:30px; padding-right:30px;}
+		p.programText{font-size:20px; color:#191e64;line-height:150%;}
+		div.programImg {padding:70px 0 20px 0;text-align:center;}
+		p.lastText {width:570px;margin: 0 auto;background:url(../../images/brand/productLast.png) no-repeat left center;font-size:15px;line-height:150%;padding:20px 0 30px 100px; color:#191e64;}
+
+
+/*커뮤니티********************/
+	/*게시판_목록*/
+		.bbsList{width:100%; background:#EEE;margin-bottom:40px;}
+		.bbsList table{width:100%;margin:0;padding:0;border-collapse:collapse; border:0;}
+		.bbsList table th,
+		.bbsList table td{border:0px; text-align:center; margin:0px;}
+		.bbsList table th{font-size:16px; color:#FFF; padding:16px 0;background:#191e64;font-weight:normal;}
+		.bbsList table td{font-size:15px; color:#666666; padding:12px 0;text-align:center;}
+		.bbsList table td a{color:#666666 !important;}
+		.bbsList table td.left{text-align:left;}
+		.bbsList table td.noAnswer{color:#e10046;}
+		.bbsList table td.answer{color:#004fe1;}
+		.bbsList table td img{vertical-align:middle;margin-right:10px;}
+		.bbsList table tbody{}
+	/*게시판_상세*/
+		.noticeBgGrey{background:#eeeeee; padding:50px 0;}
+		.bbsView{background:#FFF; padding:50px 68px;margin-bottom:35px;}
+		.bbsView h3{font-size:20px; color:#191e64;}
+		.bbsView h3 span{font-size:15px; color:#555556;font-weight:normal;float:right;}
+		.bbsView p{margin-top:60px; line-height:160%;}
+	/*목록버튼*/
+		a.btnList{display:block;width:310px;margin: 0 auto;text-align:center;color:#FFF !important;padding:13px 0;font-size:17px; background:#191e64;  border-radius:5px;}
+	/*게시판검색*/
+		.searchBbs{font-size:12.5px;}
+		.searchBbs{text-align:center;}
+		.searchBbs select,
+		.searchBbs input{box-sizing:border-box; border:1px solid #d0d0d0; height:24px; }
+		.searchBbs input[type=text] {}
+		.searchBbs input[type=submit] {border:0; color:#FFF; background:#191e64; padding:0 18px;}
+		.searchBbs a {color: #FFF !important;background: #191e64;padding: 3px 18px;}
+
+
+	/*스윙영상_베스트*/
+	.btn_like {cursor: pointer;}
+		.bestWrap{position:relative;}
+		.bestWrap h3{position:absolute;top:0;width:50%;background:#d2d2d2;}
+		.bestWrap h3 a{display:block;text-align:center;color:#FFF;font-size:20px;padding:20px 0;}
+		.bestWrap h3.todayBestH3{left:0;}
+		.bestWrap h3.weekBestH3{right:0;}
+
+		.bestWrap h3.todayBestH3.active{background:#191e64;}
+		.bestWrap h3.weekBestH3.active{background:#191e64;}
+
+		.swingvideo {cursor: pointer;}
+		.bestWrap .todayBest,
+		.bestWrap .weekBest{padding-bottom:70px;}
+		.bestWrap .todayBest{background:#191e64;}
+		.bestWrap .weekBest{background:#191e64;display:none;}
+		.bestWrap .dateControl{text-align:center;font-size:24px;color:#FFF;padding:130px 0 50px 0;}
+		.bestWrap .dateControl a{color:#FFF !important;margin:0 50px;}
+		.bestWrap .dateControl .btn_date{color:#FFF !important;margin:0 50px; cursor: pointer;}
+		.bestWrap ul{overflow:hidden;width:630px;margin:0 auto;}
+		.bestWrap ul li{float:left;}
+		.bestWrap ul li .swingvideo{display:block;overflow:hidden;position:relative;}
+		.bestWrap ul li .swingvideo:after{content:"";display:block;position:absolute;bottom:25px;right:25px;width:28px;height:28px;background:url(../../images/common/bulPlay3.png) no-repeat;}
+		.bestWrap ul li:first-child .swingvideo:after{width:41px;height:41px;background:url(../../images/common/bulPlay2.png) no-repeat;}
+		.bestWrap ul li .swingvideo img{float:left;}
+		.bestWrap ul li .swingvideo:hover > div{display:block;}
+		.bestWrap ul li .swingvideo > div{display:none;position:absolute;top:0;left:0;width:100%;height:100%;color:#FFF;background:rgba( 0,0,0,0.5 ) url(../../images/common/tagBest_03.png) no-repeat left top;}
+		.bestWrap ul li:first-child .swingvideo > div{background:rgba( 0,0,0,0.5 ) url(../../images/common/tagBest_02.png) no-repeat left top !important;}
+		.bestWrap ul li .swingvideo > div h4{font-size:27px;padding:150px 0 0 85px;}
+		.bestWrap ul li .swingvideo > div h5{font-size:19px;font-weight:normal;padding:30px 0 0 85px;}
+		.bestWrap ul li .swingvideo > div h5 span{font-size:15px;display:block;padding-top:10px;}
+		.bestWrap ul li .swingvideo > div p{font-size:15px;padding:10px 0 0 85px;}
+		.bestWrap ul li .swingvideo > div p span{padding-left:25px;margin-right:25px;}
+		.bestWrap ul li .swingvideo > div p span:nth-child(1){background:url(../../images/common/bul_heart.png) no-repeat left center;}
+		.bestWrap ul li .swingvideo > div p span:nth-child(2){background:url(../../images/common/bul_playView.png) no-repeat left center;}
+		.bestWrap ul li .swingvideo > div p span:nth-child(3){background:url(../../images/common/bul_reply.png) no-repeat left center;}
+	/*스윙영상_정렬*/
+		.tabCategory {overflow:hidden; margin-top:70px;}
+		.tabCategory ul { overflow:hidden;}
+		.tabCategory ul.gender{float:left;}
+		.tabCategory ul.listUp {float:right;}
+		.tabCategory ul li {float:left;}
+		.tabCategory ul.gender li {margin-right:21px;}
+		.tabCategory ul.listUp li {margin-left:21px;}
+		.tabCategory ul li a {display:block;color:#FFF;background:#d2d2d2; padding:3px 25px;font-size:12px;}
+		.tabCategory ul li a.active{background:#191e64;}
+	/*스윙영상_목록*/
+		ul.swingList{overflow:hidden;margin-top:27px;}
+		ul.swingList li{float:left;width:22.75%;margin-bottom:115px;}
+		ul.swingList li:nth-child(4n+2){margin:0 1.5% 0 3%;}
+		ul.swingList li:nth-child(4n+3){margin:0 3% 0 1.5%;}
+		ul.swingList li .swingvideo{display:block;overflow:hidden;position:relative;}
+		ul.swingList li .swingvideo:after{content:"";display:block;overflow:hidden;position:absolute;right:20px;bottom:20px;width:28px;height:28px;background:url(../../images/common/bulPlay3.png);}
+		ul.swingList li .swingvideo img{float:left;width:100%;}
+		ul.swingList h4{color:#333;padding:5px 0;}
+		ul.swingList h4 span{display:block;color:#666;padding-top:5px;font-weight:normal;}
+		ul.swingList p span{display:inline-block;margin-right:15px;padding-left:15px;}
+		ul.swingList p span:nth-child(1){background:url(../../images/common/bul_heartGrey.png) no-repeat left center;}
+		ul.swingList p span:nth-child(2){background:url(../../images/common/bul_playViewGrey.png) no-repeat left center;}
+		ul.swingList p span:nth-child(3){background:url(../../images/common/bul_replyGrey.png) no-repeat left center;}
+
+
+	/*홀인원기록_탑*/
+		.holeinoneTop{overflow:hidden;text-align:center;background:#191e64;padding:35px 100px;margin-bottom:80px;}
+		.holeinoneTop p{font-size:18px;color:#FFF;margin-bottom:35px;line-height:150%;}
+		.holeinoneTop div,
+		.holeinoneTop a{float:left;height:110px;box-sizing:border-box;}
+		.holeinoneTop div{font-size:15px;width:65%;background:#FFF;padding-top:30px;}
+		.holeinoneTop div span{display:block;font-weight:bold;font-size:28px;}
+		.holeinoneTop a{display:block;width:35%;font-size:18px;color:#FFF !important;background:#e10046;padding-top:45px;}
+	/*홀인원기록_목록*/
+		.recordWrap{position:relative;}
+		.recordWrap h3{position:absolute;top:0;background:#d2d2d2;}
+		.recordWrap h3 a{display:block;font-size:18px;padding:13px 35px;color:#FFF;font-weight:normal;}
+		.recordWrap h3.allRecordH3{left:0;}
+		.recordWrap h3.myRecordH3{left:136px;}
+		.recordWrap h3.active{background:#191e64;}
+		.recordWrap > div{padding-top:47px;}
+		.recordWrap > div.allRecord{}
+		.recordWrap > div.myRecord{display:none;}
+
+
+	/*포토존_베스트*/
+		ul.photoBest{overflow:hidden;width:800px;margin:0 auto;margin-bottom:40px;}
+		ul.photoBest li{float:left;}
+		ul.photoBest li a{display:block;overflow:hidden;position:relative;}
+		ul.photoBest li a img{float:left;}
+		ul.photoBest li a:hover > div{display:block;}
+		ul.photoBest li a > div{display:none;position:absolute;top:0;left:0;width:100%;height:100%;color:#FFF;background:rgba( 0,0,0,0.5 ) url(../../images/common/tagBest_02.png) no-repeat left top;}
+		ul.photoBest li  a > div h4{font-size:15px;padding:150px 0 0 50px;}
+		ul.photoBest li  a > div h4 span{font-size:11px;display:block;font-weight:normal;}
+		ul.photoBest li  a > div p{font-size:12px;padding:5px 0 0 50px;}
+		ul.photoBest li  a > div p span{margin-right:25px;}
+		ul.photoBest li  a > div p span:nth-child(2){padding-left:15px;background:url(../../images/common/bul_heart.png) no-repeat left center;background-size:10px;}
+		ul.photoBest li:first-child a > div{background:rgba( 0,0,0,0.5 ) url(../../images/common/tagBest.png) no-repeat left top !important;}
+		ul.photoBest li:first-child  a > div h4{font-size:30px;padding:300px 0 0 85px;}
+		ul.photoBest li:first-child  a > div h4 span{font-size:23px;padding-top:30px;}
+		ul.photoBest li:first-child  a > div p{font-size:23px;padding:40px 0 0 85px;}
+		ul.photoBest li:first-child  a > div p span:nth-child(2){padding-left:25px;background-size:auto;}
+	/*포토존_목록*/
+		ul.photoList{}
+		ul.photoList{overflow:hidden;width:800px;margin:0 auto;margin-bottom:40px;}
+		ul.photoList li{float:left;}
+		ul.photoList li a{display:block;overflow:hidden;position:relative;}
+		ul.photoList li a img{float:left;width:100%;}
+		ul.photoList li:nth-child(9n+1),
+		ul.photoList li:nth-child(9n+2),
+		ul.photoList li:nth-child(9n+3),
+		ul.photoList li:nth-child(9n+4){width:25%;}
+		ul.photoList li:nth-child(9n+5),
+		ul.photoList li:nth-child(9n+6){width:50%;}
+		ul.photoList li:nth-child(9n+7),
+		ul.photoList li:nth-child(9n+8){width:33.3%;}
+		ul.photoList li:nth-child(9n+9){width:33.4%;}
+		ul.photoList li a:hover > div{display:block;}
+		ul.photoList li a > div{display:none;position:absolute;top:0;left:0;width:100%;height:100%;color:#FFF;background:rgba( 0,0,0,0.5 );}
+		ul.photoList li  a > div h4{font-size:15px;padding:50% 0 0 10%;}
+		ul.photoList li  a > div h4 span{font-size:11px;display:block;font-weight:normal;}
+		ul.photoList li  a > div p{font-size:12px;padding:5px 0 0 10%;}
+		ul.photoList li  a > div p span{margin-right:10px;}
+		ul.photoList li  a > div p span:nth-child(2){padding-left:15px;background:url(../../images/common/bul_heart.png) no-repeat left center;background-size:10px;}

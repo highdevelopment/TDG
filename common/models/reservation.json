@@ -1,0 +1,74 @@
+{
+  "name": "Reservation",
+  "description": "예약",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "time1": {
+      "type": "date",
+      "required": true,
+      "description": "예약시간1"
+    },
+    "time2": {
+      "type": "date",
+      "required": false,
+      "description": "예약시간2"
+    },
+    "status": {
+      "type": "boolean",
+      "required": true,
+      "description": "예약했을때 false, 예약대로 게임진행 true",
+      "default": false
+    },
+    "name": {
+      "type": "string",
+      "required": true,
+      "description": "예약자이름"
+    },
+    "contact": {
+      "type": "string",
+      "required": false,
+      "description": "연락처"
+    },
+    "roomIndex": {
+      "type": "number",
+      "required": true,
+      "description": "룸번호"
+    },
+    "memo": {
+      "type": "string",
+      "required": false,
+      "description": "메모"
+    },
+    "createdAt": {
+      "type": "date",
+      "required": true
+    },
+    "modifiedAt": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "manager",
+      "permission": "ALLOW",
+      "property": "updateReservation",
+      "facetName": "common"
+    }
+  ],
+  "relations": {
+    "store": {
+      "type": "belongsTo",
+      "model": "store",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

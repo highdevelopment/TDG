@@ -1,0 +1,111 @@
+{
+  "name": "SubCourse",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "index": {
+      "type": "number",
+      "required": true,
+      "description": "코스자료에서의 번호 (0-3)"
+    },
+    "name": {
+      "type": "string",
+      "required": true,
+      "description": "디비에서의 식별이름"
+    },
+    "name_kr": {
+      "type": "string",
+      "required": true,
+      "default": ""
+    },
+    "name_cn": {
+      "type": "string"
+    },
+    "name_en": {
+      "type": "string"
+    },
+    "name_jp": {
+      "type": "string"
+    },
+    "par_number1": {
+      "type": "number",
+      "required": true,
+      "description": "1홀 파수",
+      "default": 4
+    },
+    "par_number2": {
+      "type": "number",
+      "required": true,
+      "description": "2홀 파수",
+      "default": 4
+    },
+    "par_number3": {
+      "type": "number",
+      "required": true,
+      "description": "3홀 파수",
+      "default": 4
+    },
+    "par_number4": {
+      "type": "number",
+      "required": true,
+      "description": "4홀 파수",
+      "default": 4
+    },
+    "par_number5": {
+      "type": "number",
+      "required": true,
+      "description": "5홀 파수",
+      "default": 4
+    },
+    "par_number6": {
+      "type": "number",
+      "required": true,
+      "description": "6홀 파수",
+      "default": 4
+    },
+    "par_number7": {
+      "type": "number",
+      "required": true,
+      "description": "7홀 파수",
+      "default": 4
+    },
+    "par_number8": {
+      "type": "number",
+      "required": true,
+      "description": "8홀 파수",
+      "default": 4
+    },
+    "par_number9": {
+      "type": "number",
+      "required": true,
+      "description": "9홀 파수",
+      "default": 4
+    }
+  },
+  "validations": [],
+  "relations": {
+    "course": {
+      "type": "belongsTo",
+      "model": "Course",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

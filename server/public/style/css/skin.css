@@ -1,0 +1,72 @@
+@charset "utf-8";
+
+/*감싸기********************/
+	.headerInner,
+	.subTopInner,
+	.footerInner{max-width:1200px;margin: 0 auto;position:relative;}
+
+
+/*헤더********************/
+	.logo a{display:inline-block;margin:35px 0;}
+	.unb,
+	.sns{position:absolute;}
+	.unb{overflow:hidden;right:0;top:27px;}
+	.unb a{font-family: 'Roboto', sans-serif !important;font-size:10px;display:block;float:left;padding:5px 10px;background:url(../../images/common/divideLine_01.png) no-repeat right center; cursor: pointer;}
+	.unb a:last-child{background:none;color:#e40046;}
+	.sns{overflow:hidden;right:0;top:70px;}
+	.sns a{display:block;float:left;width:35px;height:20px;text-indent:-9999px;background-repeat:no-repeat !important;background-position:center !important;}
+	.sns a:nth-child(1){background:url(../../images/common/bul_facebook.png);}
+	.sns a:nth-child(2){background:url(../../images/common/bul_instagram.png);}
+	.sns a:nth-child(3){background:url(../../images/common/bul_yTube.png);}
+
+
+/*내비게이션********************/
+	nav{position:absolute;top:55px;left:200px;z-index:1;}
+	nav a{display:block;text-align:center;font-family: 'Roboto', sans-serif !important;}
+	nav > ul{overflow:hidden;}
+	nav > ul > li{float:left;}
+	nav > ul > li > a{font-size:13.5px;padding:20px 0;min-width:110px;color:#191e64 !important;}
+	nav > ul > li > ul{display:none;background:rgba( 255,255,255,0.85 );min-height:135px;padding:10px 0;border-top:3px solid #e40046;}
+	nav > ul > li > ul > li > a{font-size:12px;padding:3px 0;color:#000 !important;}
+	nav > ul > li:hover ul{display:block;}
+
+
+/*서브탑********************/
+	.subTop{height:90px;background:#191e64 url(../../images/common/subTopBg.png) no-repeat left center;}
+	.subTop h1{float:left;color:#FFF;font-weight:normal;padding-top:33px;}
+	.subTop .location{float:right;color:#FFF;margin-top:33px;}
+	.subTop .location a{color:#FFF;padding-right:10px;}
+	.subTop .location span{color:#FFF;padding-left:10px;}
+
+	@media only screen and (max-width:1840px){
+		.subTop h1{position:absolute;text-align:center;width:100%;}
+	}
+
+
+/*바디********************/
+	#mainBodyWrap{}
+	#bodyWrap{padding:100px 0 130px 0;}
+
+
+/*풋터********************/
+	footer{background:#191e64;}
+	footer .footerInner{padding:65px 0;color:#FFF;}
+	.footerLogo{width:138px;height:41px;text-indent:-9999px;background:url(../../images/common/logoWhite.png) no-repeat center;}
+	.footerInfo{margin-top:60px;}
+	.footerInfo span{margin-right:35px;}
+	address{margin-top:10px !important;font-style:normal;}
+	.copyright{font-family: 'Roboto', sans-serif !important;margin-top:30px;font-size:1.2em;padding-left:30px;background:url(../../images/common/bulC.png) no-repeat left center;}
+	.telNo,
+	.footerSns{position:absolute;}
+	.telNo{right:0;top:110px;font-size:2em;font-family: 'Roboto', sans-serif !important;}
+	.footerSns{width:230px;right:0;top:160px;border-top:1px solid #FFF;padding-top:20px;}
+	.footerSns h3{font-family: 'Roboto', sans-serif !important;font-size:1.3em;font-weight:normal;margin-bottom:20px;}
+	.footerSnsBtns{overflow:hidden;}
+	.footerSnsBtns a{display:block;float:left;width:40px;height:40px;text-indent:-9999px;background-repeat:no-repeat !important;background-position:center !important;}
+	.footerSnsBtns a:nth-child(1){background:url(../../images/common/bul_facebook_2.png);}
+	.footerSnsBtns a:nth-child(2){background:url(../../images/common/bul_instagram_2.png);margin:0 55px;}
+	.footerSnsBtns a:nth-child(3){background:url(../../images/common/bul_yTube_2.png);}
+
+
+/*고탑********************/	
+	.goTop a{font-family: 'Roboto', sans-serif !important;position:absolute;top:0;right:0;display:block;text-align:center;width:80px;height:50px;padding-top:30px;background:#e40046;color:#FFF !important;font-size:1.5em;}

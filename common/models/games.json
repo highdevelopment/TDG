@@ -1,0 +1,126 @@
+{
+  "name": "games",
+  "description": "게임관리",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "startedAt": {
+      "type": "date",
+      "required": true,
+      "description": "게임시작시간",
+      "default": "$now"
+    },
+    "endedAt": {
+      "type": "date",
+      "required": false,
+      "description": "게임종료시간",
+      "default": "$now"
+    },
+    "title": {
+      "type": "string",
+      "description": "게임제목"
+    },
+    "course_name": {
+      "type": "string",
+      "required": true,
+      "description": "코스이름"
+    },
+    "subCourse1": {
+      "type": "string",
+      "required": true,
+      "description": "서브코스이름1"
+    },
+    "subCourse2": {
+      "type": "string",
+      "description": "서브코스이름2"
+    },
+    "game_holenum": {
+      "type": "number",
+      "required": true,
+      "description": "9, 18 홀개수",
+      "default": 18
+    },
+    "game_staus": {
+      "type": "number",
+      "required": true,
+      "description": "0: 진행중, 1: 완전종료, 2: 탈퇴종료",
+      "default": 0
+    },
+    "current_hole": {
+      "type": "number",
+      "required": true,
+      "description": "0-18: 현재 홀번호, 18: 게임종료",
+      "default": 0
+    },
+    "name": {
+      "type": "string",
+      "required": true,
+      "description": "게임제목",
+      "default": "game"
+    },
+    "game_mode": {
+      "type": "string",
+      "required": true,
+      "description": "게임모드 (stroke/doors1/driving)"
+    },
+    "scores": {
+      "type": "object",
+      "required": true,
+      "description": "게임스코어"
+    },
+    "putting_nums": {
+      "type": "object",
+      "required": false,
+      "description": "게임퍼팅수"
+    },
+    "game_context": {
+      "type": "object",
+      "required": false,
+      "description": "게임내용",
+      "default": ""
+    },
+    "player_num": {
+      "type": "number",
+      "required": true,
+      "description": "플레이어수"
+    },
+    "player_num_login": {
+      "type": "number",
+      "description": "로그인한 플레이어수",
+      "default": 0
+    },
+    "login_players": {
+      "type": "array",
+      "description": "로그인한 플레이어아이디배렬",
+      "default": []
+    },
+    "game_logs": {
+      "type": "array",
+      "description": "게임로그배렬",
+      "default": []
+    },
+    "option": {
+      "type": "object",
+      "description": "게임 설정내용",
+      "default": {}
+    }
+  },
+  "validations": [],
+  "relations": {
+    "room": {
+      "type": "belongsTo",
+      "model": "room",
+      "foreignKey": ""
+    },
+    "game_log": {
+      "type": "hasMany",
+      "model": "GameLogs",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

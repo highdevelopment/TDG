@@ -1,0 +1,352 @@
+@charset "utf-8";
+
+/*** content3 '코스, 마이도어스' CSS를 가지고 있습니다. ***/
+
+/*MY DOORS********************/
+	/*1대1문의*/
+		.qnaBtn{text-align:right;margin-bottom:20px;}
+		.qnaBtn a{color:#FFF !important; background:#191e64; padding:7px 27px;}
+
+	/*1대1문의하기*/
+		.inputCaution{font-size:10px;text-align:right;color:#666666;padding-right:22px;margin-bottom:15px;}
+		.inputCaution span{color:#cc0033; font-weight:bold;vertical-align:middle;margin-right:5px;}
+		span.star{color:#cc0033; font-weight:bold;vertical-align:-5px;margin-right:5px;}
+		span.noStar{padding-left:10px;}
+		.privateInput{background:#eeeeee; padding:29px 23px;}
+		.privateInput h3,
+		.askInput h3{font-size:22px; color:#191e64;margin-bottom:25px;padding-left:12px;}
+		.notification{font-size:11px;padding-top:10px;}
+		.formTable{width:100%;}
+		.formTable table{width:100%;margin:0;padding:0;border:0;border-collapse:collapse;}
+		.formTable table th{font-size:18px;color:#333333;border:0px;text-align:left;margin:0px;padding-top:5px;padding-bottom:12px;vertical-align:top;}
+		.formTable table td{margin:0;padding-bottom:12px;}
+		.formTable input,
+		.formTable select,
+		.formTable textarea{box-sizing:border-box;height:31px;color:#666666;border:1px solid #e5e5e5;padding: 3px 5px;vertical-align:middle;}
+		.formTable textarea{width:100%; height:340px;}
+		.askInput{padding:34px 23px; }
+		a.privateAgree{display:inline-block;margin-top:10px;color:#FFF !important;background:grey;padding:10px 30px;}
+		a.privateAgree.selected{background:#191e64;}
+		td.attachedFile input[type=text]{width:75%;background:#eeeeee;}
+		td.attachedFile input[type=button]{ float:right; display:inline-block;background:#FFF;padding:0 40px;cursor:pointer;}
+		.attachedFile .upload-hidden {display: none;}
+		td.attachedFile .btn{display:inline-block;background:#FFF;padding:3px 40px;cursor:pointer; box-sizing: border-box;height: 31px;color: #666666;border: 1px solid #e5e5e5; vertical-align: middle;}
+		.btnDone,
+		.btnCancel{display:inline-block; color:#FFF !important; padding:6px 30px;}
+		.btnDone{background:#191e64;}
+		.btnCancel{background:#d2d2d2; margin-left:16px;}
+		ul.privateView{padding:40px 225px;background:#EEE;margin-bottom:20px;}
+		ul.privateView li{margin:8px 0;background:#FFF;padding:45px 80px;}
+		ul.privateView dl{margin-bottom:40px;overflow:hidden;}
+		ul.privateView dt{color:#191e64;font-size:20px;float:left;width:70%;}
+		ul.privateView li:last-child dt{padding-left:25px;background: url(../../images/common/bul_enter.png) no-repeat left top;}
+		ul.privateView dd{color:#555556;font-size:15px;float:right;width:25%;}
+		ul.privateView dd span{display:block;}
+		ul.privateView p{color:#3f3f40;font-size:13px;}
+		ul.privateView img {max-width: 80%;}
+		ul.privateView .attached_icon {width: 30px; margin-bottom: -10px; padding-right: 4px;}
+
+	/*게임설정*/
+		.settingTop{padding:80px 0;background:#EEE;color:#003366;overflow:hidden;}
+		.settingTopW{padding:0;background:#FFF;}
+		.settingTop figure{text-align:center;float:left;width:20%;}
+		.settingTop figure img{width:135px;max-width:100%;border:5px solid #63eec8;border-radius:100%;}
+		.settingTop figure figcaption{margin-top:20px;font-size:18px;font-weight:bold;}
+		.settingTop figure figcaption span{display:block;font-size:15px;font-weight:normal;}
+		.settingTop figure figcaption span:last-child{font-size:25px;font-weight:600;padding-top:10px;line-height:25px;}
+		.settingTop .info{float:left;width:80%;}
+		.settingTop .info > p{font-size:29px;margin-bottom:25px;}
+		.settingTop .info > ul{overflow:hidden;}
+		.settingTop .info > ul > li{width:50%;float:left;}
+		.settingTop .info > ul > li h3{margin-bottom:25px;padding-left:30px;}
+		.settingTop .info > ul > li ul{}
+		.settingTop .info > ul > li ul li{float:left;width:33%;border-right:1px solid #003366;padding:5px 0;margin:5px 0;text-align:center;font-weight:bold;font-size:25px;font-family: 'Roboto', sans-serif;}
+		.settingTop .info > ul > li ul li:nth-child(3n+0){border-right:0}
+		.settingTop .info > ul > li ul li span{display:block;padding-top:10px;font-size:9px;font-family: 'Noto Sans KR', sans-serif;font-weight:normal;}
+		.settingTop .info > ul > li img{max-width:100%;margin-left:30px;}
+		.gameSetting{margin-top:70px;}
+		.gameSetting dl{overflow:hidden; color:#191e64; margin:20px 0;} 
+		.gameSetting dt{float:left; width:20%; font-size:18px; padding:5px 0;clear:both;}
+		.gameSetting dd{float:left; width:80%; font-size:12px;}
+		.gameSetting dd ul{overflow:hidden;}
+		.gameSetting dd ul li{float:left; width:14.2%;}
+		.gameSetting dd ul div{width:90%; text-align:center; background:#b8b8ba; padding:4px 0; color:#FFF; cursor:pointer;}
+		.gameSetting dd ul input[type=number]{width:90%; text-align:center; background:#b8b8ba; padding:4px 1px; color:#FFF; border: none;}
+		.gameSetting dd ul div.active,
+		.gameSetting dd ul div:hover{background:#191e64;}
+		.gameSetting dd ul div a{color:#FFF !important;}
+		.settinInfo{font-size:19px; font-weight:600; color:#191e64; background:#eeeeee; text-align:center; padding:20px 0; margin-top:60px; margin-bottom:40px;}
+		.settingSave{display:inline-block; font-size:22px; font-weight:600; color:#FFF !important; background:#191e64; padding:27px 130px; cursor:pointer;}
+
+	/*내 기록 분석*/
+		.recordAnalysis{background:#eeeeee;padding:50px 0;margin-top:50px;}
+		.recordAnalysis ul{overflow:hidden;}
+		.recordAnalysis ul li{float:left; width:40%;margin-right:10%;}
+		.recordAnalysis ul li:last-child{margin-right:0;margin-left:10%;}
+		.recordAnalysis ul li h3{font-size:18px; color:#191e64; margin-bottom:30px;}
+		.clubAnalysis{background:#191e64;padding:40px 80px;overflow:hidden;max-width:1040px;margin: 0 auto;}
+		.clubAnalysis h3{font-size:22px;color:#FFF;margin-bottom:30px;font-weight:normal;}
+		.clubAnalysis .sideL{float:left;width:75%;}
+		.clubAnalysis .sideR{float:left;width:23%;margin-left:2%;}
+		.clubAnalysis .sideL table{width:100%;margin:0;padding:0;border-collapse:collapse;border-radius:10px !important;}
+		.clubAnalysis .sideL table th,
+		.clubAnalysis .sideL td{text-align:center;padding:10px 10px;font-size:15px;}
+		.clubAnalysis .sideL th{color:#999;background:#EEE;}
+		.clubAnalysis .sideL td{color:#333;background:#FFF;}
+		.clubAnalysis .sideL .mark{font-weight:bold;color:#c30034;}
+		.clubAnalysis .sideL .roundTL{border-top-left-radius:5px;}
+		.clubAnalysis .sideL .roundTR{border-top-right-radius:5px;}
+		.clubAnalysis .sideL .roundBL{border-bottom-left-radius:5px;}
+		.clubAnalysis .sideL .roundBR{border-bottom-right-radius:5px;}
+		.clubAnalysis .sideR p{background:#EEE;color:#333;font-weight:600;font-size:18px;text-align:center;padding:10px;border-top-left-radius:5px;border-top-right-radius:5px;}
+		.clubAnalysis .sideR p span{display:block;padding-bottom:10px;}
+		.clubAnalysis .sideR p span:last-child{color:#002a5f;font-size:30px;padding-top:10px;}
+		.clubAnalysis .sideR ul{background:#FFF; padding:10px 0;border-bottom-left-radius:5px;border-bottom-right-radius:5px;height:307px;}
+		.clubAnalysis .sideR ul li{font-size:18px;font-weight:600;color:#666;margin:5px 0;padding:8px 10px;clear:both;}
+		.clubAnalysis .sideR ul li span{display:inline-block;float:right;}
+		.clubAnalysis .sideR ul li span:nth-child(2){float:right;background:#e10046;color:#FFF;padding:7px 14px;margin-right:-65px;margin-top:-8px;font-style:italic;}
+		.clubAnalysis .sideR ul li.winner_01{background:#f6b2c7; }
+		.clubAnalysis .sideR ul li.winner_02{background:#f9ccda; }
+		.clubAnalysis .sideR ul li.winner_03{background:#fce5ec; }
+		.gameRecord{background:#EEE;padding:50px 0;}
+		.gameRecord .gameRecordTop{overflow:hidden;margin-bottom:20px;}
+		.gameRecordTop h3{font-size:18px; color:#191e64;float:left;}
+		.gameRecordTop div{float:right;}
+		.gameRecordTop div input{vertical-align:middle;box-sizing:border-box;height:30px;border:0;color:#FFF;padding:0 10px;}
+		.gameRecordTop div input[type=text]{background:#585c8c;width:150px;}
+		.gameRecordTop div input[type=submit]{background:#181e63;cursor:pointer;}
+		.gameRecord table td{background:#FFF;}
+
+	/*내 기록 분석팝업창*/
+		.gameRecordPop{background:rgba( 255,255,255,0.9 );position:fixed;left:0;top:0;width:100%;height:100%;z-index:1;}
+		.gameRecordPop .inner{box-sizing:border-box;padding-top:80px;width:1200px;height:500px;position:absolute;left:50%;top:50%;margin-top:-250px;margin-left:-600px;background:#181e63;}
+		.gameRecordPop .inner ul.gameRecordPopSlide{}
+		ul.gameRecordPopSlide div.gameRecordPopCon{box-sizing:border-box;padding:30px;width:510px;height:340px;background:#FFF;border-radius:10px;box-shadow: 10px 10px 10px #0d1036;}
+		ul.gameRecordPopSlide div.gameRecordPopCon h4{font-size:24px;font-weight:normal;}
+		ul.gameRecordPopSlide div.gameRecordPopCon span{color:#191e64;font-size:50px;font-family: 'Roboto', sans-serif;position:absolute;top:40px;right:40px;}
+		ul.gameRecordPopSlide div.gameRecordPopCon h5{font-size:18px;font-weight:normal;margin-top:40px;}
+		ul.gameRecordPopSlide div.gameRecordPopCon table{width:100%;font-size:18px;text-align:center;margin-top:10px;}
+		ul.gameRecordPopSlide div.gameRecordPopCon table th{font-weight:normal;color:#b0b0b0;padding:3px;}
+		ul.gameRecordPopSlide div.gameRecordPopCon table td{color:#707070;padding:3px;}
+		ul.gameRecordPopSlide div.gameRecordPopCon table th.bigOne{font-weight:bold;color:#666666;font-size:40px;font-family: 'Roboto', sans-serif;}
+		a.moreScoreCard,
+		a.closeGameRecordPop{display:block;position:absolute;right:30px;}
+		a.moreScoreCard{color:#FFF !important;font-size:12px;margin-top:20px;padding-right:20px;background:url(../../images/common/arrowRight_03.png) no-repeat right;}
+		a.closeGameRecordPop{text-indent:-9999px;top:30px;width:26px;height:26px;background:url(../../images/common/bul_close_01.png) no-repeat;}
+		.gameRecordPop .bx-controls-direction a{position:absolute;top:50%;width:60px;height:60px;margin-top:-30px;text-indent:-9999px;background-repeat:no-repeat;background-position:center;}
+		.gameRecordPop .bx-controls-direction a.bx-prev{left:0;background-image:url(../../images/common/recommendCourse_arrowL.png);}
+		.gameRecordPop .bx-controls-direction a.bx-next{right:0;background-image:url(../../images/common/recommendCourse_arrowR.png);}
+		.gameRecordPop .bx-controls-direction a:hover{background-color:rgba( 255,255,255,0.3 );
+}
+
+/*내 스윙 영상*/
+	.swingSection{background: #4c4f55; padding: 20px;margin-bottom: 30px;}
+	.swingSection button {padding: 2px 15px;margin-left: 50px;margin-top: 10px;background: #424141;border: 1px solid grey;color: #eee; cursor: pointer;}
+
+	.videoplay #controls section {border-bottom: 1px solid black;border-right: 1px solid black;}
+	.videoplay #controls button {width: 35px; height: 35px; border:none; background-repeat: no-repeat; background-position: 14px 12px;margin: 0px 0px;box-shadow: -1px -1px #aaa;}
+	.videoplay #controls button#btnPrev {background-image: url(../../images/video/prev.png);}
+	.videoplay #controls button#btnStop {background-image: url(../../images/video/stop.png);}
+	.videoplay #controls button#btnNext {background-image: url(../../images/video/next.png);}
+	.videoplay #controls button.play {background-image: url(../../images/video/play.png);}
+	.videoplay #controls button.pause {background-image: url(../../images/video/pause.png);}
+	.videoplay #controls progress {color:red; background: #434343;width: 100%;height: 8px;}
+	.videoplay #controls progress::-moz-progress-bar {color:red;background:#434343; }
+    .videoplay #controls progress[value]::-webkit-progress-bar {background-color: #434343;border-radius: 2px;box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;}
+	.videoplay #controls progress[value]::-webkit-progress-value {background-color: red;}
+	.videoplay #controls select {float: right;margin: 6px 18px;background:#4c4f55;color: white;}
+	
+	.swingSectionInner{border: 1px solid grey;cursor:pointer;background:transparent;}
+	.videoplay {padding: 30px 50px; float: left;}
+	.motion_data {padding: 14px 0px;}
+	.motion_data label {color: #aaa;}
+	.motion_data span {color: #eeeeee;}
+	.motion_data li {padding: 6px 0px;}
+	.swingMovieSearch{text-align:right;margin-bottom:40px;}
+	.swingMovieSearch input{vertical-align:middle;box-sizing:border-box;height:30px;border:0;padding:0 10px;}
+	.swingMovieSearch input[type=text]{color:#111;background:#f3f3f3;width:150px;}
+	.swingMovieSearch input[type=submit]{color:#fff;background:#181e63;cursor:pointer;}
+	ul.swingMovieList{overflow:hidden;}
+	ul.swingMovieList li{float:left;width:30%;margin-bottom:5%;}
+	ul.swingMovieList li:nth-child(3n-1){margin:0 5%;}
+	ul.swingMovieList li a{display:block;overflow:hidden;}
+	ul.swingMovieList li a img{float:left;width:100%;}
+	ul.swingMovieList li div{font-size:12.5px;margin-top:5px;}
+	ul.swingMovieList li div span{display:block;font-size:14px;}
+	.weakness{background:#EEE;padding:75px 0;}
+	.weakness h3{font-size:20px;color:#191e64;margin-bottom:35px;}
+	.weakness ul{overflow:hidden;}
+	.weakness ul li{float:left;width:50%;}
+	.weakness ul li:last-child{text-align:right;}
+	.weakness a.more{display:block;position:absolute;top:10px;right:0;}
+
+/*프로필 관리*/
+	.profileGuide{font-size:11.5px;color:#666;margin-bottom:20px;}
+	.profileForm{}
+	.profileForm dl{overflow:hidden;margin-bottom:10px;}
+	.profileForm dl dt{width:25%;float:left;clear:both;padding-top:14px;font-size:18px;color:#333;}
+	.profileForm dl dt.option_01{font-size:12px;}
+	.profileForm dl dd{width:75%;float:left;}
+	.profileForm input,
+	.profileForm select{box-sizing:border-box;height:34px;background:#FFF;border:0px;margin:5px 0;border:1px solid #eaeaea;vertical-align:middle; cursor: pointer;}
+	.profileForm input:focus,
+	.profileForm select:focus{border:1px solid #e40046;}
+	.profileForm input[type=text]{padding:0 10px;}
+	.profileForm input[type=password]{padding:0 10px;}
+	.profileForm input[type=button]{color:#FFF;cursor:pointer;border:0;padding:0 20px;margin-right:10px;}
+	.profileForm input[type=button].btnBlue{background:#191e64;}
+	.profileForm input[type=button].btnGray{background:#d2d2d2;}
+	.profileForm p{font-size:11.5px;color:#666;margin:5px 0 20px 0;}
+	.profileForm dd.profileImage input[type=text]{width:100%;background:#EEE;}
+	.profileForm dd.profileImage img{vertical-align:middle;margin-right:30px;border-radius:100%;width:140px;height:140px; cursor: pointer;}
+	.profileForm dd.email input{width:145px;}
+	.profileForm dd.cellPhone input,
+	.profileForm dd.cellPhone select{width:100px;}
+
+
+/*코스********************/
+	/*코스 찾기*/
+		.findCourse{overflow:hidden;}
+		.findCourse .courseInfo{float:left; width:50%; background:#e5e5e5; height:600px; box-sizing:border-box;}
+		.courseIntroTop{position:relative; background:rgba(25, 30, 100, 0.7); width:600px; height:140px;}
+		.courseIntro h3,
+		.courseIntro div,
+		.courseIntro ul,
+		.courseIntro p, 
+		.courseIntro h3 a{color:#FFF; position:absolute;}
+		.courseIntroTop > img{padding:20px;}
+		.courseIntroTop h3{top:25px; left:100px;font-size:20px;font-weight:600;}
+		.courseIntroTop h3 a{font-size:12px; font-weight:normal;}
+		.courseIntro p{bottom:220px; left:0; padding:25px; width:45%; }
+		.courseIntroTop ul{overflow:hidden; top:95px; left:84px;}
+		.courseIntroTop ul li{float:left; font-size:12px; padding-left:16px;}
+		.courseIntroTop ul li img{vertical-align:bottom; padding-left:12px;}
+		.courseIntroTop div{top:25px; right:20px; text-align:right;}
+		.courseIntroTable{width:100%; background:#191e64;margin:12px 0 25px 0;}
+		.courseIntroTable table{width:100%;margin:0px;padding:0px;border-collapse:collapse; border:0;}
+		.courseIntroTable th,
+		.courseIntroTable td{font-size:15px;border:0px; text-align:center; color:#FFF; margin:0px; padding:10px 0;}
+		.courseIntroTable td a{color:#FFF;}
+		.courseIntroTable tr.last th,
+		.courseIntroTable tr.last td{color:rgba(255, 255, 255, 0.3);}
+		.findCourse .courseMap{float:left; width:50%;}
+
+	/*신규 코스*/
+		.newCourse{padding-bottom:65px;}
+		.newCourse h2{color:#003366;font-size:20px;padding-bottom:30px;}
+		/*
+		ul.newCourseList{overflow:hidden;}
+		ul.newCourseList > li{float:left;width:30%;}
+		ul.newCourseList > li:nth-child(3n-1){margin:0 5%;}
+		*/
+		ul.newCourseList > li > a{display:block;position:relative;overflow:hidden;}
+		ul.newCourseList > li > a > img{float:left;width:100%;}
+		ul.newCourseList > li > a > span.tagNew{position:absolute;top:0;left:0;}
+		ul.newCourseList > li > a > div.detail{display:none; position:absolute; left:0; top:0; width:100%; height:100%; color:#FFF; background:rgba(0,0,0,0.6);}
+		ul.newCourseList > li > a:hover > div.detail{display:block;}
+		ul.newCourseList > li > a > div.detail h3{padding:45px 0 20px 80px;}
+		ul.newCourseList > li > a > div.detail span{display:block;padding:5px 0 0 80px;}
+		ul.newCourseList > li > a > div.detail span img{vertical-align:middle;margin-left:10px;}
+		ul.newCourseList > li > a > div.detail span:last-child{font-size:11px;}
+		.newCourse .bx-pager{text-align:center;margin-top:20px;}
+		.newCourse .bx-pager .bx-pager-item{display:inline-block;}
+		.newCourse .bx-pager .bx-pager-item a{display:inline-block;text-indent:-9999px;width:8px;height:8px;background:#8a8a8a;margin:0 4px;border-radius:100%;}
+		.newCourse .bx-pager .bx-pager-item a.active{background:#e9336b;}
+
+	/*베스트 코스*/
+		.bestCourse{background:#eeeeee;padding:65px;}
+		.bestCourse h2{color:#003366;font-size:30px;padding-bottom:30px;text-align:center;}
+		ul.bestCourseList > li > a{display:block;position:relative;overflow:hidden;}
+		ul.bestCourseList > li > a > img{float:left;height:209px;width:35%;}
+		ul.bestCourseList > li > a > img:nth-child(1){height:418px;width:65%;}
+		ul.bestCourseList > li > a > div.detail{display:none; position:absolute; left:0; top:0; width:65%; height:100%; color:#FFF; background:rgba( 0,0,0,0.5 ) url(../../images/common/tagBest.png) no-repeat left top !important;}
+		ul.bestCourseList > li > a:hover > div.detail{display:block;}
+		ul.bestCourseList > li > a > div.detail h3{font-size:30px;padding:90px 0 20px 140px;}
+		ul.bestCourseList > li > a > div.detail span{font-size:18px;display:block;padding:10px 0 0 140px;}
+		ul.bestCourseList > li > a > div.detail span img{vertical-align:middle;margin-left:20px;}
+		ul.bestCourseList > li > a > div.detail p{font-size:17px;padding:20px 70px 20px 140px;line-height:150%;}
+	/*베스트 코스(여성, 남성)*/
+		.bestCourseGender{overflow:hidden;padding:65px;}
+		.bestCourseGender h2{color:#003366;font-size:20px;padding-bottom:30px;text-align:center;line-height:150%;}
+		.bestCourseFemale{float:left;width:408px;}
+		.bestCourseMale{float:right;width:408px;}
+		.bestCourseMale{margin-left:8%;}
+		ul.bestGenderList > li > a{display:block;position:relative;overflow:hidden;}
+		ul.bestGenderList > li > a > img.small{float:left;height:126px;width:50%;}
+		ul.bestGenderList > li > a > img.large{height:254px;width:100%;}
+		ul.bestGenderList > li > a > div.detail{display:none; position:absolute; left:0; top:0; width:100%; height:254px; color:#FFF; background:rgba( 0,0,0,0.5 ) url(../../images/common/tagBestW.png) no-repeat left top !important;}
+		.bestCourseMale	ul.bestGenderList > li > a > div.detail{background:rgba( 0,0,0,0.5 ) url(../../images/common/tagBestM.png) no-repeat left top !important;}
+		ul.bestGenderList > li > a:hover > div.detail{display:block;}
+		ul.bestGenderList > li > a > div.detail h3{padding:85px 0 20px 130px;font-size:22px;}
+		ul.bestGenderList > li > a > div.detail span{display:block;padding:5px 0 0 130px;}
+		ul.bestGenderList > li > a > div.detail span img{vertical-align:middle;margin-left:10px;}
+		ul.bestGenderList > li > a > div.detail span:last-child{font-size:11px;}
+
+	/*추천 코스*/
+		.recommendCourseTop{overflow:hidden;color:#003366;position:relative;margin-bottom:55px;}
+		.recommendCourseTop h2{display:inline-block;padding:50px 0 0 40px;font-size:29px;}
+		.recommendCourseTop figure{text-align:center;float:left;margin-left:300px;}
+		.recommendCourseTop img{border:5px solid #63eec8;border-radius:100%;}
+		.recommendCourseTop figcaption{font-size:14px;font-weight:bold;}
+		.recommendCourseTop figcaption span{display:block;font-size:12px;font-weight:normal;}
+		.recommendCourse{background:#EEE;padding:115px;position:relative;max-width:970px;margin: 0 auto;}
+		.recommendCourse h2{color:#FFF;background:#191e64;text-align:center;box-sizing:border-box;font-size:30px;position:absolute; left:0;top:0;width:115px;height:115px;padding-top:45px;}
+		ul.recommendCourseList{}
+		ul.recommendCourseList > li > a{display:block;position:relative;overflow:hidden;}
+		ul.recommendCourseList > li > a > img{float:left;height:175px;width:32%;}
+		ul.recommendCourseList > li > a > img:nth-child(1){height:350px;width:68%;}
+		ul.recommendCourseList > li > a > div.detail{display:none; position:absolute; left:0; top:0; width:68%; height:100%; color:#FFF; background:rgba( 0,0,0,0.5 ) url(../../images/common/tagBest.png) no-repeat left top !important;}
+		ul.recommendCourseList > li > a:hover > div.detail{display:block;}
+		ul.recommendCourseList > li > a > div.detail h3{font-size:30px;padding:70px 0 20px 140px;}
+		ul.recommendCourseList > li > a > div.detail span{font-size:18px;display:block;padding:10px 0 0 140px;}
+		ul.recommendCourseList > li > a > div.detail span img{vertical-align:middle;margin-left:20px;}
+		ul.recommendCourseList > li > a > div.detail p{font-size:17px;padding:20px 70px 20px 140px;line-height:150%;}
+		.recommendCourse .bx-controls-direction{}
+		.recommendCourse .bx-controls-direction a{display:block;position:absolute;top:50%;text-indent:-9999px;width:63px;height:63px;}
+		.recommendCourse .bx-controls-direction a.bx-prev{left:0;background:#adafc4 url(../../images/common/recommendCourse_arrowL.png) no-repeat center;box-shadow:3px 3px 3px #DDD;}
+		.recommendCourse .bx-controls-direction a.bx-next{right:0;background:#adafc4 url(../../images/common/recommendCourse_arrowR.png) no-repeat center;box-shadow:-3px 3px 3px #DDD;}
+
+.attachedFile.filebox label.btn-primary {
+	background: #191e64;
+	color: #FFF;
+    cursor: pointer;
+    border: 0;
+    padding: 6px 20px;
+	margin-right: 10px;
+	box-sizing: border-box;
+    height: 34px;
+    margin: 5px 0;
+    vertical-align: middle;
+}
+
+.dialog {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+.dialog .swingSection {
+    margin: 15% auto;
+    padding: 30px;
+    width: 800px;
+}
+
+/* The Close Button */
+.dialog .close {
+	color: #aaaaaa;
+	float: right;
+	font-size: 32px;
+	font-weight: bold;
+    margin-top: -26px;
+    margin-right: -20px;
+}
+  
+.dialog .close:hover,
+.dialog .close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}

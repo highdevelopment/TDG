@@ -1,0 +1,47 @@
+{
+  "name": "Verification",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "certNo": {
+      "type": "string",
+      "required": true,
+      "description": "인증번호"
+    },
+    "reqDate": {
+      "type": "string",
+      "required": true,
+      "description": "요청날짜"
+    },
+    "result": {
+      "type": "string",
+      "description": "결과 (Y: 성공, N: 실패)"
+    },
+    "resultCode": {
+      "type": "string",
+      "description": "오류코드"
+    },
+    "phoneNo": {
+      "type": "string",
+      "required": true,
+      "description": "폰번호"
+    },
+    "authNo": {
+      "type": "string",
+      "required": false,
+      "description": "인증메시지"
+    },
+    "createdAt": {
+      "type": "date",
+      "required": true,
+      "default": "$now"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

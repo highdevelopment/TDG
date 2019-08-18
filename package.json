@@ -1,0 +1,46 @@
+{
+  "name": "Golf",
+  "version": "1.0.0",
+  "main": "server/server.js",
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "start": "node .",
+    "posttest": "npm run lint && nsp check"
+  },
+  "dependencies": {
+    "async-request": "^1.2.0",
+    "body-parser": "^1.18.3",
+    "compression": "^1.0.3",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.5.2",
+    "express-handlebars": "^3.0.0",
+    "express-hbs": "^2.0.2",
+    "helmet": "^3.10.0",
+    "loopback": "^3.19.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-component-explorer": "^6.0.0",
+    "loopback-component-storage": "^3.5.0",
+    "loopback-component-storage-mongo": "^1.5.1",
+    "loopback-connector-mongodb": "^3.6.0",
+    "move-file": "^1.0.0",
+    "node-gcm": "^1.0.2",
+    "path": "^0.12.7",
+    "serve-favicon": "^2.0.1",
+    "sharp": "^0.21.1",
+    "strong-error-handler": "^2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.17.1",
+    "eslint-config-loopback": "^8.0.0",
+    "nsp": "^2.1.0"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "license": "UNLICENSED",
+  "description": "Golf"
+}

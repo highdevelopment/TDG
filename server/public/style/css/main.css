@@ -1,0 +1,117 @@
+@charset "utf-8";
+
+/*1단********************/
+	/*메인비주얼*/
+	.mainVisual{position:relative;margin-bottom:18px;}
+	.mainVisual .bx-pager{position:absolute;right:5%;top:45%;}
+	.mainVisual .bx-pager-item{}
+	.mainVisual .bx-pager-item a{display:block;margin:10px 0;text-indent:-9999px;background:#FFF;width:10px;height:10px;border-radius:100px;}
+	.mainVisual .bx-pager-item a.active{background:#d93064;}
+	.mainVisual .bx-controls-direction{}
+	.mainVisual .bx-controls-direction a{position:absolute;right:10%;width:21px;height:12px;text-indent:-9999px;}
+	.mainVisual .bx-controls-direction a.bx-prev{top:10%;background:url(../../images/common/arrowUp_01.png);}
+	.mainVisual .bx-controls-direction a.bx-next{bottom:10%;background:url(../../images/common/arrowDown_01.png);}
+	/*메인최신글*/
+	.mainRecentArticle{background:#eeeeee;overflow:hidden;padding:35px 0 12px 0;margin-bottom:20px;}
+	.mainRecentArticle .notice,
+	.mainRecentArticle .shop{width:43%;float:left;padding:0 3%;position:relative;}
+	.mainRecentArticle .notice h3,
+	.mainRecentArticle .shop h3{font-family:Futura;margin-bottom:20px;font-size:20px;}
+	.mainRecentArticle .notice{border-right:2px solid #afafaf;}
+	.mainRecentArticle .notice a.more,
+	.mainRecentArticle .shop a.more{display:block;position:absolute;top:0;right:35px;font-size:11px;padding-right:15px;background:url(../../images/common/arrowRight_02.png) no-repeat right center;}
+	.notice li{padding:5px 0;}
+	.notice li span{float:right;}
+	.shopSlide h4{font-size:20px;margin-bottom:10px;}
+	.shopSlide div{font-size:16px;}
+	.shopSlide div span{font-size:14px;display:block;margin-top:8px;}
+	.shop .bx-pager{text-align:center;margin-top:20px;}
+	.shop .bx-pager-item{display:inline;}
+	.shop .bx-pager-item a{display:inline-block;margin:0 5px;text-indent:-9999px;background:#818181;width:10px;height:10px;border-radius:100px;}
+	.shop .bx-pager-item a.active{background:#d93064;}
+
+
+/*2단:내정보********************/
+	#level_02{background:#191e64;padding:20px 0;}
+	.myInfo{position:relative;overflow:hidden;}
+	.myInfo div{float:left;color:#FFF;}
+	.myInfo div#user_photo{width: 90px; height: 90px; margin-right:30px;}
+	.myInfo div img{display:block;float:left;margin-right:30px; width: 90px;}
+	.myInfo div p{float:left;font-size:20px;margin-top:25px;}
+	.myInfo div p span{display:block;margin-top:5px;font-size:17px;}
+	.myInfo ul{overflow:hidden;float:left;margin:20px 0 0 20px;}
+	.myInfo ul li{float:left;color:#66cc99;text-align:center;font-size:40px;padding:0 30px;line-height:40px;border-right:1px solid #FFF;}
+	.myInfo ul li span{display:block;color:#FFF;font-size:13px;}
+	.myInfo ul li:last-child{border-right:0;}
+	.myInfo a.more{position:absolute;right:0;top:40px;color:#FFf;font-size:17px;padding-right:15px;background:url(../../images/common/arrowRight_03.png) no-repeat right 4px;}
+
+
+/*3단:바로가기********************/
+	#level_03{background:#efefef;padding:30px 0;}
+	.mainGo{overflow:hidden;background:#FFF;}
+	.mainGo_02{margin:20px 0;}
+	.mainGo img{display:block;width:50%;}
+	.mainGo_01 img,
+	.mainGo_03 img{float:right;}
+	.mainGo_02 img{float:left;}
+	.mainGo_01 div,
+	.mainGo_03 div{float:left;}
+	.mainGo_02 div{float:right;}
+	.mainGo div{width:32%;padding:0 9%;}
+	.mainGo div h3{font-size:26px;color:#333333;line-height:125%;}
+	.mainGo div p{font-size:13px;margin-top:20px;}
+	.mainGo a{display:block;padding:5px 0;width:55%;margin-top:30px;font-size:10px;text-align:center;color:#FFF !important;background:#181e63;}
+	.mainGo_01 div{padding-top:50px;}
+	.mainGo_03 div,
+	.mainGo_02 div{padding-top:30px;}
+
+
+/*4단:코스********************/
+	#level_04{background:#191e64;padding:60px 0;}
+	#level_04 h2{font-family: 'Roboto', sans-serif !important;text-align:center;color:#FFF;font-size:30px;margin-bottom:60px;}
+	.bestCourse > a,
+	ul.newCourse li > a{display:block;overflow:hidden;position:relative;}
+	.bestCourse a > img,
+	ul.newCourse li > a > img{width:100%;float:left;}
+	.bestCourse a span.tag,
+	ul.newCourse li a span.tag{display:block;position:absolute;top:0;left:0;z-index:1;}
+	.bestCourse > a .detailView{display:none;position:absolute;top:0;left:0;width:62%;height:70%;padding:15% 19%;color:#FFF;background:rgba( 0,0,0,0.5 );}
+	.bestCourse > a:hover .detailView{display:block;}
+	.bestCourse > a .detailView h3{font-size:30px;}
+	.bestCourse > a .detailView ul{font-size:22px;margin-top:50px;}
+	.bestCourse > a .detailView ul li{margin-top:20px;}
+	.bestCourse > a .detailView ul li img{vertical-align:middle;margin-left:20px;}
+	.bestCourse > a .detailView p{font-size:18px;margin-top:20px;line-height:150%;}
+	.bestCourse > a .detailView p span{display:block;font-size:15px;margin-top:20px;background:url(../../images/common/arrowRight_03.png) no-repeat 80px center;}
+	ul.newCourse{overflow:hidden;}
+	ul.newCourse li{float:left;width:50%;}
+	#level_04 a.more{position:absolute;top:40px;right:0;color:#FFF;font-size:13px;padding-right:15px;background:url(../../images/common/arrowRight_03.png) no-repeat right 3px;}
+
+
+/*5단:스윙비디오********************/
+	#level_05{background:#efefef;padding:60px 0;}
+	#level_05 h2{font-family: 'Roboto', sans-serif !important;text-align:center;color:#666666;font-size:30px;margin-bottom:60px;}
+	ul.swingVideo li > a{display:block;position:relative;}
+	ul.swingVideo{overflow:hidden;}
+	ul.swingVideo li{float:left;width:32%;}
+	ul.swingVideo li:nth-child(2){margin:0 2%;}
+	ul.swingVideo .articleImg{overflow:hidden;}
+	ul.swingVideo .articleImg img{width:100%;float:left;}
+	ul.swingVideo span.tag{display:block;position:absolute;top:0;left:0;z-index:1;}
+	ul.swingVideo span.play{display:block;position:absolute;right:20px;bottom:50px;z-index:1;}
+	ul.swingVideo .articleInfo{margin-top:15px;}
+	ul.swingVideo .articleInfo span{display:inline-block;font-size:15px;margin-right:15px;padding-left:20px;background-repeat:no-repeat !important;background-position:left center !important;}
+	ul.swingVideo .articleInfo span:nth-child(1){display:block;font-size:13px;padding-left:0;}
+	ul.swingVideo .articleInfo span:nth-child(2){background:url(../../images/common/bulHeart.png);}
+	ul.swingVideo .articleInfo span:nth-child(3){background:url(../../images/common/bulmessage.png);}
+	ul.swingVideo .articleInfo span:nth-child(4){background:url(../../images/common/bulPlay_02.png);padding-left:17px;}
+	#level_05 a.more{position:absolute;top:40px;right:0;font-size:13px;padding-right:15px;background:url(../../images/common/arrowRight_04.png) no-repeat right 3px;}
+
+
+/*6단:인스타그램********************/
+	#level_06{font-family: 'Roboto', sans-serif !important;background:#FFF;padding:60px 0;}
+	#level_06 h2{text-align:center;color:#666666;font-size:30px;margin-bottom:60px;}
+	ul.instagramList{overflow:hidden;}
+	ul.instagramList li{float:left;width:25%;}
+	ul.instagramList li a{display:block;height:199px;overflow:hidden;}
+	ul.instagramList li a img{float:left;height:100%;width:100%;}
