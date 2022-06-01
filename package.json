@@ -29,7 +29,7 @@
     "node-gcm": "^1.0.2",
     "path": "^0.12.7",
     "serve-favicon": "^2.0.1",
-    "sharp": "^0.21.1",
+    "sharp": "^0.30.5",
     "strong-error-handler": "^2.0.0"
   },
   "devDependencies": {
